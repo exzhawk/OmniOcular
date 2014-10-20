@@ -1,3 +1,7 @@
+ext.mc_version = "1.7.10"
+ext.mod_version = "1.0"
+ext.env = System.getenv()
+
 buildscript {
     repositories {
         mavenCentral()
@@ -17,12 +21,12 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = mc_version + "-" + mod_version
+group= "me.exz.omniocular" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "OmniOcular"
 
 minecraft {
-    version = "1.7.10-10.13.1.1217"
+    version = "1.7.10-10.13.2.1231"
     runDir = "eclipse"
 }
 
@@ -39,7 +43,18 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    compile "mcp.mobius.waila:Waila:1.5.5_1.7.10"
+}
 
+repositories {
+    maven {
+        name "ProfMobius"
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven {
+        name 'ChickenBones'
+        url "http://chickenbones.net/maven/"
+    }
 }
 
 processResources
