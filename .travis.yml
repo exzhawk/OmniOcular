@@ -1,3 +1,9 @@
 language: java
-script: gradle setupCIWorkspace
-script: gradle build
+script: gradle setupCIWorkspace build
+deploy:
+  provider: releases
+  api_key:
+    secure: ZxHFrN15GNRdeK+B8oJ8uvw/jVLcYLpq2UObC5xk37+3lpZ+5/JLvw+gxDmsbboXSJ59nh3+haYorwvyAo4fR4OL27OrUMOPo6J5yZThZWRcqoES01pikwZR7WITNMegPVGMfLFqv9boafjA7pFoYepUqfll8UJ4WM7BoCe1gR4=
+  file: build/libs/*.jar
+  on:
+    repo: exzhawk/OmniOcular
