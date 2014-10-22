@@ -4,11 +4,15 @@ import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import io.netty.buffer.ByteBuf;
 
-public class ConfigMessage implements IMessage {
-    protected String text;
-    public TransferConfigMessage(){}
 
-    public TransferConfigMessage(String text) {
+public class ConfigMessage implements IMessage {
+    String text;
+
+    @SuppressWarnings("UnusedDeclaration")
+    public ConfigMessage() {
+    }
+
+    public ConfigMessage(String text) {
         this.text = text;
     }
 

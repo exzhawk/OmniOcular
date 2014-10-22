@@ -30,12 +30,12 @@ public class CommandEntityName extends CommandBase {
         EntityPlayer player = (EntityPlayer) sender;
         Minecraft minecraft = Minecraft.getMinecraft();
         MovingObjectPosition objectMouseOver = minecraft.objectMouseOver;
-        if (objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY){
-            Class pointEntityClass  = objectMouseOver.entityHit.getClass();
-            if (EntityList.classToStringMapping.containsKey(pointEntityClass)){
+        if (objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
+            Class pointEntityClass = objectMouseOver.entityHit.getClass();
+            if (EntityList.classToStringMapping.containsKey(pointEntityClass)) {
                 player.addChatComponentMessage(new ChatComponentText(EntityList.getEntityString(objectMouseOver.entityHit)));
             }
-        }else{
+        } else {
             player.addChatComponentMessage(new ChatComponentTranslation("wailanbt.info.NotPointing"));
         }
     }

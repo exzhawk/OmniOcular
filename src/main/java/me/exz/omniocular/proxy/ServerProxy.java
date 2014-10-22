@@ -1,9 +1,18 @@
 package me.exz.omniocular.proxy;
 
-public class ServerProxy extends CommonProxy{
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import me.exz.omniocular.command.CommandReloadConfig;
+
+@SuppressWarnings("UnusedDeclaration")
+public class ServerProxy extends CommonProxy {
     @Override
     public void registerClientCommand() {
 
+    }
+
+    @Override
+    public void registerServerCommand(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandReloadConfig());
     }
 
     @Override
