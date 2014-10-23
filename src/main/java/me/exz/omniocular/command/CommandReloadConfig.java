@@ -11,6 +11,7 @@ public class CommandReloadConfig extends CommandBase {
 
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender sender) {
+    //TODO: if is singleplayer or player. isOp,return true;return false
         return true;
     }
 
@@ -22,6 +23,7 @@ public class CommandReloadConfig extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] array) {
         //config.loadConfig((EntityPlayer) sender);
+        //TODO: send to all player config string
     }
 
 }

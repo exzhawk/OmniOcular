@@ -14,6 +14,7 @@ public class ConfigEvent {
         //config.loadConfig(event.player);
 
         ConfigMessageHandler.network.sendTo(new ConfigMessage("toPlayer"), (net.minecraft.entity.player.EntityPlayerMP) event.player);
+        //TODO: send config to (player, config string)
 
         LogHelper.info("PlayerLoggedInEvent " + event.player.worldObj.isRemote);
     }
