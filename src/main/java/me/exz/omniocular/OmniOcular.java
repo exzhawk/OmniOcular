@@ -6,7 +6,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import me.exz.omniocular.handler.ConfigHandler;
 import me.exz.omniocular.proxy.IProxy;
 import me.exz.omniocular.reference.Reference;
 
@@ -20,7 +19,7 @@ public class OmniOcular {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ConfigHandler.minecraftConfigDirectory = event.getModConfigurationDirectory();
+        proxy.initConfig(event);
         proxy.registerNetwork();
     }
 

@@ -1,5 +1,6 @@
 package me.exz.omniocular.proxy;
 
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public interface IProxy {
@@ -14,5 +15,6 @@ public interface IProxy {
     public abstract void registerNEI();
 
     public abstract void registerNetwork();
-    public abstract void initConfigFiles();
+
+    public abstract void initConfig(FMLPreInitializationEvent event);
 }
