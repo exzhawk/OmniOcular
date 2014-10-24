@@ -5,6 +5,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import me.exz.omniocular.network.ConfigMessage;
 import me.exz.omniocular.network.ConfigMessageHandler;
 import me.exz.omniocular.util.LogHelper;
+import net.minecraft.server.MinecraftServer;
 
 public class ConfigEvent {
     @SubscribeEvent
@@ -17,5 +18,7 @@ public class ConfigEvent {
         //TODO: send config to (player, config string)
 
         LogHelper.info("PlayerLoggedInEvent " + event.player.worldObj.isRemote);
+        MinecraftServer.getServer().isDedicatedServer();
+        MinecraftServer.getServer().isSinglePlayer();
     }
 }
