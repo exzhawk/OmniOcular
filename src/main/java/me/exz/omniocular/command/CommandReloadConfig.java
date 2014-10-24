@@ -2,6 +2,7 @@ package me.exz.omniocular.command;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.server.MinecraftServer;
 
 public class CommandReloadConfig extends CommandBase {
     @Override
@@ -11,8 +12,13 @@ public class CommandReloadConfig extends CommandBase {
 
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender sender) {
-    //TODO: if is singleplayer or player. isOp,return true;return false
-        return true;
+        //TODO: if is singleplayer or player. isOp,return true;return false
+
+        if (MinecraftServer.getServer().isSinglePlayer() || super.canCommandSenderUseCommand(sender)) {
+            //TODO: not working maybe
+            return true;
+        }
+        return false;
     }
 
     @Override

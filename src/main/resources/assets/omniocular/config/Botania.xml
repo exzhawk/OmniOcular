@@ -1,4 +1,9 @@
 <oo>
+    <tileentity id="botania:*">
+        <line displayname="Mana">
+            nbt['mana']+Mana
+        </line>
+    </tileentity>
     <tileentity name="botania:enchanter">
         <line displayname="Required Mana">
             return nbt['manaRequired']

@@ -11,6 +11,11 @@ import net.minecraftforge.client.ClientCommandHandler;
 @SuppressWarnings("UnusedDeclaration")
 public class ClientProxy extends CommonProxy {
     @Override
+    public void registerEvent() {
+
+    }
+
+    @Override
     public void registerClientCommand() {
         ClientCommandHandler.instance.registerCommand(new CommandItemName());
         ClientCommandHandler.instance.registerCommand(new CommandEntityName());
