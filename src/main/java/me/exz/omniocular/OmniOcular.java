@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import me.exz.omniocular.proxy.IProxy;
 import me.exz.omniocular.reference.Reference;
+import me.exz.omniocular.util.LogHelper;
 
 @SuppressWarnings({"UnusedParameters", "UnusedDeclaration"})
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = "required-after:Waila;required-after:NotEnoughItems")
@@ -37,6 +38,7 @@ public class OmniOcular {
 
     @Mod.EventHandler
     void onServerStart(FMLServerStartingEvent event) {
+//        LogHelper.info("FMLServerStartingEvent");
         proxy.registerServerCommand(event);
     }
 

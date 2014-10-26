@@ -17,11 +17,6 @@ public class ServerProxy extends CommonProxy {
     }
 
     @Override
-    public void registerServerCommand(FMLServerStartingEvent event) {
-        event.registerServerCommand(new CommandReloadConfig());
-    }
-
-    @Override
     public void registerWaila() {
 
     }

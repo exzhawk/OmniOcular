@@ -21,15 +21,11 @@ public class ClientProxy extends CommonProxy {
         ClientCommandHandler.instance.registerCommand(new CommandEntityName());
     }
 
-    @Override
-    public void registerServerCommand(FMLServerStartingEvent event) {
-
-    }
 
     @Override
     public void registerWaila() {
-        FMLInterModComms.sendMessage("Waila", "register", "me.exz.wailanbt.handler.BlockHandler.callbackRegister");
-        FMLInterModComms.sendMessage("Waila", "register", "me.exz.wailanbt.handler.EntityHandler.callbackRegister");
+        FMLInterModComms.sendMessage("Waila", "register", "me.exz.omniocular.handler.EntityHandler.callbackRegister");
+        FMLInterModComms.sendMessage("Waila", "register", "me.exz.omniocular.handler.TileEntityHandler.callbackRegister");
     }
 
     @Override
