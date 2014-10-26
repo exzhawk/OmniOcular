@@ -5,11 +5,10 @@ import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
 import me.exz.omniocular.util.LogHelper;
+import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.tileentity.TileEntity;
 
 import java.util.List;
 
@@ -36,6 +35,9 @@ public class TileEntityHandler implements IWailaDataProvider {
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         if (accessor.getPlayer().getEntityWorld().getTotalWorldTime() % 20 == 0) {
             NBTTagCompound n = accessor.getNBTData();
+            if (n != null) {
+                NBTHelper.NBT2json(n);
+            }
         LogHelper.info(n.hashCode());
         }
         return currenttip;
