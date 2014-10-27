@@ -32,7 +32,6 @@ public class ConfigHandler {
     }
 
     public static void mergeConfig() {
-        //TODO: merge config files in to one config string
         mergedConfig="";
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
         File[] configFiles = configDir.listFiles();
@@ -53,6 +52,6 @@ public class ConfigHandler {
     }
 
     public static void parseConfigFiles() {
-
+System.out.println(mergedConfig);
     }
 }

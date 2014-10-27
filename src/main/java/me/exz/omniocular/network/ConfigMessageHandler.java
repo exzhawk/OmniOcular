@@ -14,8 +14,8 @@ public class ConfigMessageHandler implements IMessageHandler<ConfigMessage, IMes
 
     @Override
     public IMessage onMessage(ConfigMessage message, MessageContext ctx) {
-        LogHelper.info(String.format("Config Received: %s", message.text));
-        //TODO: parse config from string (message. text)
+        //LogHelper.info("Config Received: "+ message.text);
+        ConfigHandler.mergedConfig=message.text;
         ConfigHandler.parseConfigFiles();
         return null;
     }

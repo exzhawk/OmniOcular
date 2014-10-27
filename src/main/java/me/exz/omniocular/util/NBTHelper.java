@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 public class NBTHelper {
-    //TODO: convert nbt into json string format
     public static String NBT2json(NBTBase n) {
         try {
             switch (n.getId()) {

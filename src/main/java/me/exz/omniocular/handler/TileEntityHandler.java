@@ -33,6 +33,8 @@ public class TileEntityHandler implements IWailaDataProvider {
 
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        //TODO: do not change if nbt has not changed
+        //TODO: limit inquire frequency
         if (accessor.getPlayer().getEntityWorld().getTotalWorldTime() % 20 == 0) {
             NBTTagCompound n = accessor.getNBTData();
             if (n != null) {

@@ -1,8 +1,16 @@
 package me.exz.omniocular.command;
 
+import me.exz.omniocular.handler.ConfigHandler;
+import me.exz.omniocular.network.ConfigMessage;
+import me.exz.omniocular.network.ConfigMessageHandler;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.play.server.S38PacketPlayerListItem;
 import net.minecraft.server.MinecraftServer;
+
+import java.util.List;
 
 public class CommandReloadConfig extends CommandBase {
     @Override
@@ -27,9 +35,10 @@ public class CommandReloadConfig extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] array) {
-        //config.loadConfig((EntityPlayer) sender);
-        //LogHelper.info("oor");
-        //TODO: send to all player config string
+        ConfigHandler.mergeConfig();
+        List playerList = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
+        for (Object player : playerList) {
+            ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (EntityPlayerMP) player);
+        }
     }
-
 }
