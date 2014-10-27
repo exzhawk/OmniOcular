@@ -9,7 +9,9 @@ import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import org.w3c.dom.Node;
 
+import javax.script.ScriptException;
 import java.util.List;
 
 public class TileEntityHandler implements IWailaDataProvider {
@@ -40,7 +42,15 @@ public class TileEntityHandler implements IWailaDataProvider {
             if (n != null) {
                 if (n.hashCode() != lastHash) {
                     lastHash = n.hashCode();
-                    LogHelper.info(NBTHelper.NBT2json(n));
+                    //LogHelper.info(NBTHelper.NBT2json(n));
+                    try {
+                        JSHandler.engine.eval(NBTHelper.NBT2json(n));
+                    } catch (ScriptException e) {
+                        e.printStackTrace();
+                    }
+                    for (Node entry:ConfigHandler.tileEntityConfigList){
+
+                    }
                 }
             }
         }

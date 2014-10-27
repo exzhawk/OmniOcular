@@ -17,9 +17,4 @@
             return nbt['mana']
         </line>
     </entity>
-    <tooltip name="skull">
-        <line id="OwnerName">
-            return nbt['OwnerName']
-        </line>
-    </tooltip>
 </oo>

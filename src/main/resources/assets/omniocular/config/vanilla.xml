@@ -1,20 +1,17 @@
 <oo>
-    <tileentity name="botania:enchanter">
-        <line displayname="Required Mana">
-            return nbt['manaRequired']
-        </line>
-        <line displayname="Progress">
-            return nbt['mana']/nbt['manaRequired']*100+'%'
+    <tileentity id="Furnace">
+        <line displayname="Burn Time">
+            return nbt['BurnTime']
         </line>
     </tileentity>
-    <entity id="spark">
-        <line name="Mana">
-            return nbt['mana']
+    <entity id="Sheep">
+        <line name="Until next love">
+            return nbt['InLove']
         </line>
     </entity>
-    <tooltip name="skull">
+    <tooltip id="Skull">
         <line id="OwnerName">
-            return nbt['OwnerName']
+            return nbt['Owner']['Name']
         </line>
     </tooltip>
 </oo>
