@@ -6,7 +6,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import org.apache.commons.lang3.StringUtils;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -31,7 +30,7 @@ public class NBTHelper {
                     NBTTagList nl = (NBTTagList) n;
                     String s = "[";
                     int tagType = nl.func_150303_d();
-                    for (int i = 1; i < nl.tagCount(); i++) {
+                    for (int i = 0; i < nl.tagCount(); i++) {
                         switch (tagType) {
                             case 10:
                                 s += NBT2json(nl.getCompoundTagAt(i));
@@ -51,7 +50,9 @@ public class NBTHelper {
                         }
                         s += ",";
                     }
-                    s = StringUtils.substring(s, 0, -1);
+                    if (s.endsWith(",")) {
+                        s = StringUtils.substring(s, 0, -1);
+                    }
                     s += "]";
                     return s;
                 case 10:

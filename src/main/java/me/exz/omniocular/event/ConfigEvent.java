@@ -12,10 +12,8 @@ public class ConfigEvent {
     @SubscribeEvent
     public void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
         ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (net.minecraft.entity.player.EntityPlayerMP) event.player);
-        //TODO: send config to (player, config string)
-
-        LogHelper.info("PlayerLoggedInEvent");
-        MinecraftServer.getServer().isDedicatedServer();
-        MinecraftServer.getServer().isSinglePlayer();
+//        LogHelper.info("PlayerLoggedInEvent");
+//        MinecraftServer.getServer().isDedicatedServer();
+//        MinecraftServer.getServer().isSinglePlayer();
     }
 }

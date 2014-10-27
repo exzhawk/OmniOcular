@@ -13,6 +13,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import java.util.List;
 
 public class TileEntityHandler implements IWailaDataProvider {
+    private int lastHash;
+
     @SuppressWarnings("UnusedDeclaration")
     public static void callbackRegister(IWailaRegistrar registrar) {
         TileEntityHandler instance = new TileEntityHandler();
@@ -33,14 +35,14 @@ public class TileEntityHandler implements IWailaDataProvider {
 
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        //TODO: do not change if nbt has not changed
-        //TODO: limit inquire frequency
-        if (accessor.getPlayer().getEntityWorld().getTotalWorldTime() % 20 == 0) {
+        if (accessor.getPlayer().getEntityWorld().getTotalWorldTime() % 10 == 0) {
             NBTTagCompound n = accessor.getNBTData();
             if (n != null) {
-                NBTHelper.NBT2json(n);
+                if (n.hashCode() != lastHash) {
+                    lastHash = n.hashCode();
+                    LogHelper.info(NBTHelper.NBT2json(n));
+                }
             }
-        LogHelper.info(n.hashCode());
         }
         return currenttip;
     }
