@@ -86,7 +86,7 @@ public class ConfigHandler {
             }
             JSHandler.manager=new ScriptEngineManager(null);
             JSHandler.engine=JSHandler.manager.getEngineByName("javascript");
-
+//TODO: make a index of configuration list to boost efficiency 
         } catch (Exception e) {
             e.printStackTrace();
         }

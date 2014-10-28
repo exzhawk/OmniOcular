@@ -48,7 +48,8 @@ public class TileEntityHandler implements IWailaDataProvider {
                     } catch (ScriptException e) {
                         e.printStackTrace();
                     }
-                    for (Node entry:ConfigHandler.tileEntityConfigList){
+                    //TODO: Get n getstring(id), search in index return index. Get from configuration array. For line in lines, get display name, get text node. 
+                    for (Node entry:Configandler.tileEntityConfigList){
 
                     }
                 }
