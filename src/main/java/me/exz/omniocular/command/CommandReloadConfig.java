@@ -40,5 +40,6 @@ public class CommandReloadConfig extends CommandBase {
         for (Object player : playerList) {
             ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (EntityPlayerMP) player);
         }
+        //TODO :update feedback 
     }
 }

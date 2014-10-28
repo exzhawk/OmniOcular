@@ -37,6 +37,7 @@ public class CommandEntityName extends CommandBase {
             }
         } else {
             player.addChatComponentMessage(new ChatComponentTranslation("wailanbt.info.NotPointing"));
+            //TODO: update feedback 
         }
     }
 }

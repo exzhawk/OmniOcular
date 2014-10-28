@@ -33,6 +33,7 @@ public class TileEntityHandler implements IWailaDataProvider {
     @Override
     public List<String> getWailaHead(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         return currenttip;
+        //TODO :allow modify waila head part 
     }
 
     @Override

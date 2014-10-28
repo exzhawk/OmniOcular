@@ -30,6 +30,7 @@ public class CommandItemName extends CommandBase {
         ItemStack holdItem = player.getHeldItem();
         if (holdItem == null) {
             player.addChatComponentMessage(new ChatComponentTranslation("wailanbt.info.NotHolding"));
+          //  TODO : update Feedback 
             return;
         }
         player.addChatComponentMessage(new ChatComponentText(Item.itemRegistry.getNameForObject(holdItem.getItem())));
