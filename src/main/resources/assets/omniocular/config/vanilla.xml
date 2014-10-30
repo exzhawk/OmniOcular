@@ -1,6 +1,5 @@
 <oo>
     <tileentity id="Furnace">
-<Head>      
         <line displayname="Burn Time">
             return nbt['BurnTime']
         </line>

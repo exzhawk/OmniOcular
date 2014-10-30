@@ -29,8 +29,7 @@ public class CommandItemName extends CommandBase {
         EntityPlayer player = (EntityPlayer) sender;
         ItemStack holdItem = player.getHeldItem();
         if (holdItem == null) {
-            player.addChatComponentMessage(new ChatComponentTranslation("wailanbt.info.NotHolding"));
-          //  TODO : update Feedback 
+            player.addChatComponentMessage(new ChatComponentTranslation("omniocular.info.NotHolding"));
             return;
         }
         player.addChatComponentMessage(new ChatComponentText(Item.itemRegistry.getNameForObject(holdItem.getItem())));

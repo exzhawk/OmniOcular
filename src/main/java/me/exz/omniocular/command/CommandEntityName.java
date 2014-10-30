@@ -36,8 +36,7 @@ public class CommandEntityName extends CommandBase {
                 player.addChatComponentMessage(new ChatComponentText(EntityList.getEntityString(objectMouseOver.entityHit)));
             }
         } else {
-            player.addChatComponentMessage(new ChatComponentTranslation("wailanbt.info.NotPointing"));
-            //TODO: update feedback 
+            player.addChatComponentMessage(new ChatComponentTranslation("omniocular.info.NotPointing"));
         }
     }
 }

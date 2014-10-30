@@ -6,11 +6,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
-import javax.script.ScriptEngineManager;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
+import java.io.File;
+import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -19,9 +20,10 @@ import java.util.List;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
-    public static List<Node> entityConfigList = new ArrayList<Node>();
-    public static List<Node> tileEntityConfigList = new ArrayList<Node>();
-    public static List<Node> tooltipConfigList = new ArrayList<Node>();
+    public static List<Node> entityConfigList;
+    public static List<Node> tileEntityConfigList;
+    public static List<Node> tooltipConfigList;
+    public static List<String> lastTips= new ArrayList<String>();
 
     public static void initConfigFiles() {
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -44,6 +46,9 @@ public class ConfigHandler {
 
     public static void mergeConfig() {
         mergedConfig = "";
+        entityConfigList = new ArrayList<Node>();
+        tileEntityConfigList = new ArrayList<Node>();
+        tooltipConfigList = new ArrayList<Node>();
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
         File[] configFiles = configDir.listFiles();
         if (configFiles != null) {
@@ -60,6 +65,7 @@ public class ConfigHandler {
                 }
             }
         }
+        mergedConfig="<root>"+mergedConfig+"</root>";
     }
 
     public static void parseConfigFiles() {
@@ -67,9 +73,10 @@ public class ConfigHandler {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse(mergedConfig);
+            Document doc = builder.parse(new InputSource(new StringReader(mergedConfig)));
             doc.getDocumentElement().normalize();
-            NodeList ooList = doc.getElementsByTagName("oo");
+            Element root = doc.getDocumentElement();
+            NodeList ooList = root.getElementsByTagName("oo");
             for (int i = 0; i < ooList.getLength(); i++) {
                 NodeList entityList = ((Element) ooList.item(i)).getElementsByTagName("entity");
                 for (int j = 0; j < entityList.getLength(); j++) {
@@ -84,9 +91,8 @@ public class ConfigHandler {
                     tooltipConfigList.add(tooltipList.item(j));
                 }
             }
-            JSHandler.manager=new ScriptEngineManager(null);
-            JSHandler.engine=JSHandler.manager.getEngineByName("javascript");
-//TODO: make a index of configuration list to boost efficiency 
+//TODO: make a index of configuration list to boost efficiency
+
         } catch (Exception e) {
             e.printStackTrace();
         }
