@@ -23,7 +23,6 @@ public class ConfigHandler {
     public static List<Node> entityConfigList;
     public static List<Node> tileEntityConfigList;
     public static List<Node> tooltipConfigList;
-    public static List<String> lastTips= new ArrayList<String>();
 
     public static void initConfigFiles() {
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
