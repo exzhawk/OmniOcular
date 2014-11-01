@@ -1,7 +1,9 @@
 package me.exz.omniocular.handler;
 
+import me.exz.omniocular.util.LogHelper;
 import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.StatCollector;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -18,14 +20,13 @@ import java.util.regex.Pattern;
 
 public class JSHandler {
     //TODO: add inventory/item name support
-    //TODO: add translation support
-    //TODO: add special characters support
-    public static ScriptEngineManager manager =new ScriptEngineManager(null);
-    public static ScriptEngine engine=manager.getEngineByName("javascript");
-    public static HashSet<String> scriptSet=new HashSet<String>();
-    private static List<String> lastTips= new ArrayList<String>();
+    public static ScriptEngineManager manager = new ScriptEngineManager(null);
+    public static ScriptEngine engine = manager.getEngineByName("javascript");
+    public static HashSet<String> scriptSet = new HashSet<String>();
+    private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
-    public static List<String> getBody(List<Node> configList, NBTTagCompound n){
+
+    public static List<String> getBody(List<Node> configList, NBTTagCompound n) {
         if (n.hashCode() != lastHash) {
             lastHash = n.hashCode();
             lastTips.clear();
@@ -37,7 +38,6 @@ public class JSHandler {
                 e.printStackTrace();
             }
             //TODO: Get n getstring(id), search in index return index.
-            //TODO: clear dupe item
             for (Node entry : configList) {
                 Pattern pattern = Pattern.compile(entry.getAttributes().getNamedItem("id").getTextContent());
                 Matcher matcher = pattern.matcher(n.getString("id"));
@@ -80,4 +80,46 @@ public class JSHandler {
         }
         return lastTips;
     }
+
+    @SuppressWarnings("UnusedDeclaration")
+    public static String translate(String t) {
+        return StatCollector.translateToLocal(t);
+    }
+
+    public static void setSpecialChar() {
+        String MCStyle = "\u00A7";
+        engine.put("BLACK", MCStyle + "0");
+        engine.put("DBLUE", MCStyle + "1");
+        engine.put("DGREEN", MCStyle + "2");
+        engine.put("DAQUA", MCStyle + "3");
+        engine.put("DRED", MCStyle + "4");
+        engine.put("DPURPLE", MCStyle + "5");
+        engine.put("GOLD", MCStyle + "6");
+        engine.put("GRAY", MCStyle + "7");
+        engine.put("DGRAY", MCStyle + "8");
+        engine.put("BLUE", MCStyle + "9");
+        engine.put("GREEN", MCStyle + "a");
+        engine.put("AQUA", MCStyle + "b");
+        engine.put("RED", MCStyle + "c");
+        engine.put("LPURPLE", MCStyle + "d");
+        engine.put("YELLOW", MCStyle + "e");
+        engine.put("WHITE", MCStyle + "f");
+
+        engine.put("OBF", MCStyle + "k");
+        engine.put("BOLD", MCStyle + "l");
+        engine.put("STRIKE", MCStyle + "m");
+        engine.put("UNDER", MCStyle + "n");
+        engine.put("ITALIC", MCStyle + "o");
+        engine.put("RESET", MCStyle + "r");
+        String WailaStyle = "\u00A4";
+        String WailaIcon = "\u00A5";
+        engine.put("TAB", WailaStyle + WailaStyle + "a");
+        engine.put("ALIGNRIGHT", WailaStyle + WailaStyle + "b");
+        engine.put("ALIGNCENTER", WailaStyle + WailaStyle + "c");
+        engine.put("HEART", WailaStyle + WailaIcon + "a");
+        engine.put("HHEART", WailaStyle + WailaIcon + "b");
+        engine.put("EHEART", WailaStyle + WailaIcon + "c");
+        LogHelper.info("Special Char loaded");
+    }
+
 }

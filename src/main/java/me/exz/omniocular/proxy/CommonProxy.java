@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import me.exz.omniocular.command.CommandReloadConfig;
 import me.exz.omniocular.event.ConfigEvent;
 import me.exz.omniocular.handler.ConfigHandler;
+import me.exz.omniocular.handler.JSHandler;
 import me.exz.omniocular.network.ConfigMessage;
 import me.exz.omniocular.network.ConfigMessageHandler;
 
@@ -32,6 +33,7 @@ public abstract class CommonProxy implements IProxy {
         ConfigHandler.minecraftConfigDirectory = event.getModConfigurationDirectory();
         ConfigHandler.initConfigFiles();
         ConfigHandler.mergeConfig();
+        JSHandler.setSpecialChar();
     }
 
 }

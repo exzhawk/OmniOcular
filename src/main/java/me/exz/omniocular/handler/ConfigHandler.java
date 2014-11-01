@@ -20,9 +20,9 @@ import java.util.List;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
-    public static List<Node> entityConfigList;
-    public static List<Node> tileEntityConfigList;
-    public static List<Node> tooltipConfigList;
+    public static List<Node> entityConfigList= new ArrayList<Node>();
+    public static List<Node> tileEntityConfigList= new ArrayList<Node>();
+    public static List<Node> tooltipConfigList= new ArrayList<Node>();
 
     public static void initConfigFiles() {
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -45,9 +45,7 @@ public class ConfigHandler {
 
     public static void mergeConfig() {
         mergedConfig = "";
-        entityConfigList = new ArrayList<Node>();
-        tileEntityConfigList = new ArrayList<Node>();
-        tooltipConfigList = new ArrayList<Node>();
+
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
         File[] configFiles = configDir.listFiles();
         if (configFiles != null) {
@@ -70,6 +68,9 @@ public class ConfigHandler {
     public static void parseConfigFiles() {
 //      System.out.println(mergedConfig);
         try {
+            entityConfigList.clear();
+            tileEntityConfigList.clear();
+            tooltipConfigList.clear();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(mergedConfig)));
@@ -91,7 +92,6 @@ public class ConfigHandler {
                 }
             }
 //TODO: make a index of configuration list to boost efficiency
-
         } catch (Exception e) {
             e.printStackTrace();
         }
