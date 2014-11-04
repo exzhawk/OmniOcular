@@ -15,14 +15,20 @@ import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
-    public static List<Node> entityConfigList= new ArrayList<Node>();
-    public static List<Node> tileEntityConfigList= new ArrayList<Node>();
-    public static List<Node> tooltipConfigList= new ArrayList<Node>();
+    public static List<Node> entityConfigList = new ArrayList<Node>();
+    public static List<Node> tileEntityConfigList = new ArrayList<Node>();
+    public static List<Node> tooltipConfigList = new ArrayList<Node>();
+    public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
+    public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
+    public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();
 
     public static void initConfigFiles() {
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -62,7 +68,7 @@ public class ConfigHandler {
                 }
             }
         }
-        mergedConfig="<root>"+mergedConfig+"</root>";
+        mergedConfig = "<root>" + mergedConfig + "</root>";
     }
 
     public static void parseConfigFiles() {
@@ -71,6 +77,9 @@ public class ConfigHandler {
             entityConfigList.clear();
             tileEntityConfigList.clear();
             tooltipConfigList.clear();
+            entityPattern.clear();
+            tileEntityPattern.clear();
+            tooltipPattern.clear();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(mergedConfig)));
@@ -80,15 +89,18 @@ public class ConfigHandler {
             for (int i = 0; i < ooList.getLength(); i++) {
                 NodeList entityList = ((Element) ooList.item(i)).getElementsByTagName("entity");
                 for (int j = 0; j < entityList.getLength(); j++) {
-                    entityConfigList.add(entityList.item(j));
+                    Node node = entityList.item(j);
+                    entityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
                 }
                 NodeList tileEntityList = ((Element) ooList.item(i)).getElementsByTagName("tileentity");
                 for (int j = 0; j < tileEntityList.getLength(); j++) {
-                    tileEntityConfigList.add(tileEntityList.item(j));
+                    Node node = tileEntityList.item(j);
+                    tileEntityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
                 }
                 NodeList tooltipList = ((Element) ooList.item(i)).getElementsByTagName("tooltip");
                 for (int j = 0; j < tooltipList.getLength(); j++) {
-                    tooltipConfigList.add(tooltipList.item(j));
+                    Node node = tooltipList.item(j);
+                    tooltipPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
                 }
             }
 //TODO: make a index of configuration list to boost efficiency
