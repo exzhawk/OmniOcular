@@ -2,6 +2,7 @@ package me.exz.omniocular.util;
 
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagByteArray;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import org.apache.commons.lang3.StringUtils;
@@ -16,8 +17,6 @@ public class NBTHelper {
         try {
             switch (n.getId()) {
                 case 0:
-                case 3:
-                case 7:
                 case 11:
                     return "\"" + n.toString() + "\"";
                 case 1:
@@ -25,9 +24,13 @@ public class NBTHelper {
                 case 4:
                 case 5:
                 case 6:
-                    return "\"" + StringUtils.substring(n.toString(), 0, -1) + "\"";
-                case 8:
+                    return StringUtils.substring(n.toString(), 0, -1);
+                case 3:
                     return n.toString();
+                case 8:
+                    return "\""+StringUtils.substring(n.toString(),1,-1).replace("\\","\\\\").replace("\"","\\\"")+"\"";
+                case 7:
+                    return "\""+Arrays.toString(((NBTTagByteArray)n).func_150292_c())+"\"";
                 case 9:
                     NBTTagList nl = (NBTTagList) n;
                     String s = "[";
@@ -83,6 +86,7 @@ public class NBTHelper {
         //noinspection unchecked
         return (Map) ReflectionHelper.getPrivateValue(NBTTagCompound.class, tag, 1);
     }
+
     public static String MD5(String string) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");

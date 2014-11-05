@@ -14,7 +14,6 @@ import java.io.File;
 import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,9 +22,6 @@ import java.util.regex.Pattern;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
-    public static List<Node> entityConfigList = new ArrayList<Node>();
-    public static List<Node> tileEntityConfigList = new ArrayList<Node>();
-    public static List<Node> tooltipConfigList = new ArrayList<Node>();
     public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();
@@ -74,12 +70,10 @@ public class ConfigHandler {
     public static void parseConfigFiles() {
 //      System.out.println(mergedConfig);
         try {
-            entityConfigList.clear();
-            tileEntityConfigList.clear();
-            tooltipConfigList.clear();
             entityPattern.clear();
             tileEntityPattern.clear();
             tooltipPattern.clear();
+            JSHandler.scriptSet.clear();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(mergedConfig)));

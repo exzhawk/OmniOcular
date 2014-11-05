@@ -33,7 +33,7 @@ public abstract class CommonProxy implements IProxy {
         ConfigHandler.minecraftConfigDirectory = event.getModConfigurationDirectory();
         ConfigHandler.initConfigFiles();
         ConfigHandler.mergeConfig();
-        JSHandler.setSpecialChar();
+        JSHandler.initEngine();
     }
 
 }

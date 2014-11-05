@@ -2,6 +2,8 @@ package me.exz.omniocular.handler;
 
 import me.exz.omniocular.util.LogHelper;
 import me.exz.omniocular.util.NBTHelper;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 import org.w3c.dom.Element;
@@ -34,12 +36,13 @@ public class JSHandler {
             //LogHelper.info(NBTHelper.NBT2json(n));
             try {
                 String json = "var nbt=" + NBTHelper.NBT2json(n) + ";";
+                LogHelper.info(json);
                 JSHandler.engine.eval(json);
             } catch (ScriptException e) {
                 e.printStackTrace();
             }
             //TODO: Get n getstring(id), search in index return index.
-            for (Map.Entry<Pattern,Node> entry: patternMap.entrySet()) {
+            for (Map.Entry<Pattern, Node> entry : patternMap.entrySet()) {
                 Matcher matcher = entry.getKey().matcher(n.getString("id"));
                 if (matcher.matches()) {
                     Element item = (Element) entry.getValue();
@@ -81,10 +84,21 @@ public class JSHandler {
         return lastTips;
     }
 
-    @SuppressWarnings("UnusedDeclaration")
+    public static void initEngine() {
+        setSpecialChar();
+        try {
+            engine.eval("importClass(Packages.me.exz.omniocular.handler.JSHandler);");
+            engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
+            //engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(JSON.stringify(n))}");
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static String translate(String t) {
         return StatCollector.translateToLocal(t);
     }
+
 
     public static void setSpecialChar() {
         String MCStyle = "\u00A7";
@@ -121,5 +135,21 @@ public class JSHandler {
         engine.put("EHEART", WailaStyle + WailaIcon + "c");
         LogHelper.info("Special Char loaded");
     }
+
+    public static String getDisplayName(String jsonString) {
+        //TODO: may not working
+        LogHelper.info(jsonString);
+        try {
+//            return "__ERROR__";
+            NBTTagCompound n = (NBTTagCompound) JsonToNBT.func_150315_a(jsonString);
+            ItemStack i = ItemStack.loadItemStackFromNBT(n);
+            return i.getDisplayName();
+        } catch (Exception e) {
+
+           // e.printStackTrace();
+        }
+        return "__ERROR__";
+    }
+
 
 }

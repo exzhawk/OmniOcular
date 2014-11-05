@@ -7,6 +7,7 @@ import mcp.mobius.waila.api.IWailaRegistrar;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class TileEntityHandler implements IWailaDataProvider {
     public static void callbackRegister(IWailaRegistrar registrar) {
         TileEntityHandler instance = new TileEntityHandler();
         registrar.registerSyncedNBTKey("*", Block.class);
+        registrar.registerSyncedNBTKey("*", TileEntity.class);
         registrar.registerBodyProvider(instance, Block.class);
 
     }
@@ -33,6 +35,7 @@ public class TileEntityHandler implements IWailaDataProvider {
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         NBTTagCompound n = accessor.getNBTData();
+        //accessor.getTileEntity().writeToNBT(n);
         if (n != null) {
             currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n));
         }
