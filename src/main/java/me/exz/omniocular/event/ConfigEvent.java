@@ -5,8 +5,6 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import me.exz.omniocular.handler.ConfigHandler;
 import me.exz.omniocular.network.ConfigMessage;
 import me.exz.omniocular.network.ConfigMessageHandler;
-import me.exz.omniocular.util.LogHelper;
-import net.minecraft.server.MinecraftServer;
 
 public class ConfigEvent {
     @SubscribeEvent

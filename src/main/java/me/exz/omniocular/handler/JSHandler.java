@@ -3,7 +3,6 @@ package me.exz.omniocular.handler;
 import me.exz.omniocular.util.LogHelper;
 import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 import org.w3c.dom.Element;
@@ -89,7 +88,8 @@ public class JSHandler {
         try {
             engine.eval("importClass(Packages.me.exz.omniocular.handler.JSHandler);");
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
-            //engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(JSON.stringify(n))}");
+            engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
+
         } catch (ScriptException e) {
             e.printStackTrace();
         }
@@ -136,19 +136,16 @@ public class JSHandler {
         LogHelper.info("Special Char loaded");
     }
 
-    public static String getDisplayName(String jsonString) {
-        //TODO: may not working
-        LogHelper.info(jsonString);
+    public static String getDisplayName(String hashCode) {
         try {
-//            return "__ERROR__";
-            NBTTagCompound n = (NBTTagCompound) JsonToNBT.func_150315_a(jsonString);
-            ItemStack i = ItemStack.loadItemStackFromNBT(n);
-            return i.getDisplayName();
+            NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
+            ItemStack is = ItemStack.loadItemStackFromNBT(nc);
+            return is.getDisplayName();
         } catch (Exception e) {
 
-           // e.printStackTrace();
+
+            return "__ERROR__";
         }
-        return "__ERROR__";
     }
 
 

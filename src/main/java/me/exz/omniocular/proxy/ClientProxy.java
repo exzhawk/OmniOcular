@@ -2,7 +2,6 @@ package me.exz.omniocular.proxy;
 
 import codechicken.nei.guihook.GuiContainerManager;
 import cpw.mods.fml.common.event.FMLInterModComms;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import me.exz.omniocular.command.CommandEntityName;
 import me.exz.omniocular.command.CommandItemName;
 import me.exz.omniocular.handler.TooltipHandler;

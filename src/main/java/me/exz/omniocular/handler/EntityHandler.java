@@ -4,7 +4,6 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaEntityAccessor;
 import mcp.mobius.waila.api.IWailaEntityProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
-import me.exz.omniocular.util.LogHelper;
 import net.minecraft.entity.Entity;
 
 import java.util.List;

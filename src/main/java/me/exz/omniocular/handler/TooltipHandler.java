@@ -1,7 +1,6 @@
 package me.exz.omniocular.handler;
 
 import codechicken.nei.guihook.IContainerTooltipHandler;
-import me.exz.omniocular.util.LogHelper;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.item.ItemStack;
 
