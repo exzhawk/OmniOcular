@@ -5,6 +5,8 @@ import mcp.mobius.waila.api.IWailaEntityAccessor;
 import mcp.mobius.waila.api.IWailaEntityProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.List;
 
@@ -27,6 +29,10 @@ public class EntityHandler implements IWailaEntityProvider{
 
     @Override
     public List<String> getWailaBody(Entity entity, List<String> currenttip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
+        NBTTagCompound n = accessor.getNBTData();
+        if (n != null) {
+            currenttip.addAll(JSHandler.getBody(ConfigHandler.entityPattern, n, EntityList.getEntityString(accessor.getEntity())));
+        }
         return currenttip;
     }
 

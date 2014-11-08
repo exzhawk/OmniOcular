@@ -37,7 +37,7 @@ public class TileEntityHandler implements IWailaDataProvider {
         NBTTagCompound n = accessor.getNBTData();
         //accessor.getTileEntity().writeToNBT(n);
         if (n != null) {
-            currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n));
+            currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n,n.getString("id")));
         }
         return currenttip;
     }

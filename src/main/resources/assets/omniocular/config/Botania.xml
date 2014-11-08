@@ -1,17 +1,4 @@
 <oo>
-    <tileentity id="botania:*">
-        <line displayname="Mana">
-            nbt['mana']+Mana
-        </line>
-    </tileentity>
-    <tileentity name="botania:enchanter">
-        <line displayname="Required Mana">
-            return nbt['manaRequired']
-        </line>
-        <line displayname="Progress">
-            return nbt['mana']/nbt['manaRequired']*100+'%'
-        </line>
-    </tileentity>
     <entity id="spark">
         <line name="Mana">
             return nbt['mana']

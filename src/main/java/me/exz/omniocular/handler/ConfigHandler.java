@@ -2,6 +2,10 @@ package me.exz.omniocular.handler;
 
 import me.exz.omniocular.reference.Reference;
 import me.exz.omniocular.util.LogHelper;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.IResource;
+import net.minecraft.util.ResourceLocation;
+import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -11,6 +15,7 @@ import org.xml.sax.InputSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -19,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+@SuppressWarnings("CanBeFinal")
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
@@ -31,23 +37,33 @@ public class ConfigHandler {
         if (!configDir.exists()) {
             if (!configDir.mkdir()) {
                 LogHelper.fatal("Can't create config folder");
+            }else {
+                LogHelper.info("Config folder created");
             }
         }
-        LogHelper.info("Config folder created");
-        if (!releasePreConfigFiles(configDir)) {
+        try {
+            releasePreConfigFiles(configDir);
+        } catch (Exception e) {
             LogHelper.error("Can't release pre-config files");
         }
-        LogHelper.info("Pre-config files released");
     }
 
-    public static boolean releasePreConfigFiles(File configDir) {
-        //TODO: release pre-config files
-        return false;
+
+    private static void releasePreConfigFiles(File configDir) throws IOException {
+        for (String configFileName : Reference.configList) {
+            configFileName += ".xml";
+            File targetFile = new File(configDir, configFileName);
+            if (!targetFile.exists()) {
+                ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
+                IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
+                FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
+                LogHelper.info("Release pre-config file : " + configFileName);
+            }
+        }
     }
 
     public static void mergeConfig() {
         mergedConfig = "";
-
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
         File[] configFiles = configDir.listFiles();
         if (configFiles != null) {
@@ -84,20 +100,19 @@ public class ConfigHandler {
                 NodeList entityList = ((Element) ooList.item(i)).getElementsByTagName("entity");
                 for (int j = 0; j < entityList.getLength(); j++) {
                     Node node = entityList.item(j);
-                    entityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
+                    entityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()), node);
                 }
                 NodeList tileEntityList = ((Element) ooList.item(i)).getElementsByTagName("tileentity");
                 for (int j = 0; j < tileEntityList.getLength(); j++) {
                     Node node = tileEntityList.item(j);
-                    tileEntityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
+                    tileEntityPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()), node);
                 }
                 NodeList tooltipList = ((Element) ooList.item(i)).getElementsByTagName("tooltip");
                 for (int j = 0; j < tooltipList.getLength(); j++) {
                     Node node = tooltipList.item(j);
-                    tooltipPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()),node);
+                    tooltipPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()), node);
                 }
             }
-//TODO: make a index of configuration list to boost efficiency
         } catch (Exception e) {
             e.printStackTrace();
         }

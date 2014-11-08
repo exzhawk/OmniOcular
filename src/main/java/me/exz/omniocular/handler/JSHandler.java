@@ -20,34 +20,32 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
-    //TODO: add inventory/item name support
-    public static ScriptEngineManager manager = new ScriptEngineManager(null);
-    public static ScriptEngine engine = manager.getEngineByName("javascript");
+    private static final ScriptEngineManager manager = new ScriptEngineManager(null);
+    private static ScriptEngine engine = manager.getEngineByName("javascript");
     public static HashSet<String> scriptSet = new HashSet<String>();
     private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
 
-    public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n) {
+    public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id) {
         if (n.hashCode() != lastHash) {
             lastHash = n.hashCode();
             lastTips.clear();
             //LogHelper.info(NBTHelper.NBT2json(n));
             try {
                 String json = "var nbt=" + NBTHelper.NBT2json(n) + ";";
-                LogHelper.info(json);
                 JSHandler.engine.eval(json);
             } catch (ScriptException e) {
                 e.printStackTrace();
             }
-            //TODO: Get n getstring(id), search in index return index.
             for (Map.Entry<Pattern, Node> entry : patternMap.entrySet()) {
-                Matcher matcher = entry.getKey().matcher(n.getString("id"));
+                Matcher matcher = entry.getKey().matcher(id);
                 if (matcher.matches()) {
                     Element item = (Element) entry.getValue();
-                    if (item.getElementsByTagName("head").getLength() > 0) {
-                        Node head = item.getElementsByTagName("head").item(0);
-                    }
+//                    if (item.getElementsByTagName("head").getLength() > 0) {
+//                        Node head = item.getElementsByTagName("head").item(0);
+//                    }
                     if (item.getElementsByTagName("line").getLength() > 0) {
                         String tip;
                         NodeList lines = item.getElementsByTagName("line");
@@ -100,7 +98,7 @@ public class JSHandler {
     }
 
 
-    public static void setSpecialChar() {
+    private static void setSpecialChar() {
         String MCStyle = "\u00A7";
         engine.put("BLACK", MCStyle + "0");
         engine.put("DBLUE", MCStyle + "1");

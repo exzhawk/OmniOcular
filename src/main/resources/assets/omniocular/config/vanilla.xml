@@ -5,13 +5,13 @@
         </line>
     </tileentity>
     <entity id="Sheep">
-        <line name="Until next love">
+        <line displayname="Until next love">
             return nbt['InLove']
         </line>
     </entity>
-    <tooltip id="Skull">
-        <line id="OwnerName">
-            return nbt['Owner']['Name']
+    <tooltip id="minecraft:skull">
+        <line displayname="OwnerName">
+            return nbt['SkullOwner']
         </line>
     </tooltip>
 </oo>
