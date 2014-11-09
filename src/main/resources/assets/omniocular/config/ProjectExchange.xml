@@ -1,0 +1,35 @@
+<oo>
+    <tileentity id="Condenser Tile">
+        <line displayname="EMC">
+            return nbt['EMC ']
+        </line>
+		<line displayname="">
+            return nbt['item'][1]['id']
+		 </line>
+    </tileentity>
+    <tileentity id="Transmutation Tablet Tile">
+        <line displayname="EMC">
+            return nbt['EMC ']
+        </line>
+    </tileentity>
+    <tileentity id="Energy Collector.*">
+        <line displayname="EMC">
+            return nbt['EMC ']
+        </line>
+    </tileentity>
+     <tileentity id="AM Relay.*">
+        <line displayname="EMC">
+            return nbt['EMC ']
+        </line>
+	 </tileentity>
+     <tileentity displayname="RM Furnace Tile">	
+        <line name="EMC">
+            return nbt['EMC ']
+		</line>
+	</tileentity>
+     <tileentity displayname="DM Furnace Tile">
+        <line name="EMC">
+            return nbt['EMC ']
+		</line>
+    </entity>
+</oo>
