@@ -52,8 +52,8 @@ public class JSHandler {
                         for (int i = 0; i < lines.getLength(); i++) {
                             Node line = lines.item(i);
                             tip = "";
-                            if (line.getAttributes().getNamedItem("displayname") != null) {
-                                tip += line.getAttributes().getNamedItem("displayname").getTextContent();
+                            if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
+                                tip += "\u00A4\u00A4a\u00A4\u00A4b\u00A7f"+line.getAttributes().getNamedItem("displayname").getTextContent();
                             }
                             String functionContent = line.getTextContent();
                             String hash = "S" + NBTHelper.MD5(functionContent);
