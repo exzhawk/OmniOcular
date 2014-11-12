@@ -23,6 +23,7 @@ apply plugin: 'forge'
 
 version = mc_version + "-" + mod_version
 group= "me.exz.omniocular" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+//noinspection GroovyUnusedAssignment
 archivesBaseName = "OmniOcular"
 
 minecraft {
@@ -76,3 +77,12 @@ processResources
         exclude 'mcmod.info'
     }
 }
+//configurations.compile.copy().each { file ->
+//    logger.lifecycle "Processing ${file.path}..."
+//    copy {
+//        from(zipTree(file.path)) {
+//            include '*_at.cfg'
+//        }
+//        into('src/api/resources/at')
+//    }
+//}

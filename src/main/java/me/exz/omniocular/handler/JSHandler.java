@@ -53,7 +53,11 @@ public class JSHandler {
                             Node line = lines.item(i);
                             tip = "";
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
-                                tip += "\u00A4\u00A4a\u00A4\u00A4b\u00A7f"+line.getAttributes().getNamedItem("displayname").getTextContent();
+                                if (patternMap == ConfigHandler.tooltipPattern) {
+                                    tip += "\u00A77" + line.getAttributes().getNamedItem("displayname").getTextContent() + ": \u00A7f";
+                                } else {
+                                    tip += line.getAttributes().getNamedItem("displayname").getTextContent() + "\u00A4\u00A4a\u00A4\u00A4b\u00A7f";
+                                }
                             }
                             String functionContent = line.getTextContent();
                             String hash = "S" + NBTHelper.MD5(functionContent);
@@ -70,9 +74,11 @@ public class JSHandler {
                             try {
                                 tip += String.valueOf(invoke.invokeFunction(hash, ""));
                             } catch (Exception e) {
-                                e.printStackTrace();
+                                //e.printStackTrace();
                             }
-                            lastTips.add(tip);
+                            if (!tip.equals("__ERROR__")) {
+                                lastTips.add(tip);
+                            }
                         }
                     }
                 }

@@ -12,8 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-@SuppressWarnings("CanBeFinal")
+@SuppressWarnings({"unchecked", "CanBeFinal"})
 public class NBTHelper {
     public static Map<Integer, NBTTagCompound> mapNBT = new HashMap<Integer, NBTTagCompound>();
 

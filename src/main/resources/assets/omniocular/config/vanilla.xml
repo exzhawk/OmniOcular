@@ -3,6 +3,9 @@
         <line displayname="Burn Time">
             return nbt['BurnTime']
         </line>
+        <line displayname="Burn Time">
+            return name(nbt['Items'][0])
+        </line>
     </tileentity>
     <entity id="Sheep">
         <line displayname="Until next love">
