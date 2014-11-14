@@ -43,6 +43,7 @@ public class JSHandler {
                 Matcher matcher = entry.getKey().matcher(id);
                 if (matcher.matches()) {
                     Element item = (Element) entry.getValue();
+                    //TODO: allow modify waila head
 //                    if (item.getElementsByTagName("head").getLength() > 0) {
 //                        Node head = item.getElementsByTagName("head").item(0);
 //                    }

@@ -1,5 +1,6 @@
 package me.exz.omniocular.handler;
 
+import cpw.mods.fml.common.Loader;
 import me.exz.omniocular.reference.Reference;
 import me.exz.omniocular.util.LogHelper;
 import net.minecraft.client.Minecraft;
@@ -37,7 +38,7 @@ public class ConfigHandler {
         if (!configDir.exists()) {
             if (!configDir.mkdir()) {
                 LogHelper.fatal("Can't create config folder");
-            }else {
+            } else {
                 LogHelper.info("Config folder created");
             }
         }
@@ -51,13 +52,15 @@ public class ConfigHandler {
 
     private static void releasePreConfigFiles(File configDir) throws IOException {
         for (String configFileName : Reference.configList) {
-            configFileName += ".xml";
-            File targetFile = new File(configDir, configFileName);
-            if (!targetFile.exists()) {
-                ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
-                IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
-                FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
-                LogHelper.info("Release pre-config file : " + configFileName);
+            if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
+                configFileName += ".xml";
+                File targetFile = new File(configDir, configFileName);
+                if (!targetFile.exists()) {
+                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
+                    IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
+                    FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
+                    LogHelper.info("Release pre-config file : " + configFileName);
+                }
             }
         }
     }
@@ -82,7 +85,7 @@ public class ConfigHandler {
         }
         mergedConfig = "<root>" + mergedConfig + "</root>";
     }
-
+    //TODO: add init tag to run first
     public static void parseConfigFiles() {
 //      System.out.println(mergedConfig);
         try {
