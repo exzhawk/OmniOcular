@@ -139,7 +139,7 @@ public class JSHandler {
         engine.put("EHEART", WailaStyle + WailaIcon + "c");
         LogHelper.info("Special Char loaded");
     }
-
+//TODO: not working with java 1.8
     public static String getDisplayName(String hashCode) {
         try {
             NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
