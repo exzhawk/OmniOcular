@@ -72,13 +72,19 @@ public class JSHandler {
                             }
                             Invocable invoke = (Invocable) JSHandler.engine;
                             try {
+                                String r = String.valueOf(invoke.invokeFunction(hash, ""));
+                                if (r.equals("__ERROR__")) {
+                                    continue;
+                                }
                                 tip += String.valueOf(invoke.invokeFunction(hash, ""));
                             } catch (Exception e) {
+                                continue;
                                 //e.printStackTrace();
                             }
-                            if (!tip.equals("__ERROR__")) {
-                                lastTips.add(tip);
+                            if (tip.equals("__ERROR__")) {
+                                continue;
                             }
+                            lastTips.add(tip);
                         }
                     }
                 }
@@ -145,6 +151,7 @@ public class JSHandler {
         engine.put("EHEART", WailaStyle + WailaIcon + "c");
         LogHelper.info("Special Char loaded");
     }
+
     public static String getDisplayName(String hashCode) {
         try {
             NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
