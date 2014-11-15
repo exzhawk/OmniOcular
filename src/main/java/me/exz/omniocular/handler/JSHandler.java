@@ -43,7 +43,6 @@ public class JSHandler {
                 Matcher matcher = entry.getKey().matcher(id);
                 if (matcher.matches()) {
                     Element item = (Element) entry.getValue();
-                    //TODO: allow modify waila head
 //                    if (item.getElementsByTagName("head").getLength() > 0) {
 //                        Node head = item.getElementsByTagName("head").item(0);
 //                    }
@@ -90,6 +89,12 @@ public class JSHandler {
 
     public static void initEngine() {
         setSpecialChar();
+        /** java 8 work around */
+        try {
+            engine.eval("load(\"nashorn:mozilla_compat.js\");");
+        } catch (ScriptException e) {
+            //e.printStackTrace();
+        }
         try {
             engine.eval("importClass(Packages.me.exz.omniocular.handler.JSHandler);");
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
@@ -140,7 +145,6 @@ public class JSHandler {
         engine.put("EHEART", WailaStyle + WailaIcon + "c");
         LogHelper.info("Special Char loaded");
     }
-//TODO: not working with java 1.8
     public static String getDisplayName(String hashCode) {
         try {
             NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
