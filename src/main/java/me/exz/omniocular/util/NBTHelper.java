@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
 @SuppressWarnings({"unchecked", "CanBeFinal"})
 public class NBTHelper {
     public static Map<Integer, NBTTagCompound> mapNBT = new HashMap<Integer, NBTTagCompound>();
@@ -53,7 +54,7 @@ public class NBTHelper {
                                 s += "\"" + String.valueOf(nl.func_150308_e(i)) + "\"";
                                 break;
                             case 8:
-                                s += nl.getStringTagAt(i);
+                                s += "\"" + nl.getStringTagAt(i).replace("\\", "\\\\").replace("\"", "\\\"") + "\"";
                             default:
                         }
                         s += ",";
@@ -73,13 +74,13 @@ public class NBTHelper {
                         st += ",";
                     }
                     int hashCode = nc.hashCode();
-                    if(mapNBT.size()>1000){
+                    if (mapNBT.size() > 1000) {
                         mapNBT.clear();
                     }
                     if (!mapNBT.containsKey(hashCode)) {
                         mapNBT.put(hashCode, nc);
                     }
-                    st += "hashCode:\"" + hashCode+"\"";
+                    st += "hashCode:\"" + hashCode + "\"";
                     st += "}";
                     return st;
                 default:

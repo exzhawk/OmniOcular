@@ -52,6 +52,7 @@ public class JSHandler {
                         for (int i = 0; i < lines.getLength(); i++) {
                             Node line = lines.item(i);
                             tip = "";
+                            //TODO: support translation in displayname
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
                                 if (patternMap == ConfigHandler.tooltipPattern) {
                                     tip += "\u00A77" + line.getAttributes().getNamedItem("displayname").getTextContent() + ": \u00A7f";
