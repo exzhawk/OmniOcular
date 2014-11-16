@@ -56,7 +56,7 @@ public class ConfigHandler {
                 configFileName += ".xml";
                 File targetFile = new File(configDir, configFileName);
                 if (!targetFile.exists()) {
-                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
+                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName.replace("|",""));
                     IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
                     FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
                     LogHelper.info("Release pre-config file : " + configFileName);

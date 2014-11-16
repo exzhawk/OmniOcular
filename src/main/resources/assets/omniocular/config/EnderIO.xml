@@ -1,0 +1,74 @@
+<oo>
+    <tileentity id="blockKillerJoeTileEntity">
+        <line displayname="Experience">
+            return nbt['experienceTotal']
+        </line>
+    </tileentity>
+    <tileentity id="blockZombieGeneratorTileEntity">
+        <line displayname="Nutrient Amount">
+            return nbt['fuelTank']['Amount']+'/2000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="blockPoweredSpawnerTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']*10+'/1000000 RF'
+        </line>
+        <line displayname="Spawn Chance">
+            return nbt['currentTask']['chance']
+        </line>
+    </tileentity>
+    <tileentity id="blockCombustionGeneratorTileEntity">
+        <line displayname="Coolant Amount">
+            return nbt['coolantTank']['Amount']+'/5000 mB'
+        </line>
+        <line displayname="Fuel Amount">
+            return nbt['fuelTank']['Amount']+'/5000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="blockSagMillTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'/1000000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="blockAlloySmelterTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'/1000000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="blockVatTileEntity">
+        <line displayname="Input Fluid Amount">
+            return nbt['inputTank']['Amount']+'/8000 mB'
+        </line>
+        <line displayname="Output Fluid Amount">
+            return nbt['outputTank']['Amount']+'/8000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="blockWirelessChargerTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'RF'
+        </line>
+    </tileentity>
+    <tileentity id="blockSliceAndSpliceTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'/1000000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="blockSoulBinderTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'/1000000 RF'
+        </line>
+        <line displayname="Experience">
+            return nbt['experienceTotal']
+        </line>
+    </tileentity>
+    <tileentity id="blockAttractorTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']*10+'/1000000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="blockSpawnGuardTileEntity">
+        <line displayname="Energy">
+            return nbt['storedEnergyRF']+'/1000000 RF'
+        </line>
+    </tileentity>
+</oo>

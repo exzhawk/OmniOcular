@@ -1,0 +1,205 @@
+<oo>
+    <tileentity id="factoryLaserDrill">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 1000000 RF'
+        </line>
+        <line displayname="Progress">
+            return (nbt['workDone']/3).toFixed(0)+' %'
+        </line>
+    </tileentity>
+    <tileentity id="factoryLaserDrillPrecharger">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 96000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryHarvester">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Sludge">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryPlanter">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 8000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factorySteamTurbine">
+        <line displayname="Energy">
+            return nbt['buffer']+' / 10000 RF'
+        </line>
+        <line displayname="Steam">
+            return nbt['Tanks']['0']['Amount']+' / 8000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryBioReactor">
+        <line displayname="BioFuel">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryBioFuelGenerator">
+        <line displayname="Energy">
+            return nbt['buffer']+' / 10000 RF'
+        </line>
+        <line displayname="BioFuel">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB
+        </line>
+    </tileentity>
+    <tileentity id="factoryGrinder">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 32000 RF'
+        </line>
+        <line displayname="Essence">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryBlockSmasher">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Essence">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryBlockPlacer">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryAutoAnvil">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Essence">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryAutoEnchanter">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Essence">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryAutoBrewer">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Water">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryAutoDisenchanter">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryMobRouter">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryChronotyper">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryChunkLoader">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 2147483647 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryVet">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 32000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryWeatherCollector">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Water">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryFruitPicker">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryAutoSpawner">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 32000 RF'
+        </line>
+        <line displayname="Essence">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryMeatPacker">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Meat">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryLavaFabricator">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Lava">
+            return nbt['Tanks']['0']['Amount']+' / 1000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factorySteamBoiler">
+        <line displayname="Water">
+            return nbt['Tanks']['1']['Amount']+' / 16000 mB'
+        </line>
+        <line displayname="Steam">
+            return nbt['Tanks']['0']['Amount']+' / 32000 mB
+        </line>
+    </tileentity>
+    <tileentity id="factoryComposter">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Sewage">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryRancher">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 32000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryFertilizer">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 32000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factorySludgeBoiler">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+        <line displayname="Sludge">
+            return nbt['Tanks']['0']['Amount']+' / 4000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factorySewer">
+        <line displayname="Sewage">
+            return nbt['Tanks']['0']['Amount']+' / 1000 mB'
+        </line>
+    </tileentity>
+    <tileentity id="factoryFisher">
+        <line displayname="Energy">
+            return nbt['energyStored']+' / 16000 RF'
+        </line>
+    </tileentity>
+    <tileentity id="factoryDeepStorageUnit">
+        <line displayname="Stored">
+            return nbt['storedQuantity']
+        </line>
+    </tileentity>
+</oo>

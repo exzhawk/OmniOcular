@@ -1,0 +1,12 @@
+<oo>
+    <tileentity id="BlockDrive">
+        <line displayname="Priority">
+            return nbt['priority']
+        </line>
+    </tileentity>
+    <tileentity id="BlockChest">
+        <line displayname="Priority">
+            return nbt['priority']
+        </line>
+    </tileentity>
+</oo>

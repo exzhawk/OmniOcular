@@ -1,0 +1,7 @@
+<oo>
+    <tileentity id="ChickenChunkLoader">
+        <line displayname="Radius">
+            return nbt['radius']
+        </line>
+    </tileentity>
+</oo>

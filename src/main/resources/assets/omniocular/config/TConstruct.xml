@@ -1,0 +1,20 @@
+<oo>
+    <tileentity id="TConstruct.Smeltery">
+        <line displayname="Level">
+            return nbt['Layers']
+        </line>
+        <line displayname="Max Liquid">
+            return nbt['MaxLiquid']+' mB)'
+        </line>
+    </tileentity>
+    <tileentity id="TConstruct.Furnace">
+        <line displayname="Burn Time Left">
+            return (nbt['Fuel']/20).toFixed(0)+' Seconds'
+        </line>
+    </tileentity>
+    <tileentity id="FrypanLogic">
+        <line displayname="Burn Time Left">
+            return (nbt['Fuel']/20).toFixed(0)+' Seconds'
+        </line>
+    </tileentity>
+</oo>

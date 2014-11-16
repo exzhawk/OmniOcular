@@ -64,6 +64,7 @@ public class JSHandler {
                             String hash = "S" + NBTHelper.MD5(functionContent);
                             if (!JSHandler.scriptSet.contains(hash)) {
                                 JSHandler.scriptSet.add(hash);
+                                //TODO: automatic add "return" if no return found to simplify config file
                                 String script = "function " + hash + "()" + "{" + functionContent + "}";
                                 try {
                                     JSHandler.engine.eval(script);

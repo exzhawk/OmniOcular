@@ -22,14 +22,14 @@
             return nbt['EMC ']
         </line>
 	 </tileentity>
-     <tileentity displayname="RM Furnace Tile">	
-        <line name="EMC">
+     <tileentity id="RM Furnace Tile">
+        <line displayname="EMC">
             return nbt['EMC ']
 		</line>
 	</tileentity>
-     <tileentity displayname="DM Furnace Tile">
-        <line name="EMC">
+     <tileentity id="DM Furnace Tile">
+        <line displayname="EMC">
             return nbt['EMC ']
 		</line>
-    </entity>
+    </tileentity>
 </oo>

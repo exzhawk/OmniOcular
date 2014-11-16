@@ -1,0 +1,150 @@
+<oo>
+    <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineCreative">
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Stroke Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileLaser">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyTable">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TilePump">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+        <line displayname="Liquid Amount">
+            return nbt['tank']['Amount']
+        </line>
+        <line displayname="Storage Fluid">
+            return nbt['tank']['FluidName']
+        </line>
+        <line displayname="Input Fluid">
+            return nbt['tank']['acceptedFluid']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyAdvancedWorkbench">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileIntegrationTable">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineWood">
+        <line displayname="heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Stroke Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineStone">
+        <line displayname="heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Stroke Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+        <line displayname="Burn Time">
+            return nbt['burnTime']
+        </line>
+        <line displayname="Total Burn Time">
+            return nbt['totalBurnTime']
+        </line>
+        <line displayname="function p(v){return names[v]}">
+            return nbt['Items']['0']['id']
+        </line>
+        <line displayname="function p(v){return 'count  '+v}">
+            return nbt['Items']['0']['Count']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineIron">
+        <line displayname="heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Stroke Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+        <line displayname="Burn Time">
+            return nbt['burnTime']
+        </line>
+        <line displayname="cooling">
+            return nbt['penaltyCooling']
+        </line>
+        <line displayname="water">
+            return nbt['tankCoolant']['FluidName']
+        </line>
+        <line displayname="Amount">
+            return nbt['tankCoolant']['Amount']
+        </line>
+        <line displayname="fuel">
+            return nbt['tankFuel']['FluidName']
+        </line>
+        <line displayname="Amount">
+            return nbt['tankFuel']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileFloodGate">
+        <line displayname="redstone sign?">
+            return nbt['powered']
+        </line>
+        <line displayname="Fluid">
+            return nbt['tank']['FluidName']
+        </line>
+        <line displayname="Amount">
+            return nbt['tank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="EnergyConverter">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+        <line displayname="Mode">
+            return nbt['converterMode']
+        </line>
+    </tileentity>
+    <tileentity id="Machine">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+    </tileentity>
+    <tileentity id="Filler">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+        <line displayname="pattern">
+            return nbt['pattern']
+        </line>
+    </tileentity>
+    <tileentity id="net.minecraft.src.buildcraft.factory.TileBuilder">
+        <line displayname="MJ Stored">
+            return nbt['mjStored']
+        </line>
+        <line displayname="done?">
+            return nbt['done']
+        </line>
+    </tileentity>
+</oo>

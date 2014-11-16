@@ -1,0 +1,43 @@
+<oo>
+    <tileentity id="TileInfusionStone">
+        <line displayname="Instability">
+            return nbt['instability'].toFixed(0)
+        </line>
+    </tileentity>
+    <tileentity id="TileAlchemyFurnace">
+        <line displayname="Vis Amount">
+            return nbt['Vis']
+        </line>
+    </tileentity>
+    <tileentity id="TileSiphon">
+        <line displayname="Vis Amount">
+            return nbt['amount']
+        </line>
+    </tileentity>
+    <tileentity id="TileTube.*">
+        <line displayname="Vis Amount">
+            return nbt['amount']
+        </line>
+    </tileentity>
+    <tileentity id="TileCrucible">
+        <line displayname="Water Amount">
+            return nbt['Amount']+' mB'
+        </line>
+        <line displayname="Heat">
+            return nbt['Heat']
+        </line>
+    </tileentity>
+    <tileentity id="TileSpa">
+        <line displayname="Water Amount">
+            return nbt['Amount']+' mB'
+        </line>
+        <line displayname="Bath Salts">
+            return nbt['Items']['0']['Count']
+        </line>
+    </tileentity>
+    <tileentity id="TileJarBrain">
+        <line displayname="XP">
+            return nbt['XP']
+        </line>
+    </tileentity>
+</oo>

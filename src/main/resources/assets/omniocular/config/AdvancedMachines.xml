@@ -1,0 +1,37 @@
+<!--Author: ViKaleidoscope -->
+<oo>
+    <tileentity id="Rotary Macerator">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+        <line displayname="Speed">
+            return nbt['speed']
+        </line>
+    </tileentity>
+    <tileentity id="Singularity Compressor">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+    </tileentity>
+    <tileentity id="Centrifuge Extractor">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+        <line displayname="Speed">
+            return nbt['speed']
+        </line>
+    </tileentity>
+    <tileentity id="immibis.am2.*">
+        <line displayname="Energy">
+            return nbt['energy']
+        </line>
+        <line displayname="Water">
+            return nbt['water']
+        </line>
+    </tileentity>
+    <tileentity id="immibis.am2.canner">
+        <line displayname="Speed">
+            return nbt['speed']
+        </line>
+    </tileentity>
+</oo>

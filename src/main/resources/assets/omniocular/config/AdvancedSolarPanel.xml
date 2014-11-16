@@ -1,0 +1,38 @@
+<oo>
+    <tileentity id="Advanced Solar Panel">
+        <line displayname="Energy">
+            return nbt['storage']
+        </line>
+    </tileentity>
+    <tileentity id="Hybrid Solar Panel">
+        <line displayname="Energy">
+            return nbt['storage']
+        </line>
+    </tileentity>
+    <tileentity id="Ultimate Hybrid Solar Panel">
+        <line displayname="Energy">
+            return nbt['storage']
+        </line>
+    </tileentity>
+    <tileentity id="Quantum Solar Panel">
+        <line displayname="Energy">
+            return nbt['storage']
+        </line>
+    </tileentity>
+    <tileentity id="Quantum Solar Panel">
+        <line displayname="Output">
+            return nbt['production']
+        </line>
+    </tileentity>
+    <tileentity id="Molecular Transformer">
+        <line displayname="Energy Required">
+            return nbt['lastRecipeEnergyPerOperation']
+        </line>
+        <line displayname="Energy Used">
+            return nbt['lastRecipeEnergyUsed']
+        </line>
+        <line displayname="Progress">
+            return nbt['lastProgress']
+        </line>
+    </tileentity>
+</oo>

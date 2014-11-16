@@ -1,0 +1,67 @@
+<oo>
+    <tileentity id="factory_barrel.*">
+        <line displayname="Item">
+            return name(nbt['item'])
+        </line>
+        <line displayname="count">
+            return nbt['count']
+        </line>
+    </tileentity>
+    <tileentity id="factory_slag">
+        <line displayname="Burn Time Left">
+            return nbt['burnTime']+' Seconds'
+        </line>
+    </tileentity>
+    <tileentity id="factory_.*">
+        <line displayname="Charge">
+            return nbt['charge']
+        </line>
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+    </tileentity>
+    <tileentity id="factory_steamturbine">
+        <line displayname="Fan">
+            return nbt['fan']
+        </line>
+        <line displayname="Steam Amount">
+            return nbt['steam']['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="factory_solarfurnace">
+        <line displayname="Water Amount">
+            return nbt['water']['Amount']+' mB'
+        </line>
+        <line displayname="Steam Amount">
+            return nbt['steam']['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="factory_battery">
+        <line displayname="Energy Storage">
+            return nbt['storage']+' CG'
+        </line>
+    </tileentity>
+    <tileentity id="factory_leyjar">
+        <line displayname="Energy Storage">
+            return nbt['store']+' CG'
+        </line>
+    </tileentity>
+    <tileentity id="factory_calory">
+        <line displayname="Digest">
+            return nbt['digest']/20+' Seconds'
+        </line>
+    </tileentity>
+    <tileentity id="factory_crystal">
+        <line displayname="Progress">
+            return nbt['progress']+' %
+        </line>
+    </tileentity>
+    <tileentity id="fzsock_lacerate">
+        <line displayname="Charge">
+            return nbt['chargecharge']
+        </line>
+        <line displayname="Speed">
+            return nbt['spd']+' %'
+        </line>
+    </tileentity>
+</oo>

@@ -1,0 +1,137 @@
+<oo>
+    <tileentity id="tileentityignisgenerator">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityessentiagenerator">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityauramgenerator">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityarborgenerator">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityaergenerator">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityetherealmacerator">
+        <line displayname="Progress">
+            return nbt['CookTime']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitycompressedsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoublecompressedsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytriplecompressedsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitywatersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoublewatersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytriplewatersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydarksolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoubledarksolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytripledarksolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityordersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoubleordersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytripleordersolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityfiresolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoublefiresolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytriplefiresolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityairsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoubleairsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytripleairsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentityearthsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitydoubleearthsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+    <tileentity id="tileentitytripleearthsolar">
+        <line displayname="Energy">
+            return nbt['IC2BasicSource>>>energy']
+        </line>
+    </tileentity>
+</oo>

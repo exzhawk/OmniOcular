@@ -1,0 +1,167 @@
+<oo>
+    <tileentity id="Air Collector">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="air stored">
+            return nbt['storedOxygenF']
+        </line>
+    </tileentity>
+    <tileentity id="Air Compressor">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="air stored">
+            return nbt['storedOxygenF']
+        </line>
+    </tileentity>
+    <tileentity id="Oxygen Decompressor">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="air stored">
+            return nbt['storedOxygenF']
+        </line>
+    </tileentity>
+    <tileentity id="Air Distributor">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="air stored">
+            return nbt['storedOxygenF']
+        </line>
+    </tileentity>
+    <tileentity id="Air Sealer">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="air stored">
+            return nbt['storedOxygenF']
+        </line>
+    </tileentity>
+    <tileentity id="Refinery">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="oil Amount">
+            return nbt['oilTank']['Amount']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Fuel Loader">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Cargo Loader">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Cargo Unloader">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Galacticraft Coal Generator">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="generateRate">
+            return nbt['generateRate']
+        </line>
+        <line displayname="cook time">
+            return nbt['itemCookTime']
+        </line>
+    </tileentity>
+    <tileentity id="Circuit Fabricator">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Electric Ingot Compressor">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Galacticraft Solar Panel">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Energy Storage Module">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Galacticraft Electric Furnace">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+    </tileentity>
+    <tileentity id="Gas Liquefier">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="TargetFrequency">
+            return nbt['TargetFrequency']
+        </line>
+        <line displayname="gas Amount">
+            return nbt['gasTank']['Amount']
+        </line>
+        <line displayname="liquid Amount">
+            return nbt['liquidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Methane Synthesizer">
+        <line displayname="energy">
+            return nbt['EnergyF']
+        </line>
+        <line displayname="TargetFrequency">
+            return nbt['TargetFrequency']
+        </line>
+        <line displayname="gas Amount">
+            return nbt['gasTank']['Amount']
+        </line>
+        <line displayname="liquid Amount">
+            return nbt['liquidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="GalacticraftCore.Spaceship">
+        <line displayname="timeUntilLaunch">
+            return nbt['timeUntilLaunch']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="SpaceshipT2">
+        <line displayname="timeUntilLaunch">
+            return nbt['timeUntilLaunch']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Tier3RocketGC">
+        <line displayname="timeUntilLaunch">
+            return nbt['timeUntilLaunch']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="GalacticraftCore.Buggy">
+        <line displayname="fuel(?)">
+            return nbt['fuel']
+        </line>
+        <line displayname="fuel Amount">
+            return nbt['fuelTank']['Amount']
+        </line>
+    </tileentity>
+</oo>

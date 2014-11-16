@@ -1,0 +1,71 @@
+<oo>
+    <tileentity id="thermalexpansion.*">
+        <line displayname="Fuel">
+            return nbt['Fuel']
+        </line>
+        <line displayname="Remain Time">
+            return nbt['ProcRem']+' ticks'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.DynamoSteam">
+        <line displayname="Steam Amount">
+            return nbt['SteamTank']['Amount']
+        </line>
+        <line displayname="Water Amount">
+            return nbt['WaterTank']['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.DynamoCompression">
+        <line displayname="Fuel Amount">
+            return nbt['FuelTank']['Amount']+' mB'
+        </line>
+        <line displayname="Coolant Amount">
+            return nbt['CoolantTank']['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Sponge">
+        <line displayname="Fluid">
+            var fluidname=nbt['FluidName'];
+            return fluidname.charAt(0).toUpperCase()+fluidname.substring(1)
+        </line>
+        <line displayname="Amount">
+            return nbt['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Precipitator">
+        <line displayname="Fluid Amount">
+            return nbt['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Extruder">
+        <line displayname="Water Amount">
+            return nbt['ColdTank']['Amount']+' mB'
+        </line>
+        <line displayname="Lava Amount">
+            return nbt['HotTank']['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Accumulator">
+        <line displayname="Water Amount">
+            return nbt['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Assembler">
+        <line displayname="Fluid Amount">
+            return nbt['Amount']+' mB'
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Activator">
+        <line displayname="Left Click">
+            return nbt['LeftClick']
+        </line>
+        <line displayname="Sneaking">
+            return nbt['Sneaking']
+        </line>
+    </tileentity>
+    <tileentity id="thermalexpansion.Tesseract">
+        <line displayname="Frequency">
+            return nbt['Frequency']
+        </line>
+    </tileentity>
+</oo>

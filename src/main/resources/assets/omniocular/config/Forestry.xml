@@ -1,0 +1,101 @@
+<oo>
+    <tileentity id="forestry.Engine.*">
+        <line displayname="Energy Stored">
+            return nbt['EngineStored']
+        </line>
+        <line displayname="Heat">
+            return nbt['EngineHeat']/10+20
+        </line>
+        <line displayname="Burn Time Left">
+            return (nbt['EngineBurnTime']/20).toFixed(0)+' Seconds'
+        </line>
+        <line displayname="Fuel Tank">
+            return nbt['FuelSlot']['Amount'].toFixed(0)+'mB'
+        </line>
+        <line displayname="Heating Tank">
+            return nbt['HeatingSlot']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Raintank">
+        <line displayname="Water Amount">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Generator.*">
+        <line displayname="Energy Stored">
+            return nbt['IC2BasicSource']['energy'].toFixed(0)+'EU'
+        </line>
+        <line displayname="Biomass Amount">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Bottler">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Resource Tank: %.0f mB">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Carpenter">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Resource Tank: %.0f mB">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Centrifuge">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Fermenter">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Resource Tank">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+        <line displayname="Product Tank">
+            return nbt['ProductTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Moistener">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Water Amount: %.0f mB">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Squeezer">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Resource Tank">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Rainmaker">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Still">
+        <line displayname="Energy Stored">
+            return nbt['powerProvider']['energyStored']
+        </line>
+        <line displayname="Resource Tank">
+            return nbt['ResourceTank']['Amount'].toFixed(0)+'mB'
+        </line>
+        <line displayname="Product Tank">
+            return nbt['ProductTank']['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+    <tileentity id="forestry.Analyzer">
+        <line displayname="Honey Amount">
+            return nbt['Amount'].toFixed(0)+'mB'
+        </line>
+    </tileentity>
+</oo>

@@ -1,0 +1,308 @@
+<oo>
+    <tileentity id="HeatGenerator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Lava Amount">
+            return nbt['lavaTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="SolarGenerator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="GasGenerator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Fuel Amount">
+            return nbt['fuelTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="BioGenerator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Fuel Amount">
+            return nbt['bioFuelStored']
+        </line>
+    </tileentity>
+    <tileentity id="AdvancedSolarGenerator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="WindTurbine">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="EnrichmentChamber">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="OsmiumCompressor">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="Combiner">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="Crusher">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="SmeltingFactory">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="AdvancedSmeltingFactory">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="UltimateSmeltingFactory">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="MetallurgicInfuser">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="PurificationChamber">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="EnergizedSmelter">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="MekanismTeleporter">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="ElectricPump">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="ElectricChest">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="Chargepad">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="LogisticalSorter">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="EnergyCube">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="SalinationController">
+        <line displayname="Temperature">
+            return nbt['temperature']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Brine Amount">
+            return nbt['brineTank']['Amount']
+        </line>
+        <line displayname="Water Amount">
+            return nbt['waterTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="RotaryCondensentrator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Gas Amount">
+            return nbt['gasTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalOxidizer">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Gas Amount">
+            return nbt['gasTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalInfuser">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Left Gas Amount">
+            return nbt['leftTank']['stored']['amount']
+        </line>
+        <line displayname="Right Gas Amount">
+            return nbt['rightTank']['stored']['amount']
+        </line>
+        <line displayname="Center Gas Amount">
+            return nbt['centerTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalInjectionChamber">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="ElectrolyticSeparator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+        <line displayname="Left Gas Amount">
+            return nbt['leftTank']['stored']['amount']
+        </line>
+        <line displayname="Right Gas Amount">
+            return nbt['rightTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="PrecisionSawmill">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalDissolutionChamber">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Gas Amount">
+            return nbt['gasTank']['stored']['amount']
+        </line>
+        <line displayname="Inject Gas Amount">
+            return nbt['injectTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalWasher">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Water Amount">
+            return nbt['leftTank']['Amount']
+        </line>
+        <line displayname="Left Gas Amount">
+            return nbt['centerTank']['stored']['amount']
+        </line>
+        <line displayname="Right Gas Amount">
+            return nbt['rightTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="ChemicalCrystallizer">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Gas Amount">
+            return nbt['rightTank']['stored']['amount']
+        </line>
+    </tileentity>
+    <tileentity id="SeismicVibrator">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+    </tileentity>
+    <tileentity id="PressurizedReactionChamber">
+        <line displayname="Stored Energy">
+            return nbt['electricityStored']
+        </line>
+        <line displayname="Progress">
+            return nbt['operatingTicks']
+        </line>
+        <line displayname="Input Fluid Amount">
+            return nbt['inputFluidTank']['Amount']
+        </line>
+        <line displayname="Input Gas Amount">
+            return nbt['inputGasTank']['Amount']
+        </line>
+        <line displayname="Output Gas Amount">
+            return nbt['outputGasTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="PortableTank">
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="FluidicPlenisher">
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+</oo>

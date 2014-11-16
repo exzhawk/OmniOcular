@@ -1,0 +1,33 @@
+<oo>
+    <tileentity id="witchery:altar">
+        <line displayname="Power">
+            return nbt['Power'].toFixed(0)
+        </line>
+        <line displayname="Power Scale">
+            return nbt['PowerScale']
+        </line>
+    </tileentity>
+    <tileentity id="witchery:spinningwheel">
+        <line displayname="Progress">
+            return nbt['CookTime']+' %'
+        </line>
+    </tileentity>
+    <tileentity id="witchery:witchesovenidle">
+        <line displayname="Progress">
+            return nbt['CookTime']/1.6+' %'
+        </line>
+        <line displayname="Burn Time Left">
+            return (nbt['BurnTime']/20).toFixed(0)++' Seconds'
+        </line>
+    </tileentity>
+    <tileentity id="witchery:distilleryidle">
+        <line displayname="Progress">
+            return (nbt['CookTime']/8)+' %'
+        </line>
+    </tileentity>
+    <tileentity id="witchery:leechchest">
+        <line displayname="Taglock Player:">
+            return nbt['WITCPlayers']['0']['Player']
+        </line>
+    </tileentity>
+</oo>

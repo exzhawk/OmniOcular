@@ -1,0 +1,515 @@
+<oo>
+    <tileentity id="Generator">
+        <line displayname="Remaining Fuel">
+            return nbt['fuel']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Geothermal Generator">
+        <line displayname="Lava Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Water Mill">
+        <line displayname="Remaining Water">
+            return nbt['fuel']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Solar Panel">
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Wind Mill">
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Nuclear Reactor">
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Energy Output">
+            return nbt['output']
+        </line>
+    </tileentity>
+    <tileentity id="Radioisotope Thermoelectric Generator">
+        <line displayname="Remaining Fuel">
+            return nbt['fuel']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Semifluid Generator">
+        <line displayname="Energy Storage">
+            return nbt['storage'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Stirling Generator">
+        <line displayname="Energy Storage">
+            return nbt['EUstorage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Kinetic Generator">
+        <line displayname="Energy Storage">
+            return nbt['EUstorage'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Luminator">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Tesla Coil">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Crop-Matron">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Thermal Centrifuge">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+    </tileentity>
+    <tileentity id="Metal Former">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Mode">
+            return nbt['mode']
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+    </tileentity>
+    <tileentity id="Ore Washing Plant">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Water Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Scanner">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="State">
+            return nbt['state']
+        </line>
+    </tileentity>
+    <tileentity id="Replicator">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="UU Processed">
+            return nbt['uuProcessed']
+        </line>
+        <line displayname="UU Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+        <line displayname="Extra UU Storage">
+            return nbt['extraUuStored']
+        </line>
+    </tileentity>
+    <tileentity id="Solid Canner Maschine">
+        <line displayname="Energy Storage">
+            return nbt['energy']
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+    </tileentity>
+    <tileentity id="Fluid Bottler Maschine">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Advanced Miner">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Silk Touch">
+            return nbt['silktouch']
+        </line>
+        <line displayname="Mining Layer">
+            return nbt['minelayer']
+        </line>
+    </tileentity>
+    <tileentity id="Liquid Heat Exchanger">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+        <line displayname="Input Fluid Amount">
+            return nbt['inputTank']['Amount']
+        </line>
+        <line displayname="Output Fluid Amount">
+            return nbt['outputTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Fermenter">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Input Fluid Amount">
+            return nbt['inputTank']['Amount']
+        </line>
+        <line displayname="Output Fluid Amount">
+            return nbt['outputTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Fluid Regulator">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Output Amount">
+            return nbt['outputmb']
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Condenser">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Input Fluid Amount">
+            return nbt['inputTank']['Amount']
+        </line>
+        <line displayname="Output Fluid Amount">
+            return nbt['outputTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Steam Generator">
+        <line displayname="Calcification">
+            return nbt['calcification']
+        </line>
+        <line displayname="Pressure Valve">
+            return nbt['pressurevalve']
+        </line>
+        <line displayname="System Heat">
+            return nbt['systemheat']
+        </line>
+    </tileentity>
+    <tileentity id="Blast Furnace">
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+    </tileentity>
+    <tileentity id="Block Cutter">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+    </tileentity>
+    <tileentity id="Solar Destiller">
+        <line displayname="Water Amount">
+            return nbt['inputTank']['Amount']
+        </line>
+        <line displayname="Distilled Water Amount">
+            return nbt['outputTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Fluid Distributor">
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Sorting Machine">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Crop Havester">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Chargepad BatBox">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Chargepad CESU">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Chargepad MFE">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Chargepad MFSU">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Steam Kinetic Generator">
+        <line displayname="Condensation Progress">
+            return nbt['condensationprogress']
+        </line>
+        <line displayname="Distilled Water Amount">
+            return nbt['distilledwaterTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Solid Heat Generator">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+        <line displayname="Remaining Fuel">
+            return nbt['fuel']
+        </line>
+    </tileentity>
+    <tileentity id="Fluid Heat Generator">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Radioisotope Thermo Heat Generator">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+    </tileentity>
+    <tileentity id="Electric Heat Generator">
+        <line displayname="Heat Buffer">
+            return nbt['HeatBuffer']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Iron Furnace">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Remaining Fuel">
+            return nbt['fuel']
+        </line>
+        <line displayname="Max Fuel">
+            return nbt['maxFuel']
+        </line>
+    </tileentity>
+    <tileentity id="Electric Furnace">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Macerator">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Extractor">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Compressor">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Canning Machine">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Input Fluid Amount">
+            return nbt['inputTank']['Amount']
+        </line>
+        <line displayname="Output Fluid Amount">
+            return nbt['outputTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Miner">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Pump">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Fluid Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Magnetizer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Electrolyzer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Recycler">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="Induction Furnace">
+        <line displayname="Progress">
+            return nbt['progress']
+        </line>
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Heat">
+            return nbt['heat']
+        </line>
+    </tileentity>
+    <tileentity id="Mass Fabricator">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+        <line displayname="Scrap">
+            return nbt['scrap']
+        </line>
+        <line displayname="UU Amount">
+            return nbt['fluidTank']['Amount']
+        </line>
+    </tileentity>
+    <tileentity id="Terraformer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="LV-Transformer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="MV-Transformer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="HV-Transformer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="EV-Transformer">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="CESU">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="MFE">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="MFSU">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="BatBox">
+        <line displayname="Energy Storage">
+            return nbt['energy'].toFixed(0)+' EU'
+        </line>
+    </tileentity>
+    <tileentity id="TECrop">
+        <line displayname="Growth Size">
+            return nbt['size']
+        </line>
+        <line displayname="Growth Points">
+            return nbt['growthPoints']
+        </line>
+    </tileentity>
+    <tileentity id="Energy-O-Mat">
+        <line displayname="EU Offer">
+            return nbt['euOffer']
+        </line>
+        <line displayname="Owner">
+            return nbt['ownerGameProfile']['Name']
+        </line>
+    </tileentity>
+    <tileentity id="Trade-O-Mat">
+        <line displayname="Owner">
+            return nbt['ownerGameProfile']['Name']
+        </line>
+    </tileentity>
+</oo>
