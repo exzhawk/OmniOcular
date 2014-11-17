@@ -19,6 +19,12 @@
         <line displayname="Sludge">
             return nbt['Tanks']['0']['Amount']+' / 4000 mB'
         </line>
+        <line displayname="Shear Leaves">
+            return nbt['harvesterSettings']['harvestSmallMushrooms']
+        </line>
+        <line displayname="Small Shrooms">
+            return nbt['harvesterSettings']['silkTouch']
+        </line>
     </tileentity>
     <tileentity id="factoryPlanter">
         <line displayname="Energy">
@@ -27,7 +33,7 @@
     </tileentity>
     <tileentity id="factorySteamTurbine">
         <line displayname="Energy">
-            return nbt['buffer']+' / 10000 RF'
+            return nbt['energyStored']+' / 10000 RF'
         </line>
         <line displayname="Steam">
             return nbt['Tanks']['0']['Amount']+' / 8000 mB'
@@ -39,7 +45,7 @@
         </line>
     </tileentity>
     <tileentity id="factoryBioFuelGenerator">
-        <line displayname="Energy">
+        <line displayname="energyStored">
             return nbt['buffer']+' / 10000 RF'
         </line>
         <line displayname="BioFuel">

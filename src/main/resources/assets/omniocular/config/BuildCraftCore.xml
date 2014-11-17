@@ -1,150 +1,134 @@
+<!--Author: ViKaleidoscope, EpixZhang -->
+<!--Date: 2014/11/17-->
+<!--Version: 6.1.8-->
 <oo>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineCreative">
         <line displayname="Heat">
             return nbt['heat']
-        </line>
-        <line displayname="Stroke Progress">
-            return nbt['progress']
         </line>
         <line displayname="Energy">
             return nbt['energy']
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileLaser">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
+        </line>
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyTable">
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy']+" RF"
+        </line>
+        <line displayname="Recipe">
+            return nbt['recipeId']
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TilePump">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
+        </line>
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
         </line>
         <line displayname="Liquid Amount">
             return nbt['tank']['Amount']
         </line>
         <line displayname="Storage Fluid">
-            return nbt['tank']['FluidName']
+            var fluidName=nbt['tank']['FluidName'];
+            return fluidName.charAt(0).toUpperCase()+fluidName.substring(1)
         </line>
         <line displayname="Input Fluid">
-            return nbt['tank']['acceptedFluid']
+            var fluidName=nbt['tank']['acceptedFluid'];
+            return fluidName.charAt(0).toUpperCase()+fluidName.substring(1)
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyAdvancedWorkbench">
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy'] +" / 5000 RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileIntegrationTable">
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineWood">
         <line displayname="heat">
             return nbt['heat']
         </line>
-        <line displayname="Stroke Progress">
-            return nbt['progress']
-        </line>
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineStone">
         <line displayname="heat">
-            return nbt['heat']
-        </line>
-        <line displayname="Stroke Progress">
-            return nbt['progress']
+            return nbt['heat'].toFixed(2)
         </line>
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy']+" RF"
         </line>
         <line displayname="Burn Time">
-            return nbt['burnTime']
-        </line>
-        <line displayname="Total Burn Time">
-            return nbt['totalBurnTime']
-        </line>
-        <line displayname="function p(v){return names[v]}">
-            return nbt['Items']['0']['id']
-        </line>
-        <line displayname="function p(v){return 'count  '+v}">
-            return nbt['Items']['0']['Count']
+            return (nbt['burnTime']/20).toFixed(0)+' / '+(nbt['totalBurnTime']/20).toFixed(0)
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineIron">
         <line displayname="heat">
-            return nbt['heat']
-        </line>
-        <line displayname="Stroke Progress">
-            return nbt['progress']
-        </line>
+            return nbt['heat'].toFixed(2)
+        </line>e
         <line displayname="Energy">
-            return nbt['energy']
+            return nbt['energy']+" RF"
         </line>
-        <line displayname="Burn Time">
-            return nbt['burnTime']
+        <line displayname="Coolant">
+            return nbt['tankCoolant']['FluidName']+"("+nbt['tankCoolant']['Amount']+" mB)"
         </line>
-        <line displayname="cooling">
-            return nbt['penaltyCooling']
-        </line>
-        <line displayname="water">
-            return nbt['tankCoolant']['FluidName']
-        </line>
-        <line displayname="Amount">
-            return nbt['tankCoolant']['Amount']
-        </line>
-        <line displayname="fuel">
-            return nbt['tankFuel']['FluidName']
-        </line>
-        <line displayname="Amount">
-            return nbt['tankFuel']['Amount']
+        <line displayname="Fuel">
+            return nbt['tankFuel']['FluidName']+"("+nbt['tankFuel']['Amount']+" mB)"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileFloodGate">
-        <line displayname="redstone sign?">
+        <line displayname="State">
             return nbt['powered']
         </line>
         <line displayname="Fluid">
-            return nbt['tank']['FluidName']
-        </line>
-        <line displayname="Amount">
-            return nbt['tank']['Amount']
-        </line>
-    </tileentity>
-    <tileentity id="EnergyConverter">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
-        </line>
-        <line displayname="Mode">
-            return nbt['converterMode']
-        </line>
-    </tileentity>
-    <tileentity id="Machine">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
+            return nbt['tank']['FluidName']+"("+nbt['tank']['Amount']+" mB)"
         </line>
     </tileentity>
     <tileentity id="Filler">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="pattern">
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
+        </line>
+        <line displayname="Pattern">
             return nbt['pattern']
         </line>
     </tileentity>
-    <tileentity id="net.minecraft.src.buildcraft.factory.TileBuilder">
-        <line displayname="MJ Stored">
-            return nbt['mjStored']
+    <tileentity id="net.minecraft.src.builders.TileBuilder">
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="done?">
-            return nbt['done']
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
+        </line>
+    </tileentity>
+    <tileentity id="Machine">
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
+        </line>
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
+        </line>
+    </tileentity>
+    <tileentity id="MiningWell">
+        <line displayname="Energy">
+            return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
+        </line>
+        <line displayname="Max Energy Receive">
+            return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>
 </oo>

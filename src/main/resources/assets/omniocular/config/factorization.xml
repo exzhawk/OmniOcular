@@ -1,38 +1,41 @@
+<!--Author: ViKaleidoscope, EpixZhang-->
+<!--Date: 2014/11/17-->
+<!--Version: 1.1.4-->
 <oo>
-    <tileentity id="factory_barrel.*">
+    <tileentity id="factory_barrel2">
         <line displayname="Item">
             return name(nbt['item'])
         </line>
-        <line displayname="count">
+        <line displayname="Count">
             return nbt['count']
         </line>
     </tileentity>
     <tileentity id="factory_slag">
         <line displayname="Burn Time Left">
-            return nbt['burnTime']+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="factory_.*">
-        <line displayname="Charge">
-            return nbt['charge']
-        </line>
-        <line displayname="Heat">
-            return nbt['heat']
+            return (nbt['burnTime']/20).toFixed(0)+' Seconds'
         </line>
     </tileentity>
     <tileentity id="factory_steamturbine">
-        <line displayname="Fan">
-            return nbt['fan']
+        <line displayname="Charge">
+            return nbt['charge']
         </line>
         <line displayname="Steam Amount">
             return nbt['steam']['Amount']+' mB'
         </line>
+        <line displayname="Fan">
+            return nbt['fan']
+        </line>
+    </tileentity>
+    <tileentity id="factory_calory">
+        <line displayname="Digest">
+            if(nbt['digest']>0){return (nbt['digest']/20).toFixed(0)+' Seconds';}else{return "__ERROR__"}
+        </line>
     </tileentity>
     <tileentity id="factory_solarfurnace">
-        <line displayname="Water Amount">
+        <line displayname="Water">
             return nbt['water']['Amount']+' mB'
         </line>
-        <line displayname="Steam Amount">
+        <line displayname="Steam">
             return nbt['steam']['Amount']+' mB'
         </line>
     </tileentity>
@@ -46,14 +49,19 @@
             return nbt['store']+' CG'
         </line>
     </tileentity>
-    <tileentity id="factory_calory">
-        <line displayname="Digest">
-            return nbt['digest']/20+' Seconds'
+    <tileentity id="factory_heater">
+        <line displayname="Charge">
+            return nbt['charge']
         </line>
     </tileentity>
     <tileentity id="factory_crystal">
         <line displayname="Progress">
-            return nbt['progress']+' %
+            return (nbt['progress']/60).toFixed(0)+" %"
+        </line>
+    </tileentity>
+    <tileentity id="factory_mixer">
+        <line displayname="Progress">
+            return (nbt['progress']/2.5).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="fzsock_lacerate">
@@ -61,7 +69,7 @@
             return nbt['chargecharge']
         </line>
         <line displayname="Speed">
-            return nbt['spd']+' %'
+            return (nbt['spd']/2).toFixed(0)+' %'
         </line>
     </tileentity>
 </oo>

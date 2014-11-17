@@ -28,6 +28,7 @@ public class OmniOcular {
         proxy.registerWaila();
         proxy.registerEvent();
         proxy.registerClientCommand();
+        proxy.releasePreConfigFiles();
     }
 
     @Mod.EventHandler

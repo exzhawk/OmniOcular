@@ -1,21 +1,19 @@
+<!--Author: ViKaleidoscope, EpixZhang -->
+<!--Date: 2014/11/17-->
+<!--Version: 0.8.2.81-->
 <oo>
-    <tileentity id="logisticspipes.*">
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity">
         <line displayname="Power Level">
             return nbt['powerLevel']+' / 2000000 LP'
         </line>
     </tileentity>
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsBCPowerProviderTileEntity">
-        <line displayname="Energy">
-            return nbt['internalStorage'].toFixed(0)+' / 1000000 MJ'
-        </line>
-    </tileentity>
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity.disable">
-        <line displayname="Energy">
-            return nbt['internalStorage'].toFixed(0)+' / 10000000 MJ'
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity">
+        <line displayname="Stored Energy">
+            return nbt['internalStorage'].toFixed(0)+' / 10000000 RF'
         </line>
     </tileentity>
     <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity">
-        <line displayname="Energy">
+        <line displayname="Stored Energy">
             return nbt['internalStorage'].toFixed(0)+' / 40000000 EU'
         </line>
     </tileentity>

@@ -1,10 +1,10 @@
+<!--Author: EpixZhang, ViKaleidoscope-->
+<!--Date: 2014/11/17-->
+<!--Version: r1.3-135-->
 <oo>
     <tileentity id="botania:pool">
         <line displayname="Mana">
-            return nbt['mana']
-        </line>
-        <line displayname="Max Mana">
-            return nbt['manaCap']
+            return nbt['mana']+" / "+nbt['manaCap']
         </line>
     </tileentity>
     <tileentity id="botania:spreader">
@@ -19,11 +19,8 @@
     </tileentity>
     <tileentity id="botania:enchanter">
         <line displayname="Mana">
-            return nbt['mana']
-        </line>
-        <line displayname="Mana Required">
-            return nbt['manaRequired']
-        </line>
+            return nbt['mana']+" / "+nbt['manaRequired']
+        </line>f
     </tileentity>
     <tileentity id="botania:specialFlower">
         <line displayname="Mana">

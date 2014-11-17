@@ -29,12 +29,13 @@ import java.util.regex.Pattern;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
+    public static File configDir;
     public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();
 
     public static void initConfigFiles() {
-        File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
+        configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
         if (!configDir.exists()) {
             if (!configDir.mkdir()) {
                 LogHelper.fatal("Can't create config folder");
@@ -42,21 +43,17 @@ public class ConfigHandler {
                 LogHelper.info("Config folder created");
             }
         }
-        try {
-            releasePreConfigFiles(configDir);
-        } catch (Exception e) {
-            LogHelper.error("Can't release pre-config files");
-        }
+
     }
 
 
-    private static void releasePreConfigFiles(File configDir) throws IOException {
+    public static void releasePreConfigFiles() throws IOException {
         for (String configFileName : Reference.configList) {
             if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
-                configFileName += ".xml";
+                configFileName=configFileName.replace("|","") + ".xml";
                 File targetFile = new File(configDir, configFileName);
                 if (!targetFile.exists()) {
-                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName.replace("|",""));
+                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
                     IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
                     FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
                     LogHelper.info("Release pre-config file : " + configFileName);
@@ -64,7 +61,7 @@ public class ConfigHandler {
             }
         }
     }
-
+//TODO: add FMP support
     public static void mergeConfig() {
         mergedConfig = "";
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);

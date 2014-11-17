@@ -1,35 +1,38 @@
+<!--Author: ViKaleidoscope -->
+<!--Date: 2014/11/17-->
+<!--Version: 1.7.10-3.5.1-->
 <oo>
     <tileentity id="Advanced Solar Panel">
         <line displayname="Energy">
-            return nbt['storage']
+            return nbt['storage']+" EU"
         </line>
     </tileentity>
     <tileentity id="Hybrid Solar Panel">
         <line displayname="Energy">
-            return nbt['storage']
+            return nbt['storage']+" EU"
         </line>
     </tileentity>
     <tileentity id="Ultimate Hybrid Solar Panel">
         <line displayname="Energy">
-            return nbt['storage']
+            return nbt['storage']+" EU"
         </line>
     </tileentity>
     <tileentity id="Quantum Solar Panel">
         <line displayname="Energy">
-            return nbt['storage']
+            return nbt['storage']+" EU"
         </line>
     </tileentity>
-    <tileentity id="Quantum Solar Panel">
+    <tileentity id="Quantum Generator">
         <line displayname="Output">
-            return nbt['production']
+            return nbt['production']+" EU"
         </line>
     </tileentity>
     <tileentity id="Molecular Transformer">
         <line displayname="Energy Required">
-            return nbt['lastRecipeEnergyPerOperation']
+            return nbt['lastRecipeEnergyPerOperation']+" EU"
         </line>
         <line displayname="Energy Used">
-            return nbt['lastRecipeEnergyUsed']
+            return nbt['lastRecipeEnergyUsed']+" EU"
         </line>
         <line displayname="Progress">
             return nbt['lastProgress']

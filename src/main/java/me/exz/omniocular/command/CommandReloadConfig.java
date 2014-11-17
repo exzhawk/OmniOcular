@@ -1,8 +1,7 @@
 package me.exz.omniocular.command;
 
 import me.exz.omniocular.handler.ConfigHandler;
-import me.exz.omniocular.network.ConfigMessage;
-import me.exz.omniocular.network.ConfigMessageHandler;
+import me.exz.omniocular.network.NetworkHelper;
 import me.exz.omniocular.util.LogHelper;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
@@ -37,7 +36,8 @@ public class CommandReloadConfig extends CommandBase {
         ConfigHandler.mergeConfig();
         List playerList = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
         for (Object player : playerList) {
-            ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (EntityPlayerMP) player);
+            //ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (EntityPlayerMP) player);
+            NetworkHelper.sendConfigString(ConfigHandler.mergedConfig, (EntityPlayerMP) player);
         }
         LogHelper.info(sender.getCommandSenderName()+" commit a config reload.");
     }

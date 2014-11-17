@@ -1,3 +1,6 @@
+<!--Author: EpixZhang -->
+<!--Date: 2014/11/17-->
+<!--Version: v1.2.0Beta23(1.7.10)-->
 <oo>
     <tileentity id="containerAltar">
         <line displayname="Life Essence">
@@ -6,35 +9,26 @@
         <line displayname="Capacity">
             return nbt['capacity']
         </line>
-        <line displayname="LP proceed">
-            return nbt['progress']
-        </line>
-        <line displayname="LP required">
-            return nbt['liquidRequired']
+        <line displayname="Process">
+            return nbt['progress']+" / "+nbt['liquidRequired']
         </line>
         <line displayname="Tier">
             return nbt['upgradeLevel']
         </line>
-        <line displayname="Capacity *">
-            return nbt['capacityMultiplier']
+        <line displayname="Process Speed">
+            return (nbt['consumptionMultiplier']+1)*100+" %"
         </line>
-        <line displayname="Speed *">
-            return nbt['consumptionMultiplier']
+        <line displayname="IO Speed">
+            return (nbt['dislocationMultiplier']*20).toFixed(0)+" mB/t"
         </line>
-        <line displayname="Dislocation *">
-            return nbt['dislocationMultiplier']
+        <line displayname="Orb Capacity">
+            return nbt['orbCapacityMultiplier']*100+" %"
         </line>
-        <line displayname="Efficiency *">
-            return nbt['efficiencyMultiplier']
+        <line displayname="Sacrifice">
+            return ((nbt['sacrificeEfficiencyMultiplier']+1)*100).toFixed(0)+" %"
         </line>
-        <line displayname="Orb capacity *">
-            return nbt['orbCapacityMultiplier']
-        </line>
-        <line displayname="Sacrifice *">
-            return nbt['sacrificeEfficiencyMultiplier']
-        </line>
-        <line displayname="Self-Sacrifice *">
-            return nbt['selfSacrificeEfficiencyMultiplier']
+        <line displayname="Self-Sacrifice">
+            return ((nbt['selfSacrificeEfficiencyMultiplier']+1)*100).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="containerMasterStone">
@@ -46,11 +40,11 @@
         </line>
     </tileentity>
     <tileentity id="containerWritingTable">
-        <line displayname="LP required(*100)">
-            return nbt['amountUsed']
+        <line displayname="Require">
+            return nbt['amountUsed']*100+" LP"
         </line>
-        <line displayname="Progress(%)">
-            return nbt['progress']
+        <line displayname="Progress">
+            return nbt['progress']+" %"
         </line>
     </tileentity>
 </oo>

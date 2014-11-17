@@ -10,6 +10,7 @@ import me.exz.omniocular.handler.ConfigHandler;
 import me.exz.omniocular.handler.JSHandler;
 import me.exz.omniocular.network.ConfigMessage;
 import me.exz.omniocular.network.ConfigMessageHandler;
+import me.exz.omniocular.util.LogHelper;
 
 public abstract class CommonProxy implements IProxy {
     @Override
@@ -36,4 +37,12 @@ public abstract class CommonProxy implements IProxy {
         JSHandler.initEngine();
     }
 
+    @Override
+    public void releasePreConfigFiles() {
+        try {
+            ConfigHandler.releasePreConfigFiles();
+        } catch (Exception e) {
+            LogHelper.error("Can't release pre-config files");
+        }
+    }
 }

@@ -75,10 +75,10 @@ public class JSHandler {
                             Invocable invoke = (Invocable) JSHandler.engine;
                             try {
                                 String r = String.valueOf(invoke.invokeFunction(hash, ""));
-                                if (r.equals("__ERROR__")) {
+                                if (r.equals("__ERROR__")||r.equals("null")||r.equals("undefined")||r.equals("NaN")) {
                                     continue;
                                 }
-                                tip += String.valueOf(invoke.invokeFunction(hash, ""));
+                                tip += r;
                             } catch (Exception e) {
                                 continue;
                                 //e.printStackTrace();
