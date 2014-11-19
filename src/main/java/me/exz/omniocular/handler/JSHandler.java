@@ -5,6 +5,8 @@ import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -13,10 +15,7 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,6 +26,7 @@ public class JSHandler {
     public static HashSet<String> scriptSet = new HashSet<String>();
     private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
+    private static Map<String, String>fluidList = new HashMap<String, String>();
 
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id) {
         if (n.hashCode() != lastHash) {
@@ -54,6 +54,7 @@ public class JSHandler {
                             tip = "";
                             //TODO: support translation in displayname
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
+
                                 if (patternMap == ConfigHandler.tooltipPattern) {
                                     tip += "\u00A77" + line.getAttributes().getNamedItem("displayname").getTextContent() + ": \u00A7f";
                                 } else {
@@ -107,6 +108,7 @@ public class JSHandler {
             engine.eval("importClass(Packages.me.exz.omniocular.handler.JSHandler);");
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
             engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
+            engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
 
         } catch (ScriptException e) {
             e.printStackTrace();
@@ -154,6 +156,7 @@ public class JSHandler {
         LogHelper.info("Special Char loaded");
     }
 
+
     public static String getDisplayName(String hashCode) {
         try {
             NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
@@ -165,6 +168,20 @@ public class JSHandler {
             return "__ERROR__";
         }
     }
-
+    public static String getFluidName(String uName){
+        if (fluidList.containsKey(uName)){
+            return fluidList.get(uName);
+        }else{
+            try{
+            Fluid f=new Fluid(uName);
+            FluidStack fs = new FluidStack(f,1);
+            String lName=fs.getLocalizedName();
+            fluidList.put(uName,lName);
+            return lName;}
+            catch (Exception e){
+                return "__ERROR__";
+            }
+        }
+    }
 
 }
