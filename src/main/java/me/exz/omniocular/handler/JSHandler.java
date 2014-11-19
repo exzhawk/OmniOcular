@@ -27,6 +27,7 @@ public class JSHandler {
     private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
     private static Map<String, String>fluidList = new HashMap<String, String>();
+    private static Map<String, String>displayNameList = new HashMap<String, String>();
 
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id) {
         if (n.hashCode() != lastHash) {
@@ -52,13 +53,12 @@ public class JSHandler {
                         for (int i = 0; i < lines.getLength(); i++) {
                             Node line = lines.item(i);
                             tip = "";
-                            //TODO: support translation in displayname
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
-
+                                String displayname=StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());
                                 if (patternMap == ConfigHandler.tooltipPattern) {
-                                    tip += "\u00A77" + line.getAttributes().getNamedItem("displayname").getTextContent() + ": \u00A7f";
+                                    tip += "\u00A77" + displayname + ": \u00A7f";
                                 } else {
-                                    tip += line.getAttributes().getNamedItem("displayname").getTextContent() + "\u00A4\u00A4a\u00A4\u00A4b\u00A7f";
+                                    tip += displayname + "\u00A4\u00A4a\u00A4\u00A4b\u00A7f";
                                 }
                             }
                             String functionContent = line.getTextContent();
