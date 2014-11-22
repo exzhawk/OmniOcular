@@ -1,12 +1,12 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2014/11/17-->
+<!--Date: 2014/11/22-->
 <!--Version: 1.3.4.14-->
 <oo>
     <tileentity id="ChickenChunkLoader">
-        <line displayname="Radius">
+        <line displayname="chickenchunks.gui.radius">
             return nbt['radius']
         </line>
-        <line displayname="Owner">
+        <line displayname="hud.msg.owner">
             return nbt['owner']
         </line>
     </tileentity>
