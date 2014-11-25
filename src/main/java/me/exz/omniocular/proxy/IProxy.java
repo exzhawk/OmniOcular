@@ -18,5 +18,5 @@ public interface IProxy {
 
     public abstract void initConfig(FMLPreInitializationEvent event);
 
-    public abstract void releasePreConfigFiles();
+    public abstract void prepareConfigFiles();
 }

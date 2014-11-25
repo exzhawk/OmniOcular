@@ -33,17 +33,16 @@ public abstract class CommonProxy implements IProxy {
     public void initConfig(FMLPreInitializationEvent event) {
         ConfigHandler.minecraftConfigDirectory = event.getModConfigurationDirectory();
         ConfigHandler.initConfigFiles();
-        //TODO: move this to somewhere after release pre-config files
-        ConfigHandler.mergeConfig();
         JSHandler.initEngine();
     }
 
     @Override
-    public void releasePreConfigFiles() {
+    public void prepareConfigFiles() {
         try {
             ConfigHandler.releasePreConfigFiles();
         } catch (Exception e) {
             LogHelper.error("Can't release pre-config files");
         }
+        ConfigHandler.mergeConfig();
     }
 }
