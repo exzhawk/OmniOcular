@@ -50,7 +50,7 @@ public class ConfigHandler {
     public static void releasePreConfigFiles() throws IOException {
         for (String configFileName : Reference.configList) {
             if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
-                configFileName=configFileName.replace("|","") + ".xml";
+                configFileName = configFileName.replace("|", "") + ".xml";
                 File targetFile = new File(configDir, configFileName);
                 if (!targetFile.exists()) {
                     ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
@@ -61,7 +61,8 @@ public class ConfigHandler {
             }
         }
     }
-//TODO: add FMP support
+
+    //TODO: add FMP support
     public static void mergeConfig() {
         mergedConfig = "";
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -82,10 +83,12 @@ public class ConfigHandler {
         }
         mergedConfig = "<root>" + mergedConfig + "</root>";
     }
+
     //TODO: add init tag to run first
     public static void parseConfigFiles() {
 //      System.out.println(mergedConfig);
         try {
+            JSHandler.initEngine();
             entityPattern.clear();
             tileEntityPattern.clear();
             tooltipPattern.clear();

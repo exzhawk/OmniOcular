@@ -25,9 +25,8 @@ public class NetworkHelper {
             ConfigHandler.mergedConfig = "";
         } else if (string.equals("__END__")) {
             ConfigHandler.parseConfigFiles();
-        }else {
-            ConfigHandler.mergedConfig+=string;
+        } else {
+            ConfigHandler.mergedConfig += string;
         }
-
     }
 }

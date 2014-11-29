@@ -26,8 +26,8 @@ public class OmniOcular {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.registerWaila();
-        proxy.registerEvent();
         proxy.registerClientCommand();
+        proxy.registerEvent();
         proxy.prepareConfigFiles();
     }
 

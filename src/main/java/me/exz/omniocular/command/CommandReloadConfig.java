@@ -39,6 +39,6 @@ public class CommandReloadConfig extends CommandBase {
             //ConfigMessageHandler.network.sendTo(new ConfigMessage(ConfigHandler.mergedConfig), (EntityPlayerMP) player);
             NetworkHelper.sendConfigString(ConfigHandler.mergedConfig, (EntityPlayerMP) player);
         }
-        LogHelper.info(sender.getCommandSenderName()+" commit a config reload.");
+        LogHelper.info(sender.getCommandSenderName() + " commit a config reload.");
     }
 }

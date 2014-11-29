@@ -10,13 +10,14 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.List;
 
-public class EntityHandler implements IWailaEntityProvider{
+public class EntityHandler implements IWailaEntityProvider {
     @SuppressWarnings("UnusedDeclaration")
     public static void callbackRegister(IWailaRegistrar registrar) {
         EntityHandler instance = new EntityHandler();
         registrar.registerSyncedNBTKey("*", Entity.class);
         registrar.registerBodyProvider(instance, Entity.class);
     }
+
     @Override
     public Entity getWailaOverride(IWailaEntityAccessor accessor, IWailaConfigHandler config) {
         return null;

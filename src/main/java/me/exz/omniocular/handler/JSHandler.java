@@ -21,13 +21,13 @@ import java.util.regex.Pattern;
 
 @SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
-    private static final ScriptEngineManager manager = new ScriptEngineManager(null);
-    private static ScriptEngine engine = manager.getEngineByName("javascript");
+    private static ScriptEngineManager manager;
+    private static ScriptEngine engine;
     public static HashSet<String> scriptSet = new HashSet<String>();
     private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
-    private static Map<String, String>fluidList = new HashMap<String, String>();
-    private static Map<String, String>displayNameList = new HashMap<String, String>();
+    private static Map<String, String> fluidList = new HashMap<String, String>();
+    private static Map<String, String> displayNameList = new HashMap<String, String>();
 
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id) {
         if (n.hashCode() != lastHash) {
@@ -54,7 +54,7 @@ public class JSHandler {
                             Node line = lines.item(i);
                             tip = "";
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
-                                String displayname=StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());
+                                String displayname = StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());
                                 if (patternMap == ConfigHandler.tooltipPattern) {
                                     tip += "\u00A77" + displayname + ": \u00A7f";
                                 } else {
@@ -65,8 +65,8 @@ public class JSHandler {
                             String hash = "S" + NBTHelper.MD5(functionContent);
                             if (!JSHandler.scriptSet.contains(hash)) {
                                 JSHandler.scriptSet.add(hash);
-                                if (!functionContent.contains("return")){
-                                    functionContent="return "+functionContent.trim();
+                                if (!functionContent.contains("return")) {
+                                    functionContent = "return " + functionContent.trim();
                                 }
                                 String script = "function " + hash + "()" + "{" + functionContent + "}";
                                 try {
@@ -78,7 +78,7 @@ public class JSHandler {
                             Invocable invoke = (Invocable) JSHandler.engine;
                             try {
                                 String r = String.valueOf(invoke.invokeFunction(hash, ""));
-                                if (r.equals("__ERROR__")||r.equals("null")||r.equals("undefined")||r.equals("NaN")) {
+                                if (r.equals("__ERROR__") || r.equals("null") || r.equals("undefined") || r.equals("NaN")) {
                                     continue;
                                 }
                                 tip += r;
@@ -99,6 +99,8 @@ public class JSHandler {
     }
 
     public static void initEngine() {
+        manager = new ScriptEngineManager(null);
+        engine = manager.getEngineByName("javascript");
         setSpecialChar();
         /** java 8 work around */
         try {
@@ -111,7 +113,6 @@ public class JSHandler {
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
             engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
             engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
-
         } catch (ScriptException e) {
             e.printStackTrace();
         }
@@ -165,25 +166,23 @@ public class JSHandler {
             ItemStack is = ItemStack.loadItemStackFromNBT(nc);
             return is.getDisplayName();
         } catch (Exception e) {
-
-
             return "__ERROR__";
         }
     }
-    public static String getFluidName(String uName){
-        if (fluidList.containsKey(uName)){
+
+    public static String getFluidName(String uName) {
+        if (fluidList.containsKey(uName)) {
             return fluidList.get(uName);
-        }else{
-            try{
-            Fluid f=new Fluid(uName);
-            FluidStack fs = new FluidStack(f,1);
-            String lName=fs.getLocalizedName();
-            fluidList.put(uName,lName);
-            return lName;}
-            catch (Exception e){
+        } else {
+            try {
+                Fluid f = new Fluid(uName);
+                FluidStack fs = new FluidStack(f, 1);
+                String lName = fs.getLocalizedName();
+                fluidList.put(uName, lName);
+                return lName;
+            } catch (Exception e) {
                 return "__ERROR__";
             }
         }
     }
-
 }
