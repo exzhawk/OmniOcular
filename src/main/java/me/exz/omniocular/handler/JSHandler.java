@@ -97,7 +97,7 @@ public class JSHandler {
         }
         return lastTips;
     }
-
+    //TODO: support access of player's (holding item/armor/inventory)
     public static void initEngine() {
         manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");
