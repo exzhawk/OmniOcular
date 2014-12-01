@@ -26,6 +26,10 @@ group= "me.exz.omniocular" // http://maven.apache.org/guides/mini/guide-naming-c
 //noinspection GroovyUnusedAssignment
 archivesBaseName = "OmniOcular"
 
+if (env.BUILD_NUMBER != null) {
+    version += "build" + env.BUILD_NUMBER
+}
+
 minecraft {
     version = "1.7.10-10.13.2.1236"
     runDir = "eclipse"
