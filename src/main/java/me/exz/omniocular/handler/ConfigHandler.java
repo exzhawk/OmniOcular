@@ -84,7 +84,6 @@ public class ConfigHandler {
         mergedConfig = "<root>" + mergedConfig + "</root>";
     }
 
-    //TODO: add init tag to run first
     public static void parseConfigFiles() {
 //      System.out.println(mergedConfig);
         try {
@@ -114,6 +113,11 @@ public class ConfigHandler {
                 for (int j = 0; j < tooltipList.getLength(); j++) {
                     Node node = tooltipList.item(j);
                     tooltipPattern.put(Pattern.compile(node.getAttributes().getNamedItem("id").getTextContent()), node);
+                }
+                NodeList initList = ((Element) ooList.item(i)).getElementsByTagName("init");
+                for (int j = 0; j < initList.getLength(); j++) {
+                    Node node = initList.item(j);
+                    JSHandler.engine.eval(node.getTextContent());
                 }
             }
         } catch (Exception e) {

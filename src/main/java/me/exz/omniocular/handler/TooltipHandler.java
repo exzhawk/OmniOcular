@@ -29,7 +29,7 @@ public class TooltipHandler implements IContainerTooltipHandler {
 
             //accessor.getTileEntity().writeToNBT(n);
             if (n != null) {
-                currenttip.addAll(1, JSHandler.getBody(ConfigHandler.tooltipPattern, n, Item.itemRegistry.getNameForObject(itemStack.getItem())));
+                currenttip.addAll(1, JSHandler.getBody(ConfigHandler.tooltipPattern, n, Item.itemRegistry.getNameForObject(itemStack.getItem()),guiContainer.mc.thePlayer));
 
             }
         }

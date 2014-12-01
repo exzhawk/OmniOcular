@@ -32,7 +32,7 @@ public class EntityHandler implements IWailaEntityProvider {
     public List<String> getWailaBody(Entity entity, List<String> currenttip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
         NBTTagCompound n = accessor.getNBTData();
         if (n != null) {
-            currenttip.addAll(JSHandler.getBody(ConfigHandler.entityPattern, n, EntityList.getEntityString(accessor.getEntity())));
+            currenttip.addAll(JSHandler.getBody(ConfigHandler.entityPattern, n, EntityList.getEntityString(accessor.getEntity()), accessor.getPlayer()));
         }
         return currenttip;
     }

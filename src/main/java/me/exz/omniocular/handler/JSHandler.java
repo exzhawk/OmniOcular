@@ -2,6 +2,8 @@ package me.exz.omniocular.handler;
 
 import me.exz.omniocular.util.LogHelper;
 import me.exz.omniocular.util.NBTHelper;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
@@ -22,14 +24,16 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
     private static ScriptEngineManager manager;
-    private static ScriptEngine engine;
+    public static ScriptEngine engine;
     public static HashSet<String> scriptSet = new HashSet<String>();
     private static List<String> lastTips = new ArrayList<String>();
     private static int lastHash;
     private static Map<String, String> fluidList = new HashMap<String, String>();
     private static Map<String, String> displayNameList = new HashMap<String, String>();
+    private static EntityPlayer entityPlayer;
 
-    public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id) {
+    public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
+        entityPlayer=player;
         if (n.hashCode() != lastHash) {
             lastHash = n.hashCode();
             lastTips.clear();
@@ -113,15 +117,11 @@ public class JSHandler {
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
             engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
             engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
+            engine.eval("function holding(){return Packages.me.exz.omniocular.handler.JSHandler.playerHolding()}");
         } catch (ScriptException e) {
             e.printStackTrace();
         }
     }
-
-    public static String translate(String t) {
-        return StatCollector.translateToLocal(t);
-    }
-
 
     private static void setSpecialChar() {
         String MCStyle = "\u00A7";
@@ -159,6 +159,16 @@ public class JSHandler {
         LogHelper.info("Special Char loaded");
     }
 
+    public static String translate(String t) {
+        return StatCollector.translateToLocal(t);
+    }
+    public static String playerHolding() {
+        ItemStack i = entityPlayer.getHeldItem();
+        if (i==null){
+            return "";
+        }
+        return Item.itemRegistry.getNameForObject(i.getItem());
+    }
 
     public static String getDisplayName(String hashCode) {
         try {
