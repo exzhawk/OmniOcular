@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
-    public static File configDir;
+    private static File configDir;
     public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();

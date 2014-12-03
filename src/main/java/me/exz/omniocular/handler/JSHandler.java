@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
 
 @SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
-    private static ScriptEngineManager manager;
     public static ScriptEngine engine;
     public static HashSet<String> scriptSet = new HashSet<String>();
     private static List<String> lastTips = new ArrayList<String>();
@@ -33,7 +32,7 @@ public class JSHandler {
     private static EntityPlayer entityPlayer;
 
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
-        entityPlayer=player;
+        entityPlayer = player;
         if (n.hashCode() != lastHash) {
             lastHash = n.hashCode();
             lastTips.clear();
@@ -101,9 +100,10 @@ public class JSHandler {
         }
         return lastTips;
     }
+
     //TODO: support access of player's (holding item/armor/inventory)
     public static void initEngine() {
-        manager = new ScriptEngineManager(null);
+        ScriptEngineManager manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");
         setSpecialChar();
         /** java 8 work around */
@@ -118,6 +118,7 @@ public class JSHandler {
             engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
             engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
             engine.eval("function holding(){return Packages.me.exz.omniocular.handler.JSHandler.playerHolding()}");
+            engine.eval("function armor(i){return Packages.me.exz.omniocular.handler.JSHandler.playerArmor(i)}");
         } catch (ScriptException e) {
             e.printStackTrace();
         }
@@ -162,12 +163,24 @@ public class JSHandler {
     public static String translate(String t) {
         return StatCollector.translateToLocal(t);
     }
+
     public static String playerHolding() {
-        ItemStack i = entityPlayer.getHeldItem();
-        if (i==null){
+        ItemStack is = entityPlayer.getHeldItem();
+        if (is == null) {
             return "";
         }
-        return Item.itemRegistry.getNameForObject(i.getItem());
+        return Item.itemRegistry.getNameForObject(is.getItem());
+    }
+
+    public static String playerArmor(int i) {
+        if (i < 0 || i > 3) {
+            return null;
+        }
+        ItemStack is = entityPlayer.inventory.armorInventory[i];
+        if (is == null) {
+            return "";
+        }
+        return Item.itemRegistry.getNameForObject(is.getItem());
     }
 
     public static String getDisplayName(String hashCode) {

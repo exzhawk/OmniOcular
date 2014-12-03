@@ -5,7 +5,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 
 public class NetworkHelper {
 
-    public static void sendString(String string, EntityPlayerMP player) {
+    private static void sendString(String string, EntityPlayerMP player) {
         ConfigMessageHandler.network.sendTo(new ConfigMessage(string), player);
     }
 
