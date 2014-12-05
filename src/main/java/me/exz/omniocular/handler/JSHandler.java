@@ -119,6 +119,9 @@ public class JSHandler {
             engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
             engine.eval("function holding(){return Packages.me.exz.omniocular.handler.JSHandler.playerHolding()}");
             engine.eval("function armor(i){return Packages.me.exz.omniocular.handler.JSHandler.playerArmor(i)}");
+            engine.eval("function isInHotbar(n){return Packages.me.exz.omniocular.handler.JSHandler.haveItemInHotbar(n)}");
+            engine.eval("function isInInv(n){return Packages.me.exz.omniocular.handler.JSHandler.haveItemInInventory(n)}");
+
         } catch (ScriptException e) {
             e.printStackTrace();
         }
@@ -181,6 +184,17 @@ public class JSHandler {
             return "";
         }
         return Item.itemRegistry.getNameForObject(is.getItem());
+    }
+
+    public static Boolean haveItemInHotbar(String n){
+        Item i = (Item)Item.itemRegistry.getObject(n);
+        int s=entityPlayer.inventory.func_146029_c(i);
+        return s > -1 && s < 9;
+    }
+    public static Boolean haveItemInInventory(String n){
+        Item i = (Item)Item.itemRegistry.getObject(n);
+        int s=entityPlayer.inventory.func_146029_c(i);
+        return s != -1;
     }
 
     public static String getDisplayName(String hashCode) {
