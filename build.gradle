@@ -30,6 +30,12 @@ if (env.BUILD_NUMBER != null) {
     version += "build" + env.BUILD_NUMBER
 }
 
+jar {
+    manifest {
+        attributes 'FMLAT': 'OmniOcular_at.cfg'
+    }
+}
+
 minecraft {
     version = "1.7.10-10.13.2.1236"
     runDir = "eclipse"
