@@ -12,7 +12,6 @@ import me.exz.omniocular.reference.Reference;
 @SuppressWarnings({"UnusedParameters", "UnusedDeclaration"})
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = "required-after:Waila;required-after:NotEnoughItems")
 
-//TODO: use AccessTransformer rather than reflection to increase efficiency of reading NBTCompound
 public class OmniOcular {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;

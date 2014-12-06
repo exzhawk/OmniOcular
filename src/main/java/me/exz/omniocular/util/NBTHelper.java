@@ -1,6 +1,5 @@
 package me.exz.omniocular.util;
 
-import cpw.mods.fml.relauncher.ReflectionHelper;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagByteArray;
 import net.minecraft.nbt.NBTTagCompound;
@@ -95,7 +94,7 @@ public class NBTHelper {
 
     private static Map<String, NBTBase> getMap(NBTTagCompound tag) {
         //noinspection unchecked
-        return (Map) ReflectionHelper.getPrivateValue(NBTTagCompound.class, tag, 1);
+        return tag.tagMap;
     }
 
     public static String MD5(String string) {

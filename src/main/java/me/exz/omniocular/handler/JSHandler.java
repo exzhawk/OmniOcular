@@ -101,7 +101,7 @@ public class JSHandler {
         return lastTips;
     }
 
-    //TODO: support access of player's (holding item/armor/inventory)
+    //TODO: force refresh HUD when these method invoked
     public static void initEngine() {
         ScriptEngineManager manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");
@@ -186,15 +186,13 @@ public class JSHandler {
         return Item.itemRegistry.getNameForObject(is.getItem());
     }
 
-    public static Boolean haveItemInHotbar(String n){
-        Item i = (Item)Item.itemRegistry.getObject(n);
-        int s=entityPlayer.inventory.func_146029_c(i);
+    public static Boolean haveItemInHotbar(String n) {
+        int s = entityPlayer.inventory.func_146029_c((Item) Item.itemRegistry.getObject(n));
         return s > -1 && s < 9;
     }
-    public static Boolean haveItemInInventory(String n){
-        Item i = (Item)Item.itemRegistry.getObject(n);
-        int s=entityPlayer.inventory.func_146029_c(i);
-        return s != -1;
+
+    public static Boolean haveItemInInventory(String n) {
+        return entityPlayer.inventory.func_146029_c((Item) Item.itemRegistry.getObject(n)) != -1;
     }
 
     public static String getDisplayName(String hashCode) {
