@@ -33,7 +33,7 @@ public class JSHandler {
 
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
         entityPlayer = player;
-        if (n.hashCode() != lastHash) {
+        if (n.hashCode() != lastHash || player.worldObj.getTotalWorldTime() % 10 == 0) {
             lastHash = n.hashCode();
             lastTips.clear();
             //LogHelper.info(NBTHelper.NBT2json(n));
