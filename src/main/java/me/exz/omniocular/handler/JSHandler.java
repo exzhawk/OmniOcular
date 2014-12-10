@@ -101,7 +101,6 @@ public class JSHandler {
         return lastTips;
     }
 
-    //TODO: force refresh HUD when these method invoked
     public static void initEngine() {
         ScriptEngineManager manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");

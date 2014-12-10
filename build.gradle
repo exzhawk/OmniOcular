@@ -33,6 +33,9 @@ if (env.BUILD_NUMBER != null) {
 jar {
     manifest {
         attributes 'FMLAT': 'OmniOcular_at.cfg'
+        attributes 'FMLCorePlugin': 'me.exz.omniocular.asm.Core'
+        attributes 'FMLCorePluginContainsFMLMod': true
+
     }
 }
 
