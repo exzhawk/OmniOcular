@@ -7,7 +7,7 @@ import cpw.mods.fml.common.ModMetadata;
 
 import java.util.Arrays;
 
-class CoreContainer extends DummyModContainer{
+public class CoreContainer extends DummyModContainer{
     public CoreContainer()
     {
         super(new ModMetadata());

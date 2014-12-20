@@ -46,7 +46,7 @@ public class ConfigHandler {
 
     }
 
-
+//TODO not working on server side
     public static void releasePreConfigFiles() throws IOException {
         for (String configFileName : Reference.configList) {
             if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
@@ -62,7 +62,6 @@ public class ConfigHandler {
         }
     }
 
-    //TODO: add FMP support
     public static void mergeConfig() {
         mergedConfig = "";
         File configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);

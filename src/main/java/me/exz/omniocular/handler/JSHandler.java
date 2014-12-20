@@ -30,7 +30,7 @@ public class JSHandler {
     private static Map<String, String> fluidList = new HashMap<String, String>();
     private static Map<String, String> displayNameList = new HashMap<String, String>();
     private static EntityPlayer entityPlayer;
-
+//TODO allow add multiple lines at one time by "\n"
     public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
         entityPlayer = player;
         if (n.hashCode() != lastHash || player.worldObj.getTotalWorldTime() % 10 == 0) {
