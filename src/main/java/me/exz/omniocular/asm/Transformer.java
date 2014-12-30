@@ -23,6 +23,7 @@ public class Transformer implements IClassTransformer {
                         }
                         n = n.getNext();
                     }
+                    //TODO better fmp support
                     if (n != null) {
                         mn.instructions.insertBefore(n, new FieldInsnNode(Opcodes.GETSTATIC, "mcp/mobius/waila/api/impl/DataAccessorFMP", "instance", "Lmcp/mobius/waila/api/impl/DataAccessorFMP;"));
                         mn.instructions.insertBefore(n, new VarInsnNode(Opcodes.ALOAD, 3));

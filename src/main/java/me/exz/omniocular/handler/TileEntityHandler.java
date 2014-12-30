@@ -31,7 +31,7 @@ public class TileEntityHandler implements IWailaDataProvider {
     public List<String> getWailaHead(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         return currenttip;
     }
-
+    //TODO workaround for drops / support drops
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         NBTTagCompound n = accessor.getNBTData();
