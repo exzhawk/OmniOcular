@@ -9,7 +9,6 @@ import me.exz.omniocular.event.ConfigEvent;
 import me.exz.omniocular.handler.ConfigHandler;
 import me.exz.omniocular.network.ConfigMessage;
 import me.exz.omniocular.network.ConfigMessageHandler;
-import me.exz.omniocular.util.LogHelper;
 
 public abstract class CommonProxy implements IProxy {
     @Override
@@ -33,15 +32,5 @@ public abstract class CommonProxy implements IProxy {
         ConfigHandler.minecraftConfigDirectory = event.getModConfigurationDirectory();
         ConfigHandler.initConfigFiles();
         //JSHandler.initEngine();
-    }
-
-    @Override
-    public void prepareConfigFiles() {
-        try {
-            ConfigHandler.releasePreConfigFiles();
-        } catch (Exception e) {
-            LogHelper.error("Can't release pre-config files");
-        }
-        ConfigHandler.mergeConfig();
     }
 }

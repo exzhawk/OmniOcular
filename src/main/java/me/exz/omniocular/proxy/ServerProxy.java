@@ -1,5 +1,7 @@
 package me.exz.omniocular.proxy;
 
+import me.exz.omniocular.handler.ConfigHandler;
+
 @SuppressWarnings("UnusedDeclaration")
 public class ServerProxy extends CommonProxy {
 
@@ -16,5 +18,10 @@ public class ServerProxy extends CommonProxy {
     @Override
     public void registerNEI() {
 
+    }
+
+    @Override
+    public void prepareConfigFiles() {
+        ConfigHandler.mergeConfig();
     }
 }

@@ -46,7 +46,6 @@ public class ConfigHandler {
 
     }
 
-//TODO not working on server side
     public static void releasePreConfigFiles() throws IOException {
         for (String configFileName : Reference.configList) {
             if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
