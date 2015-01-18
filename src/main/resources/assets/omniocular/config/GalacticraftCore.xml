@@ -1,7 +1,10 @@
+<!--Author: ViKaleidoscope, EpixZhang-->
+<!--Date: 2014/11/17-->
+<!--Version: 3.0.6.232-->
 <oo>
     <tileentity id="Air Collector">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="air stored">
             return nbt['storedOxygenF']
@@ -9,7 +12,7 @@
     </tileentity>
     <tileentity id="Air Compressor">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="air stored">
             return nbt['storedOxygenF']
@@ -17,7 +20,7 @@
     </tileentity>
     <tileentity id="Oxygen Decompressor">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="air stored">
             return nbt['storedOxygenF']
@@ -25,7 +28,7 @@
     </tileentity>
     <tileentity id="Air Distributor">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="air stored">
             return nbt['storedOxygenF']
@@ -33,7 +36,7 @@
     </tileentity>
     <tileentity id="Air Sealer">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="air stored">
             return nbt['storedOxygenF']
@@ -41,7 +44,7 @@
     </tileentity>
     <tileentity id="Refinery">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="oil Amount">
             return nbt['oilTank']['Amount']
@@ -52,7 +55,7 @@
     </tileentity>
     <tileentity id="Fuel Loader">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="fuel Amount">
             return nbt['fuelTank']['Amount']
@@ -60,17 +63,17 @@
     </tileentity>
     <tileentity id="Cargo Loader">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Cargo Unloader">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Coal Generator">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="generateRate">
             return nbt['generateRate']
@@ -81,32 +84,32 @@
     </tileentity>
     <tileentity id="Circuit Fabricator">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Electric Ingot Compressor">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Solar Panel">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Energy Storage Module">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Electric Furnace">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Gas Liquefier">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="TargetFrequency">
             return nbt['TargetFrequency']
@@ -120,7 +123,7 @@
     </tileentity>
     <tileentity id="Methane Synthesizer">
         <line displayname="energy">
-            return nbt['EnergyF']
+            return nbt['EnergyF']+"gJ"
         </line>
         <line displayname="TargetFrequency">
             return nbt['TargetFrequency']

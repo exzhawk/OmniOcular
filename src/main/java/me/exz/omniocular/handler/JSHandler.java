@@ -1,6 +1,5 @@
 package me.exz.omniocular.handler;
 
-import me.exz.omniocular.util.LogHelper;
 import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -159,7 +158,7 @@ public class JSHandler {
         engine.put("HEART", WailaStyle + WailaIcon + "a");
         engine.put("HHEART", WailaStyle + WailaIcon + "b");
         engine.put("EHEART", WailaStyle + WailaIcon + "c");
-        LogHelper.info("Special Char loaded");
+//        LogHelper.info("Special Char loaded");
     }
 
     public static String translate(String t) {

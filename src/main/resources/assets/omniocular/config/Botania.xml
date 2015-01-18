@@ -20,7 +20,7 @@
     <tileentity id="botania:enchanter">
         <line displayname="Mana">
             return nbt['mana']+" / "+nbt['manaRequired']
-        </line>f
+        </line>
     </tileentity>
     <tileentity id="botania:specialFlower">
         <line displayname="Mana">

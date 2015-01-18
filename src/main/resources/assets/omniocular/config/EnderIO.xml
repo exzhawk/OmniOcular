@@ -10,9 +10,6 @@
         </line>
     </tileentity>
     <tileentity id="blockPoweredSpawnerTileEntity">
-        <line displayname="Energy">
-            return nbt['storedEnergyRF']*10+'/1000000 RF'
-        </line>
         <line displayname="Spawn Chance">
             return nbt['currentTask']['chance']
         </line>
