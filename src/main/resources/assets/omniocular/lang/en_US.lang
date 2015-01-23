@@ -1,5 +1,26 @@
 omniocular.info.NotHolding=NotHolding
 omniocular.info.NotPointing=NotPointing
 
+hud.msg.common.LiquidAmount=Liquid Amount
+hud.msg.common.StorageFluid=Storage Fluid
+hud.msg.common.BurnTime=Burn Time
 
-hud.msg.capacity=Capacity
+hud.msg.AWWayofTime.Capacity=Capacity
+hud.msg.AWWayofTime.Process=Process
+hud.msg.AWWayofTime.ProcessSpeed=Process Speed
+hud.msg.AWWayofTime.IOSpeed=IO Speed
+hud.msg.AWWayofTime.OrbCapacity=Orb Capacity
+hud.msg.AWWayofTime.Sacrifice=Sacrifice
+hud.msg.AWWayofTime.SelfSacrifice=Self-Sacrifice
+hud.msg.AWWayofTime.RitualID=Ritual ID
+hud.msg.AWWayofTime.RitualOwner=Ritual Owner
+hud.msg.AWWayofTime.Require=Require
+
+hud.msg.Botania.Mana=Mana
+
+hud.msg.BuildCraftCore.MaxEnergyReceive=Max Energy Receive
+hud.msg.BuildCraftCore.Recipe=Recipe
+hud.msg.BuildCraftCore.Pattern=Pattern
+
+hud.msg.EnderIO.Experience=Experience
+hud.msg.EnderIO.SpawnChance=Spawn Chance

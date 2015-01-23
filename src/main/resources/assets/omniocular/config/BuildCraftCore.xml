@@ -3,131 +3,131 @@
 <!--Version: 6.1.8-->
 <oo>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineCreative">
-        <line displayname="Heat">
+        <line displayname="gui.heat">
             return nbt['heat']
         </line>
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileLaser">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyTable">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']+" RF"
         </line>
-        <line displayname="Recipe">
+        <line displayname="hud.msg.BuildCraftCore.Recipe">
             return nbt['recipeId']
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TilePump">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
-        <line displayname="Liquid Amount">
+        <line displayname="hud.msg.common.LiquidAmount=Liquid Amount">
             return nbt['tank']['Amount']
         </line>
-        <line displayname="Storage Fluid">
+        <line displayname="hud.msg.common.StorageFluid">
             var fluidName=nbt['tank']['FluidName'];
             return fluidName.charAt(0).toUpperCase()+fluidName.substring(1)
         </line>
-        <line displayname="Input Fluid">
+        <line displayname="gate.action.station.accept_fluids">
             var fluidName=nbt['tank']['acceptedFluid'];
             return fluidName.charAt(0).toUpperCase()+fluidName.substring(1)
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileAssemblyAdvancedWorkbench">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy'] +" / 5000 RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileIntegrationTable">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineWood">
-        <line displayname="heat">
+        <line displayname="gui.heat">
             return nbt['heat']
         </line>
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']+" RF"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineStone">
-        <line displayname="heat">
+        <line displayname="gui.heat">
             return nbt['heat'].toFixed(2)
         </line>
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']+" RF"
         </line>
-        <line displayname="Burn Time">
+        <line displayname="hud.msg.common.BurnTime">
             return (nbt['burnTime']/20).toFixed(0)+' / '+(nbt['totalBurnTime']/20).toFixed(0)
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineIron">
-        <line displayname="heat">
+        <line displayname="gui.heat">
             return nbt['heat'].toFixed(2)
         </line>e
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['energy']+" RF"
         </line>
         <line displayname="Coolant">
             return nbt['tankCoolant']['FluidName']+"("+nbt['tankCoolant']['Amount']+" mB)"
         </line>
-        <line displayname="Fuel">
+        <line displayname="fluid.fuel">
             return nbt['tankFuel']['FluidName']+"("+nbt['tankFuel']['Amount']+" mB)"
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileFloodGate">
-        <line displayname="State">
+        <line displayname="hud.msg.state">
             return nbt['powered']
         </line>
-        <line displayname="Fluid">
+        <line displayname="hud.msg.fluid">
             return nbt['tank']['FluidName']+"("+nbt['tank']['Amount']+" mB)"
         </line>
     </tileentity>
     <tileentity id="Filler">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
-        <line displayname="Pattern">
+        <line displayname="hud.msg.BuildCraftCore.Pattern">
             return nbt['pattern']
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.builders.TileBuilder">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>
     <tileentity id="Machine">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>
     <tileentity id="MiningWell">
-        <line displayname="Energy">
+        <line displayname="gui.energy">
             return nbt['battery']['energy']+" / "+nbt['battery']['maxEnergy']+" RF"
         </line>
-        <line displayname="Max Energy Receive">
+        <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
     </tileentity>

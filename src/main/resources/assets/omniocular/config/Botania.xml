@@ -3,37 +3,37 @@
 <!--Version: r1.3-135-->
 <oo>
     <tileentity id="botania:pool">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']+" / "+nbt['manaCap']
         </line>
     </tileentity>
     <tileentity id="botania:spreader">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']
         </line>
     </tileentity>
     <tileentity id="botania:runeAltar">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']
         </line>
     </tileentity>
     <tileentity id="botania:enchanter">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']+" / "+nbt['manaRequired']
         </line>
     </tileentity>
     <tileentity id="botania:specialFlower">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['subTileCmp']['mana']
         </line>
     </tileentity>
     <tileentity id="botania:rfGenerator">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']
         </line>
     </tileentity>
     <tileentity id="botania:spawnerClaw">
-        <line displayname="Mana">
+        <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']
         </line>
     </tileentity>

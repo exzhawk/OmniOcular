@@ -6,44 +6,44 @@
         <line displayname="LP">
             return nbt['Amount']
         </line>
-        <line displayname="Capacity">
+        <line displayname="hud.msg.AWWayofTime.Capacity">
             return nbt['capacity']
         </line>
-        <line displayname="Process">
+        <line displayname="hud.msg.AWWayofTime.Process">
             return nbt['progress']+" / "+nbt['liquidRequired']
         </line>
         <line displayname="bm.string.tier">
             return nbt['upgradeLevel']
         </line>
-        <line displayname="Process Speed">
+        <line displayname="hud.msg.AWWayofTime.ProcessSpeed">
             return (nbt['consumptionMultiplier']+1)*100+" %"
         </line>
-        <line displayname="IO Speed">
+        <line displayname="hud.msg.AWWayofTime.IOSpeed">
             return (nbt['dislocationMultiplier']*20).toFixed(0)+" mB/t"
         </line>
-        <line displayname="Orb Capacity">
+        <line displayname="hud.msg.AWWayofTime.OrbCapacity">
             return nbt['orbCapacityMultiplier']*100+" %"
         </line>
-        <line displayname="Sacrifice">
+        <line displayname="hud.msg.AWWayofTime.Sacrifice">
             return ((nbt['sacrificeEfficiencyMultiplier']+1)*100).toFixed(0)+" %"
         </line>
-        <line displayname="Self-Sacrifice">
+        <line displayname="hud.msg.AWWayofTime.SelfSacrifice">
             return ((nbt['selfSacrificeEfficiencyMultiplier']+1)*100).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="containerMasterStone">
-        <line displayname="Ritual ID">
+        <line displayname="hud.msg.AWWayofTime.RitualID">
             return nbt['currentRitualString']
         </line>
-        <line displayname="Ritual Owner">
+        <line displayname="hud.msg.AWWayofTime.RitualOwner">
             return nbt['owner']
         </line>
     </tileentity>
     <tileentity id="containerWritingTable">
-        <line displayname="Require">
+        <line displayname="hud.msg.AWWayofTime.Require">
             return nbt['amountUsed']*100+" LP"
         </line>
-        <line displayname="Progress">
+        <line displayname="hud.msg.AWWayofTime.Process">
             return nbt['progress']+" %"
         </line>
     </tileentity>
