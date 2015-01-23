@@ -1,3 +1,5 @@
-omniocular.info.NotHolding = "NotHolding"
-omniocular.info.NotPointing = "NotPointing"
-todo add more term like 'Seconds'
+omniocular.info.NotHolding=NotHolding
+omniocular.info.NotPointing=NotPointing
+
+
+hud.msg.capacity=Capacity

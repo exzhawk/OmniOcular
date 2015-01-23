@@ -3,7 +3,7 @@
 <!--Version: 59.0.2-->
 <oo>
     <tileentity id="Rotary Macerator">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Speed">
@@ -11,7 +11,7 @@
         </line>
     </tileentity>
     <tileentity id="Singularity Compressor">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Pressure">
@@ -19,7 +19,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.recycler">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Pressure">
@@ -27,7 +27,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.roller">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Pressure">
@@ -35,7 +35,7 @@
         </line>
     </tileentity>
     <tileentity id="Centrifuge Extractor">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Speed">
@@ -43,7 +43,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.washer">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Water">
@@ -54,7 +54,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.cutter">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Water">
@@ -65,7 +65,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.canner">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Speed">
@@ -73,7 +73,7 @@
         </line>
     </tileentity>
     <tileentity id="immibis.am2.extruder">
-        <line displayname="Energy">
+        <line displayname="ic2.generic.text.Energy">
             return nbt['energy']+" EU"
         </line>
         <line displayname="Heat">

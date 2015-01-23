@@ -3,7 +3,7 @@
 <!--Version: v1.2.0Beta23(1.7.10)-->
 <oo>
     <tileentity id="containerAltar">
-        <line displayname="Life Essence">
+        <line displayname="LP">
             return nbt['Amount']
         </line>
         <line displayname="Capacity">
@@ -12,7 +12,7 @@
         <line displayname="Process">
             return nbt['progress']+" / "+nbt['liquidRequired']
         </line>
-        <line displayname="Tier">
+        <line displayname="bm.string.tier">
             return nbt['upgradeLevel']
         </line>
         <line displayname="Process Speed">
