@@ -1,169 +1,169 @@
 <!--Author: ViKaleidoscope, EpixZhang-->
-<!--Date: 2014/11/17-->
+<!--Date: 2015/2/8-->
 <!--Version: 3.0.6.232-->
 <oo>
     <tileentity id="Air Collector">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="air stored">
+        <line displayname="hud.msg.GalacticraftCore.AirStored">
             return nbt['storedOxygenF']
         </line>
     </tileentity>
     <tileentity id="Air Compressor">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="air stored">
+        <line displayname="hud.msg.GalacticraftCore.AirStored">
             return nbt['storedOxygenF']
         </line>
     </tileentity>
     <tileentity id="Oxygen Decompressor">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="air stored">
+        <line displayname="hud.msg.GalacticraftCore.AirStored">
             return nbt['storedOxygenF']
         </line>
     </tileentity>
     <tileentity id="Air Distributor">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="air stored">
+        <line displayname="hud.msg.GalacticraftCore.AirStored">
             return nbt['storedOxygenF']
         </line>
     </tileentity>
     <tileentity id="Air Sealer">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="air stored">
+        <line displayname="hud.msg.GalacticraftCore.AirStored">
             return nbt['storedOxygenF']
         </line>
     </tileentity>
     <tileentity id="Refinery">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="oil Amount">
+        <line displayname="gui.message.oil.name">
             return nbt['oilTank']['Amount']
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="Fuel Loader">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="Cargo Loader">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Cargo Unloader">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Coal Generator">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="generateRate">
+        <line displayname="hud.msg.GalacticraftCore.GenerateRate">
             return nbt['generateRate']
         </line>
-        <line displayname="cook time">
+        <line displayname="hud.msg.GalacticraftCore.CookTime">
             return nbt['itemCookTime']
         </line>
     </tileentity>
     <tileentity id="Circuit Fabricator">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Electric Ingot Compressor">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Solar Panel">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Energy Storage Module">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Galacticraft Electric Furnace">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
     </tileentity>
     <tileentity id="Gas Liquefier">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="TargetFrequency">
+        <line displayname="hud.msg.frequency">
             return nbt['TargetFrequency']
         </line>
-        <line displayname="gas Amount">
+        <line displayname="hud.msg.GalacticraftCore.GasAmount">
             return nbt['gasTank']['Amount']
         </line>
-        <line displayname="liquid Amount">
+        <line displayname="hud.msg.GalacticraftCore.LiquidAmount">
             return nbt['liquidTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="Methane Synthesizer">
-        <line displayname="energy">
+        <line displayname="hud.msg.energ">
             return nbt['EnergyF']+"gJ"
         </line>
-        <line displayname="TargetFrequency">
+        <line displayname="hud.msg.frequency">
             return nbt['TargetFrequency']
         </line>
-        <line displayname="gas Amount">
+        <line displayname="hud.msg.GalacticraftCore.GasAmount">
             return nbt['gasTank']['Amount']
         </line>
-        <line displayname="liquid Amount">
+        <line displayname="hud.msg.GalacticraftCore.LiquidAmount">
             return nbt['liquidTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="GalacticraftCore.Spaceship">
-        <line displayname="timeUntilLaunch">
+        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
             return nbt['timeUntilLaunch']
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="SpaceshipT2">
-        <line displayname="timeUntilLaunch">
+        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
             return nbt['timeUntilLaunch']
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="Tier3RocketGC">
-        <line displayname="timeUntilLaunch">
+        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
             return nbt['timeUntilLaunch']
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>
     <tileentity id="GalacticraftCore.Buggy">
-        <line displayname="fuel(?)">
+        <line displayname="tile.fuel.name">
             return nbt['fuel']
         </line>
-        <line displayname="fuel Amount">
+        <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
     </tileentity>

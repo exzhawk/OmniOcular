@@ -1,19 +1,19 @@
 <!--Author: ViKaleidoscope, EpixZhang -->
-<!--Date: 2014/11/17-->
+<!--Date: 2015/2/8-->
 <!--Version: 0.8.2.81-->
 <oo>
     <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity">
-        <line displayname="Power Level">
+        <line displayname="hud.msg.energ">
             return nbt['powerLevel']+' / 2000000 LP'
         </line>
     </tileentity>
     <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity">
-        <line displayname="Stored Energy">
+        <line displayname="hud.msg.energ">
             return nbt['internalStorage'].toFixed(0)+' / 10000000 RF'
         </line>
     </tileentity>
     <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity">
-        <line displayname="Stored Energy">
+        <line displayname="hud.msg.energ">
             return nbt['internalStorage'].toFixed(0)+' / 40000000 EU'
         </line>
     </tileentity>

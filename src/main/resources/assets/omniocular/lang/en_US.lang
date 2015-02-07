@@ -32,6 +32,13 @@ hud.msg.factorization.Digest=Digest
 hud.msg.factorization.Process=Process
 hud.msg.factorization.Speed=Speed
 
+hud.msg.GalacticraftCore.AirStored=Air Stored
+hud.msg.GalacticraftCore.GenerateRate=Generate Rate
+hud.msg.GalacticraftCore.CookTime=Cook Time
+hud.msg.GalacticraftCore.GasAmount=Gas Amount
+hud.msg.GalacticraftCore.LiquidAmount=Liquid Amount
+hud.msg.GalacticraftCore.TimeUntilLaunch=Time Until Launch
+
 hud.msg.vanilla.BurnTime=Burn Time Left
 hud.msg.vanilla.Seconds=Seconds
 
