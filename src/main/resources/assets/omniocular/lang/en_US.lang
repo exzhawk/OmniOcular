@@ -24,3 +24,14 @@ hud.msg.BuildCraftCore.Pattern=Pattern
 
 hud.msg.EnderIO.Experience=Experience
 hud.msg.EnderIO.SpawnChance=Spawn Chance
+
+hud.msg.factorization.Count=Count
+hud.msg.factorization.Fan=Fan
+hud.msg.factorization.Charge=Charge
+hud.msg.factorization.Digest=Digest
+hud.msg.factorization.Process=Process
+hud.msg.factorization.Speed=Speed
+
+hud.msg.vanilla.BurnTime=Burn Time Left
+hud.msg.vanilla.Seconds=Seconds
+

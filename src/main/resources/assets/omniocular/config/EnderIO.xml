@@ -1,6 +1,6 @@
 <oo>
     <tileentity id="blockKillerJoeTileEntity">
-        <line displayname="Experience">
+        <line displayname="hud.msg.EnderIO.Experience">
             return nbt['experienceTotal']
         </line>
     </tileentity>

@@ -1,74 +1,74 @@
 <!--Author: ViKaleidoscope, EpixZhang-->
-<!--Date: 2014/11/17-->
-<!--Version: 1.1.4-->
+<!--Date: 2015/2/7-->
+<!--Version: 0.8.88.1-->
 <oo>
     <tileentity id="factory_barrel2">
-        <line displayname="Item">
+        <line displayname="hud.msg.item">
             return name(nbt['item'])
         </line>
-        <line displayname="Count">
+        <line displayname="hud.msg.factorization.Count">
             return nbt['count']
         </line>
     </tileentity>
     <tileentity id="factory_slag">
-        <line displayname="Burn Time Left">
-            return (nbt['burnTime']/20).toFixed(0)+' Seconds'
+        <line displayname="hud.msg.vanilla.BurnTime">
+            return (nbt['burnTime']/20).toFixed(0)+' '+ translate('hud.msg.vanilla.Seconds')
         </line>
     </tileentity>
     <tileentity id="factory_steamturbine">
-        <line displayname="Charge">
+        <line displayname="hud.msg.factorization.Charge">
             return nbt['charge']
         </line>
-        <line displayname="Steam Amount">
+        <line displayname="fluid.factorization:fluid/steam">
             return nbt['steam']['Amount']+' mB'
         </line>
-        <line displayname="Fan">
+        <line displayname="hud.msg.factorization.Fan">
             return nbt['fan']
         </line>
     </tileentity>
     <tileentity id="factory_calory">
-        <line displayname="Digest">
-            if(nbt['digest']>0){return (nbt['digest']/20).toFixed(0)+' Seconds';}else{return "__ERROR__"}
+        <line displayname="hud.msg.factorization.Digest">
+            if(nbt['digest']>0){return (nbt['digest']/20).toFixed(0)+' '+translate('hud.msg.vanilla.Seconds');}else{return "__ERROR__"}
         </line>
     </tileentity>
     <tileentity id="factory_solarfurnace">
-        <line displayname="Water">
+        <line displayname="tile.water.name">
             return nbt['water']['Amount']+' mB'
         </line>
-        <line displayname="Steam">
+        <line displayname="fluid.factorization:fluid/steam">
             return nbt['steam']['Amount']+' mB'
         </line>
     </tileentity>
     <tileentity id="factory_battery">
-        <line displayname="Energy Storage">
+        <line displayname="hud.msg.factorization.Charge">
             return nbt['storage']+' CG'
         </line>
     </tileentity>
     <tileentity id="factory_leyjar">
-        <line displayname="Energy Storage">
+        <line displayname="hud.msg.factorization.Charge">
             return nbt['store']+' CG'
         </line>
     </tileentity>
     <tileentity id="factory_heater">
-        <line displayname="Charge">
+        <line displayname="hud.msg.factorization.Charge">
             return nbt['charge']
         </line>
     </tileentity>
     <tileentity id="factory_crystal">
-        <line displayname="Progress">
+        <line displayname="hud.msg.factorization.Process">
             return (nbt['progress']/60).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="factory_mixer">
-        <line displayname="Progress">
+        <line displayname="hud.msg.factorization.Process">
             return (nbt['progress']/2.5).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="fzsock_lacerate">
-        <line displayname="Charge">
+        <line displayname="hud.msg.factorization.Charge">
             return nbt['chargecharge']
         </line>
-        <line displayname="Speed">
+        <line displayname="hud.msg.factorization.Speed">
             return (nbt['spd']/2).toFixed(0)+' %'
         </line>
     </tileentity>
