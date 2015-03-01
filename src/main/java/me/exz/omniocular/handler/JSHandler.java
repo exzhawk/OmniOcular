@@ -99,7 +99,7 @@ public class JSHandler {
         }
         return lastTips;
     }
-
+    //todo provide an function to detect player keyboard action. (hold shift, etc.)
     public static void initEngine() {
         ScriptEngineManager manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");
