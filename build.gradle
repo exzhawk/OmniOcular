@@ -40,7 +40,7 @@ jar {
 }
 
 minecraft {
-    version = "1.7.10-10.13.2.1236"
+    version = "1.7.10-10.13.2.1291"
     runDir = "eclipse"
 }
 
