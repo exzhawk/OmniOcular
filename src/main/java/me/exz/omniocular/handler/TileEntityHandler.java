@@ -4,7 +4,6 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -20,8 +19,8 @@ public class TileEntityHandler implements IWailaDataProvider {
         TileEntityHandler instance = new TileEntityHandler();
 //        registrar.registerSyncedNBTKey("*", Block.class);
 //        registrar.registerSyncedNBTKey("*", TileEntity.class);
-        registrar.registerBodyProvider(instance, Block.class);
-        registrar.registerNBTProvider(instance, Block.class);
+        registrar.registerBodyProvider(instance, TileEntity.class);
+//        registrar.registerNBTProvider(instance, Block.class);
 //        registrar.registerNBTProvider(instance, TileEntity.class);
 
     }
