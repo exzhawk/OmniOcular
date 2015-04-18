@@ -1,0 +1,101 @@
+<!--Version: 5.07.07-->
+<!--Date: 2015/04/18-->
+<oo>
+	<init>
+		function gtFluid(f){
+			return fluidName(f['FluidName'])+TAB+ALIGNRIGHT+WHITE+f['Amount']+" mB"
+		}
+	</init>
+	<init>
+		function gtIgnore(item, unit){
+			if(!(item==undefined || item==0)){
+				return item+' '+unit
+			}
+		}
+	</init>
+	<tileentity id="BaseMetaTileEntity">
+		<line>
+            gtFluid(nbt['mFluid'])
+		</line>
+        <line displayname="Steam">
+            if(nbt['mSteam']['Amount']!=undefined){return nbt['mSteam']['Amount']+" mB"}
+		</line>
+        <line displayname="Steam">
+            if(nbt['mStoredSteam']!=0){return nbt['mStoredSteam']+" mB"}
+		</line>
+		<line displayname="Temperature">
+            if(nbt['mID']==100)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="Temperature">
+            if(nbt['mID']==105)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="Temperature">
+            if(nbt['mID']==101)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="Temperature">
+            if(nbt['mID']==102)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="hud.msg.energ">
+            if(nbt['mStoredEnergy']!=0){return nbt['mStoredEnergy']+" EU"}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==103){return (nbt['mProgresstime']/2-28).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==106){return (nbt['mProgresstime']/8).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==109){return (nbt['mProgresstime']/8).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==112){return (nbt['mProgresstime']*3+4).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==115){return (nbt['mProgresstime']/8).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==118){return (nbt['mProgresstime']/2-30).toFixed(0)+"%"+" * "+nbt['Inventory'][2]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==104){return (nbt['mProgresstime']-28).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==107){return (nbt['mProgresstime']/4).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==110){return (nbt['mProgresstime']/4).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==113){return (nbt['mProgresstime']/4).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==116){return (nbt['mProgresstime']/4).toFixed(0)+"%"+" * "+nbt['Inventory'][1]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mID']==119){return (nbt['mProgresstime']-30).toFixed(0)+"%"+" * "+nbt['Inventory'][2]['Count']}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mStoredSteam']==0)if(nbt['mMaxProgresstime']==400)if(nbt['mProgresstime']>0){return (nbt['mProgresstime']/4).toFixed(0)+"%"}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mStoredSteam']==0)if(nbt['mMaxProgresstime']==10)if(nbt['mProgresstime']>0){return (nbt['mProgresstime']*10).toFixed(0)+"%"}
+		</line>
+		<line displayname="Progress">
+            if(nbt['mStoredSteam']==0)if(nbt['mMaxProgresstime']==78)if(nbt['mProgresstime']>0){return (nbt['mProgresstime']+22).toFixed(0)+"%"}
+		</line>
+		<line displayname="Output">
+            if(nbt['mNeedsSteamVenting']==0)if(nbt['mActive']==0)if(nbt['mID']!=118)if(nbt['mID']!=119)if(nbt['Inventory'][0]['IntSlot']==5){return nbt['Inventory'][0]['Count']}
+		</line>
+		<line displayname="Output">
+            if(nbt['mNeedsSteamVenting']==0)if(nbt['mActive']==0)if(nbt['mID']=118)if(nbt['mID']=119)if(nbt['Inventory'][0]['IntSlot']==4)	{return nbt['Inventory'][1]['Count']}
+		</line>
+		<line>
+            gtFluid(nbt['mFluidOut'])
+		</line>
+	</tileentity>
+	<tileentity id="BaseMetaPipeEntity">
+		<line>
+            gtFluid(nbt['mFluid'])
+		</line>
+	</tileentity>
+</oo>
