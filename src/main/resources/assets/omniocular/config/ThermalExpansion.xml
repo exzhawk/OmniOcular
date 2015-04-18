@@ -1,117 +1,105 @@
-<!--Author: ViKaleidoscope, EpixZhang-->
-<!--Date: 2014/11/17-->
-<!--Version: 4.0.0B6-->
+<!--Author: EpixZhang-->
+<!--Date: 2015/04/18-->
+<!--Version: 4.0.1-182-->
 <oo>
-    <tileentity id="thermalexpansion.Furnace">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Sawmill">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Pulverizer">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Smelter">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Crucible">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Transposer">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Precipitator">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Extruder">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-        <line displayname="Fluid">
-            return nbt['ColdTank']['FluidName']+"("+nbt['ColdTank']['Amount']+" mB)"
-        </line>
-        <line displayname="Fluid">
-            return nbt['HotTank']['FluidName']+"("+nbt['HotTank']['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Accumulator">
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Assembler">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Crucible">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Crucible">
-        <line displayname="Remain Time">
-            return (nbt['ProcRem']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.DynamoSteam">
-        <line displayname="Fluid">
-            return nbt['SteamTank']['FluidName']+"("+nbt['SteamTank']['Amount']+" mB)"
-        </line>
-        <line displayname="Fluid">
-            return nbt['WaterTank']['FluidName']+"("+nbt['WaterTank']['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.DynamoCompression">
-        <line displayname="Fluid">
-            return nbt['CoolantTank']['FluidName']+"("+nbt['CoolantTank']['Amount']+" mB)"
-        </line>
-        <line displayname="Fluid">
-            return nbt['FuelTank']['FluidName']+"("+nbt['FuelTank']['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Sponge">
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.SpongeMagmatic">
-        <line displayname="Fluid">
-            return nbt['FluidName']+"("+nbt['Amount']+" mB)"
-        </line>
-    </tileentity>
-    <tileentity id="thermalexpansion.Activator">
-        <line displayname="Left Click">
-            return nbt['LeftClick']
-        </line>
-        <line displayname="Sneaking">
-            return nbt['Sneaking']
-        </line>
-    </tileentity>
+	<init>
+		function gtteUT(n, cap){
+			if(nbt['Empty']==undefined){
+				return fluidName(n['FluidName'])+TAB+WHITE+n['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<init>
+		function gtteS(n, cap){
+			if(nbt['FluidName']!=undefined){
+				return fluidName(n['FluidName'])+TAB+WHITE+n['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<init>
+		function gtteWT(n, cap){
+			if(nbt['WaterTank']['Empty']==undefined){
+				return fluidName(n['WaterTank']['FluidName'])+TAB+WHITE+n['WaterTank']['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<init>
+		function gtteST(n, cap){
+			if(nbt['SteamTank']['Empty']==undefined){
+				return fluidName(n['SteamTank']['FluidName'])+TAB+WHITE+n['SteamTank']['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<init>
+		function gtteFT(n, cap){
+			if(nbt['FuelTank']['Empty']==undefined){
+				return fluidName(n['FuelTank']['FluidName'])+TAB+WHITE+n['FuelTank']['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<init>
+		function gtteCT(n, cap){
+			if(nbt['CoolantTank']['Empty']==undefined){
+				return fluidName(n['CoolantTank']['FluidName'])+TAB+WHITE+n['CoolantTank']['Amount']+" / "+cap+" mB"}
+		}
+	</init>
+	<tileentity id="thermalexpansion.Activator">
+		<line>
+            if(nbt['LeftClick']==0){return"Right Click"}else{return"Left Click"}
+		</line>
+		<line>
+			if(nbt['Sneaking']==0){return"Not Sneaking"}else{return"Sneaking"}
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.Transposer">
+		<line>
+            gtteUT(nbt, 80000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.Crucible">
+		<line>
+            gtteUT(nbt, 80000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.Insolator">
+		<line>
+            gtteUT(nbt, 80000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.Precipitator">
+		<line>
+            gtteUT(nbt, 32000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.DynamoSteam">
+		<line>
+            gtteWT(nbt, 4000)
+		</line>
+		<line>
+            gtteST(nbt, 4000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.DynamoMagmatic">
+		<line>
+            gtteUT(nbt, 4000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.DynamoCompression">
+		<line>
+            gtteFT(nbt, 4000)
+		</line>
+		<line>
+            gtteCT(nbt, 4000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.DynamoReactant">
+		<line>
+            gtteUT(nbt, 4000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.Sponge">
+		<line>
+            gtteS(nbt, 10000)
+		</line>
+	</tileentity>
+	<tileentity id="thermalexpansion.SpongeMagmatic">
+		<line>
+            gtteS(nbt, 8000)
+		</line>
+	</tileentity>
 </oo>
