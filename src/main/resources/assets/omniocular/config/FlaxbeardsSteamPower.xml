@@ -1,0 +1,35 @@
+<!--Author: syf097, Mrkwtkr-->
+<!--Date: 2015/04/20-->
+<!--Version: 1.7.10-0.28.7-->
+<oo>
+    <tileentity id="steamcraft:itemMortar">
+        <line displayname="Target">
+			if(nbt['xT']!=0)if(nbt['zT']!=0)
+				return nbt['xT']+", "+nbt['zT']
+        </line>
+    </tileentity>
+	<tileentity id="steamcraft:itemMortar">
+        <line>
+			if(nbt['xT']==0){return"No target"}
+        </line>
+    </tileentity>
+    <tileentity id="steamcraft:.*">
+        <line displayname="Water">
+		if(nbt['water']!=undefined)if(nbt['id']!=steamcraft:flashBoiler)
+            return nbt['water']+GRAY+" / "+WHITE+"10000 mB"
+        </line>
+        <line displayname="Steam">
+            return nbt['steam']+" SU"
+        </line>
+    </tileentity>
+    <tileentity id="steamcraft:fan">
+        <line displayname="Range">
+            return nbt['range']+" blocks"
+        </line>
+    </tileentity>
+    <tileentity id="steamcraft:vacuum">
+        <line displayname="Range">
+            return nbt['range']+" blocks"
+        </line>
+    </tileentity>
+</oo>
