@@ -1,46 +1,104 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2014/11/17-->
-<!--Version: 1.7.10-4.2.1.4-->
+<!--Date: 2015/04/20-->
+<!--Version: 1.7.10-4.2.3.5-->
 <oo>
+	<init>
+	function up(word){
+		return word.substring(0,1).toUpperCase()+word.substring(1)
+	}
+	</init>
+    <tileentity id="TileResearchTable">
+        <line displayname="Bonus Aspects">
+				return up(nbt['bonusAspects'][0]['tag'])
+        </line>
+    </tileentity>
+	<tileentity id="TileArcaneWorkbench">
+        <line displayname="Aer">
+			if(nbt['Inventory'][0]['tag']['aer']!=undefined)
+				return (nbt['Inventory'][0]['tag']['aer']/100).toFixed(0)
+        </line>
+		<line displayname="Aqua">
+			if(nbt['Inventory'][0]['tag']['aqua']!=undefined)
+				return (nbt['Inventory'][0]['tag']['aqua']/100).toFixed(0)
+        </line>
+		<line displayname="Ignis">
+			if(nbt['Inventory'][0]['tag']['ignis']!=undefined)
+				return (nbt['Inventory'][0]['tag']['ignis']/100).toFixed(0)
+        </line>
+		<line displayname="Ordo">
+			if(nbt['Inventory'][0]['tag']['ordo']!=undefined)
+				return (nbt['Inventory'][0]['tag']['ordo']/100).toFixed(0)
+        </line>
+		<line displayname="Perditio">
+			if(nbt['Inventory'][0]['tag']['perditio']!=undefined)
+				return (nbt['Inventory'][0]['tag']['perditio']/100).toFixed(0)
+        </line>
+		<line displayname="Terra">
+			if(nbt['Inventory'][0]['tag']['terra']!=undefined)
+				return (nbt['Inventory'][0]['tag']['terra']/100).toFixed(0)
+        </line>
+    </tileentity>
+	<tileentity id="TilePedestal">
+		<line>
+			name(nbt['Items'][0])
+		</line>
+	</tileentity>
     <tileentity id="TileInfusionStone">
         <line displayname="Instability">
-            return nbt['instability'].toFixed(0)
+			if(nbt['active']!=0)
+				return nbt['instability'].toFixed(0)
         </line>
     </tileentity>
     <tileentity id="TileAlchemyFurnace">
         <line displayname="Vis Amount">
-            return nbt['Vis']
+            return nbt['Vis']+GRAY+" / "+WHITE+"50"
         </line>
     </tileentity>
     <tileentity id="TileSiphon">
         <line displayname="Vis Amount">
-            return nbt['amount']
-        </line>
-    </tileentity>
-    <tileentity id="TileTube.*">
-        <line displayname="Vis Amount">
-            return nbt['amount']
+            return nbt['amount']+GRAY+" / "+WHITE+"32"
         </line>
     </tileentity>
     <tileentity id="TileCrucible">
-        <line displayname="Water Amount">
-            return nbt['Amount']+' mB'
-        </line>
-        <line displayname="Heat">
-            return nbt['Heat']
+        <line>
+            return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"1000 mB"
         </line>
     </tileentity>
     <tileentity id="TileSpa">
-        <line displayname="Water Amount">
-            return nbt['Amount']+' mB'
-        </line>
-        <line displayname="Bath Salts">
+		<line displayname="Bath Salts">
             return nbt['Items']['0']['Count']
+        </line>
+        <line>
+			if(nbt['FluidName']!=undefined)
+				return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"5000 mB"
         </line>
     </tileentity>
     <tileentity id="TileJarBrain">
         <line displayname="XP">
-            return nbt['XP']
+			if(nbt['XP']!=0)
+				return nbt['XP']
         </line>
     </tileentity>
+	<tileentity id="TileFocalManipulator">
+		<line>
+			name(nbt['ItemsSynced'][0])
+		</line>
+	</tileentity>
+	<tileentity id="TileNode">
+		<line displayname="Node Type">
+			switch(nbt['type']){
+				case 0:return "Normal";
+					break;
+				case 1:return "Unstable";
+					break;
+				case 2:return "Sinister";
+					break;
+				case 3:return "Tainted";
+					break;
+				case 4:return "Hungry";
+					break;
+				case 5:return "Pure";
+					break;}
+	</line>
+	</tileentity>
 </oo>
