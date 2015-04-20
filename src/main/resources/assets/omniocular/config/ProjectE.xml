@@ -1,0 +1,29 @@
+<!--Date: 2015/04/20-->
+<!--Version: 1.7.10-PE1.4.4-->
+<oo>
+	<tileentity id="Condenser Tile">
+        <line>
+            return "EMC : "+WHITE+nbt['EMC'].toFixed(0)
+        </line>
+    </tileentity>
+	<tileentity id="Condenser MK2 Tile">
+        <line>
+            return "EMC : "+WHITE+nbt['EMC'].toFixed(0)
+        </line>
+    </tileentity>
+	<tileentity id="Transmutation Tablet Tile">
+        <line>
+            return  "EMC : "+WHITE+nbt['EMC'].toFixed(0)
+        </line>
+    </tileentity>
+    <tileentity id="Energy Collector.*">
+        <line>
+            return  "EMC : "+WHITE+nbt['EMC'].toFixed(0)
+        </line>
+    </tileentity>
+     <tileentity id="AM Relay.*">
+        <line>
+            return  "EMC : "+WHITE+nbt['EMC'].toFixed(0)
+        </line>
+	 </tileentity>
+</oo>
