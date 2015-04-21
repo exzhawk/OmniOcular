@@ -1,5 +1,5 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2015/04/20-->
+<!--Date: 2015/04/21-->
 <!--Version: 1.7.10-4.2.3.5-->
 <oo>
 	<init>
@@ -36,6 +36,11 @@
 		<line displayname="Terra">
 			if(nbt['Inventory'][0]['tag']['terra']!=undefined)
 				return (nbt['Inventory'][0]['tag']['terra']/100).toFixed(0)
+        </line>
+    </tileentity>
+	<tileentity id="TileDeconstructionTable">
+        <line displayname="Aspect">
+				return up(nbt['Aspect'])
         </line>
     </tileentity>
 	<tileentity id="TilePedestal">
@@ -84,6 +89,18 @@
 			name(nbt['ItemsSynced'][0])
 		</line>
 	</tileentity>
+	<tileentity id="TileMirror">
+        <line displayname="Linked with">
+			if(nbt['linked']!=0)
+				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+        </line>
+    </tileentity>
+	<tileentity id="TileMirrorEssentia">
+        <line displayname="Linked with">
+			if(nbt['linked']!=0)
+				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+        </line>
+    </tileentity>
 	<tileentity id="TileNode">
 		<line displayname="Node Type">
 			switch(nbt['type']){
@@ -101,4 +118,33 @@
 					break;}
 	</line>
 	</tileentity>
+	<entity id="Thaumcraft.Golem">
+		<line displayname="Core">
+			switch(nbt['Core']){
+				case 0:return "Fill";
+					break;
+				case 1:return "Empty";
+					break;
+				case 2:return "Gather";
+					break;
+				case 3:return "Harvest";
+					break;
+				case 4:return "Guard";
+					break;
+				case 5:return "Decanting";
+					break;
+				case 6:return "Alchemy";
+					break;
+				case 7:return "Chop";
+					break;
+				case 8:return "Use";
+					break;
+				case 9:return "Butcher";
+					break;
+				case 10:return "Sorting";
+					break;
+				case 11:return "Fishing";
+					break;}
+	</line>
+	</entity>
 </oo>
