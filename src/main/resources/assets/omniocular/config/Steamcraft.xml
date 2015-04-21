@@ -19,6 +19,7 @@
             return nbt['water']+GRAY+" / "+WHITE+"10000 mB"
         </line>
         <line displayname="Steam">
+		if(nbt['steam']!=undefined)
             return nbt['steam']+" SU"
         </line>
     </tileentity>
