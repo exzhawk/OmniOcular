@@ -1,83 +1,83 @@
 <!--Author: ViKaleidoscope, EpixZhang-->
-<!--Date: 2014/11/17-->
+<!--Date: 2015/04/21-->
 <!--Version: 59.0.2-->
 <oo>
     <tileentity id="Rotary Macerator">
         <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
         </line>
         <line displayname="Speed">
-            return nbt['speed']+" RPM"
+            return nbt['speed']+GRAY+" / "+WHITE+"10000 RPM"
         </line>
     </tileentity>
     <tileentity id="Singularity Compressor">
         <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
         </line>
         <line displayname="Pressure">
-            return nbt['speed']*9+" Gibbl"
+            return nbt['speed']*9+GRAY+" / "+WHITE+"90000 Gibbl"
+        </line>
+    </tileentity>
+	<tileentity id="Centrifuge Extractor">
+        <line displayname="ic2.generic.text.Energy">
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
+        </line>
+        <line displayname="Speed">
+            return nbt['speed']+GRAY+" / "+WHITE+"10000 RPM"
+        </line>
+    </tileentity>
+	<tileentity id="immibis.am2.canner">
+        <line displayname="ic2.generic.text.Energy">
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
+        </line>
+        <line displayname="Speed">
+            return (nbt['speed']/100).toFixed(0)+GRAY+" / "+WHITE+"100 cm/s"
+        </line>
+    </tileentity>
+	<tileentity id="immibis.am2.washer">
+        <line displayname="ic2.generic.text.Energy">
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
+        </line>
+		<line displayname="Heat">
+            return (nbt['speed']/100).toFixed(0)+" %"
+        </line>
+        <line displayname="Water">
+            return WHITE+nbt['water']+GRAY+" / "+WHITE+"8000 mB"
         </line>
     </tileentity>
     <tileentity id="immibis.am2.recycler">
         <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
         </line>
         <line displayname="Pressure">
-            return nbt['speed']*9+" Gibbl"
+            return nbt['speed']*9+GRAY+" / "+WHITE+"90000 Gibbl"
+        </line>
+    </tileentity>
+	<tileentity id="immibis.am2.extruder">
+        <line displayname="ic2.generic.text.Energy">
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
+        </line>
+        <line displayname="Heat">
+            return (nbt['speed']/100).toFixed(0)+" %"
         </line>
     </tileentity>
     <tileentity id="immibis.am2.roller">
         <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
         </line>
         <line displayname="Pressure">
-            return nbt['speed']+" Gibbl"
-        </line>
-    </tileentity>
-    <tileentity id="Centrifuge Extractor">
-        <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
-        </line>
-        <line displayname="Speed">
-            return nbt['speed']+" RPM"
-        </line>
-    </tileentity>
-    <tileentity id="immibis.am2.washer">
-        <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
-        </line>
-        <line displayname="Water">
-            return nbt['water']+" mB"
-        </line>
-        <line displayname="Heat">
-            return (nbt['speed']/100).toFixed(0)+" %"
+            return nbt['speed']+GRAY+" / "+WHITE+"10000 Gibbl"
         </line>
     </tileentity>
     <tileentity id="immibis.am2.cutter">
         <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
-        </line>
-        <line displayname="Water">
-            return nbt['water']+" mB"
+            return nbt['energy']+GRAY+" / "+WHITE+"10112 EU"
         </line>
         <line displayname="Pressure">
-            return nbt['speed']+" Gibbl"
+            return nbt['speed']+GRAY+" / "+WHITE+"10000 Gibbl"
         </line>
-    </tileentity>
-    <tileentity id="immibis.am2.canner">
-        <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
-        </line>
-        <line displayname="Speed">
-            return nbt['speed']+" cm/s"
-        </line>
-    </tileentity>
-    <tileentity id="immibis.am2.extruder">
-        <line displayname="ic2.generic.text.Energy">
-            return nbt['energy']+" EU"
-        </line>
-        <line displayname="Heat">
-            return (nbt['speed']/100).toFixed(0)+" %"
+		<line displayname="Water">
+            return WHITE+nbt['water']+GRAY+" / "+WHITE+"8000 mB"
         </line>
     </tileentity>
 </oo>
