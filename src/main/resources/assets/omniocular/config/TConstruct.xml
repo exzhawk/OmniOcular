@@ -1,23 +1,15 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2014/11/17-->
-<!--Version: 1.7.1c-->
+<!--Date: 2015/04/22-->
+<!--Version: 1.7.10-1.8.4-->
 <oo>
     <tileentity id="TConstruct.Smeltery">
-        <line displayname="Level">
-            return nbt['Layers']
+        <line>
+		if(nbt['ValidStructure']!=0){
+            return translate('hud.msg.TConstruct.Layer')+": "+nbt['Layers']}
         </line>
-        <line displayname="Max Liquid">
-            return nbt['MaxLiquid']+" mB"
-        </line>
-    </tileentity>
-    <tileentity id="TConstruct.Furnace">
-        <line displayname="Burn Time Left">
-            return (nbt['Fuel']/20).toFixed(0)+' Seconds'
-        </line>
-    </tileentity>
-    <tileentity id="FrypanLogic">
-        <line displayname="Burn Time Left">
-            return (nbt['Fuel']/20).toFixed(0)+' Seconds'
+        <line>
+		if(nbt['ValidStructure']!=0){
+            return translate('hud.msg.TConstruct.Capacity')+": "+nbt['MaxLiquid']+" mB"}
         </line>
     </tileentity>
 </oo>
