@@ -1,77 +1,49 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2015/04/21-->
+<!--Date: 2015/04/22-->
 <!--Version: 1.7.10-4.2.3.5-->
 <oo>
 	<init>
-	function up(word){
-		return word.substring(0,1).toUpperCase()+word.substring(1)
-	}
+		function up(word){
+			return word.substring(0,1).toUpperCase()+word.substring(1)
+			}
 	</init>
-    <tileentity id="TileResearchTable">
-        <line displayname="Bonus Aspects">
-				return up(nbt['bonusAspects'][0]['tag'])
-        </line>
-    </tileentity>
-	<tileentity id="TileArcaneWorkbench">
-        <line displayname="Aer">
-			if(nbt['Inventory'][0]['tag']['aer']!=undefined)
-				return (nbt['Inventory'][0]['tag']['aer']/100).toFixed(0)
-        </line>
-		<line displayname="Aqua">
-			if(nbt['Inventory'][0]['tag']['aqua']!=undefined)
-				return (nbt['Inventory'][0]['tag']['aqua']/100).toFixed(0)
-        </line>
-		<line displayname="Ignis">
-			if(nbt['Inventory'][0]['tag']['ignis']!=undefined)
-				return (nbt['Inventory'][0]['tag']['ignis']/100).toFixed(0)
-        </line>
-		<line displayname="Ordo">
-			if(nbt['Inventory'][0]['tag']['ordo']!=undefined)
-				return (nbt['Inventory'][0]['tag']['ordo']/100).toFixed(0)
-        </line>
-		<line displayname="Perditio">
-			if(nbt['Inventory'][0]['tag']['perditio']!=undefined)
-				return (nbt['Inventory'][0]['tag']['perditio']/100).toFixed(0)
-        </line>
-		<line displayname="Terra">
-			if(nbt['Inventory'][0]['tag']['terra']!=undefined)
-				return (nbt['Inventory'][0]['tag']['terra']/100).toFixed(0)
-        </line>
-    </tileentity>
 	<tileentity id="TileDeconstructionTable">
-        <line displayname="Aspect">
+        <line displayname="hud.msg.Thaumcraft.AspectTable">
 				return up(nbt['Aspect'])
         </line>
     </tileentity>
 	<tileentity id="TilePedestal">
 		<line>
-			name(nbt['Items'][0])
+				name(nbt['Items'][0])
 		</line>
 	</tileentity>
     <tileentity id="TileInfusionStone">
-        <line displayname="Instability">
-			if(nbt['active']!=0)
+        <line displayname="hud.msg.Thaumcraft.Instability">
+			if(nbt['crafting']!=0)
 				return nbt['instability'].toFixed(0)
         </line>
     </tileentity>
     <tileentity id="TileAlchemyFurnace">
-        <line displayname="Vis Amount">
-            return nbt['Vis']+GRAY+" / "+WHITE+"50"
-        </line>
-    </tileentity>
-    <tileentity id="TileSiphon">
-        <line displayname="Vis Amount">
-            return nbt['amount']+GRAY+" / "+WHITE+"32"
+        <line displayname="hud.msg.Thaumcraft.VisAmount">
+				return nbt['Vis']+GRAY+" / "+WHITE+"50"
         </line>
     </tileentity>
     <tileentity id="TileCrucible">
         <line>
-            return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"1000 mB"
+				return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"1000 mB"
         </line>
     </tileentity>
+	<tileentity id="TileArcaneBore">
+		<line>
+			if(nbt['Inventory'][0]['Slot']!=0){
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][0])}
+			else{
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][1])}
+		</line>
+	</tileentity>
     <tileentity id="TileSpa">
-		<line displayname="Bath Salts">
-            return nbt['Items']['0']['Count']
+		<line displayname="item.ItemBathSalts.name">
+				return nbt['Items']['0']['Count']
         </line>
         <line>
 			if(nbt['FluidName']!=undefined)
@@ -79,71 +51,83 @@
         </line>
     </tileentity>
     <tileentity id="TileJarBrain">
-        <line displayname="XP">
+        <line displayname="hud.msg.Thaumcraft.XP">
 			if(nbt['XP']!=0)
 				return nbt['XP']
         </line>
     </tileentity>
 	<tileentity id="TileFocalManipulator">
 		<line>
-			name(nbt['ItemsSynced'][0])
+				name(nbt['ItemsSynced'][0])
 		</line>
 	</tileentity>
 	<tileentity id="TileMirror">
-        <line displayname="Linked with">
+        <line displayname="hud.msg.Thaumcraft.Link">
 			if(nbt['linked']!=0)
 				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
         </line>
     </tileentity>
 	<tileentity id="TileMirrorEssentia">
-        <line displayname="Linked with">
+        <line displayname="hud.msg.Thaumcraft.Link">
 			if(nbt['linked']!=0)
 				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
         </line>
     </tileentity>
 	<tileentity id="TileNode">
-		<line displayname="Node Type">
+		<line displayname="hud.msg.Thaumcraft.NodeType">
+			var result="";
 			switch(nbt['type']){
-				case 0:return "Normal";
+				case 0:result= translate('nodetype.NORMAL.name');
 					break;
-				case 1:return "Unstable";
+				case 1:result= translate('nodetype.UNSTABLE.name');
 					break;
-				case 2:return "Sinister";
+				case 2:result= translate('nodetype.DARK.name');
 					break;
-				case 3:return "Tainted";
+				case 3:result= translate('nodetype.TAINTED.name');
 					break;
-				case 4:return "Hungry";
+				case 4:result= translate('nodetype.HUNGRY.name');
 					break;
-				case 5:return "Pure";
+				case 5:result= translate('nodetype.PURE.name');
 					break;}
-	</line>
+			result+="";
+			switch(nbt['modifier']){
+				case 0:result+=", "+translate('nodemod.BRIGHT.name');
+					break;
+				case 1:result+=", "+translate('nodemod.PALE.name');
+					break;
+				case 2:result+=", "+translate('nodemod.FADING.name');
+					break;}
+			return result;
+		</line>
 	</tileentity>
 	<entity id="Thaumcraft.Golem">
-		<line displayname="Core">
+		<line displayname="hud.msg.Thaumcraft.GolemCore">
 			switch(nbt['Core']){
-				case 0:return "Fill";
+				case 0:return translate('item.ItemGolemCore.0.name');
 					break;
-				case 1:return "Empty";
+				case 1:return translate('item.ItemGolemCore.1.name');
 					break;
-				case 2:return "Gather";
+				case 2:return translate('item.ItemGolemCore.2.name');
 					break;
-				case 3:return "Harvest";
+				case 3:return translate('item.ItemGolemCore.3.name');
 					break;
-				case 4:return "Guard";
+				case 4:return translate('item.ItemGolemCore.4.name');
 					break;
-				case 5:return "Decanting";
+				case 5:return translate('item.ItemGolemCore.5.name');
 					break;
-				case 6:return "Alchemy";
+				case 6:return translate('item.ItemGolemCore.6.name');
 					break;
-				case 7:return "Chop";
+				case 7:return translate('item.ItemGolemCore.7.name');
 					break;
-				case 8:return "Use";
+				case 8:return translate('item.ItemGolemCore.8.name');
 					break;
-				case 9:return "Butcher";
+				case 9:return translate('item.ItemGolemCore.9.name');
 					break;
-				case 10:return "Sorting";
+				case 10:return translate('item.ItemGolemCore.10.name');
 					break;
-				case 11:return "Fishing";
+				case 11:return translate('item.ItemGolemCore.11.name');
+					break;
+				case 100:return translate('item.ItemGolemCore.100.name');
 					break;}
 	</line>
 	</entity>
