@@ -23,7 +23,6 @@ hud.msg.BuildCraftCore.Recipe=Recipe
 hud.msg.BuildCraftCore.Pattern=Pattern
 
 hud.msg.EnderIO.Experience=Experience
-hud.msg.EnderIO.SpawnChance=Spawn Chance
 
 hud.msg.factorization.Count=Count
 hud.msg.factorization.Fan=Fan
@@ -42,3 +41,24 @@ hud.msg.GalacticraftCore.TimeUntilLaunch=Time Until Launch
 hud.msg.vanilla.BurnTime=Burn Time Left
 hud.msg.vanilla.Seconds=Seconds
 
+hud.msg.witchery.Owner=Owner
+
+hud.msg.Thaumcraft.AspectTable=Aspect
+hud.msg.Thaumcraft.Instability=Instability
+hud.msg.Thaumcraft.VisAmount=Vis Amount
+hud.msg.Thaumcraft.BorePick=Contains
+hud.msg.Thaumcraft.XP=XP
+hud.msg.Thaumcraft.Link=Linked with
+hud.msg.Thaumcraft.NodeType=Node Type
+hud.msg.Thaumcraft.GolemCore=Core
+
+hud.msg.RotaryCraft.Power=Power
+hud.msg.RotaryCraft.Torque=Torque
+hud.msg.RotaryCraft.Speed=Speed
+
+hud.msg.TConstruct.Layer=Layer
+hud.msg.TConstruct.Capacity=Capacity
+
+hudmsg.IC2.LavaAmount=Lava Amount
+hudmsg.IC2.Charging=Charging
+hudmsg.IC2.Discharging=Discharging
