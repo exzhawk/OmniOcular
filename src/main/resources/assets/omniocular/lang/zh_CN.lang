@@ -58,3 +58,7 @@ hud.msg.RotaryCraft.Speed=转速
 #
 hud.msg.TConstruct.Layer=层数
 hud.msg.TConstruct.Capacity=容量
+#
+hudmsg.IC2.LavaAmount=岩浆储量
+hudmsg.IC2.Charging=充能
+hudmsg.IC2.Discharging=电池

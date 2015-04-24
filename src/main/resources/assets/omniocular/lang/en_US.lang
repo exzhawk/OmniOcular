@@ -58,3 +58,7 @@ hud.msg.RotaryCraft.Speed=Speed
 
 hud.msg.TConstruct.Layer=Layer
 hud.msg.TConstruct.Capacity=Capacity
+
+hudmsg.IC2.LavaAmount=Lava Amount
+hudmsg.IC2.Charging=Charging
+hudmsg.IC2.Discharging=Discharging

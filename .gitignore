@@ -21,3 +21,7 @@ OmniOcular.iml
 gradlew.bat
 setup.bat
 OmniOcular.iws
+.gradle
+test
+cauldron
+forgeserver
