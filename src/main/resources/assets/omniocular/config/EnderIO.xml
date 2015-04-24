@@ -1,38 +1,71 @@
+<!--Date: 2015/04/19-->
+<!--Version: 2.2.8.367-->
 <oo>
-    <tileentity id="blockKillerJoeTileEntity">
-        <line displayname="hud.msg.EnderIO.Experience">
-            return nbt['experienceTotal']
-        </line>
-    </tileentity>
-    <tileentity id="blockZombieGeneratorTileEntity">
-        <line displayname="enderio.killerJoe.fuelTank">
-            return nbt['fuelTank']['Amount']+'/2000 mB'
-        </line>
-    </tileentity>
-    <tileentity id="blockPoweredSpawnerTileEntity">
-        <line displayname="hud.msg.EnderIO.SpawnChance">
-            return nbt['currentTask']['chance']
-        </line>
-    </tileentity>
-    <tileentity id="blockCombustionGeneratorTileEntity">
-        <line displayname="enderio.combustionGenerator.coolantTank">
-            return nbt['coolantTank']['Amount']+'/5000 mB'
-        </line>
-        <line displayname="enderio.combustionGenerator.fuelTank">
-            return nbt['fuelTank']['Amount']+'/5000 mB'
-        </line>
-    </tileentity>
-    <tileentity id="blockVatTileEntity">
-        <line displayname="enderio.vat.inputTank">
-            return nbt['inputTank']['Amount']+'/8000 mB'
-        </line>
-        <line displayname="enderio.vat.outputTank">
-            return nbt['outputTank']['Amount']+'/8000 mB'
-        </line>
-    </tileentity>
-    <tileentity id="blockSoulBinderTileEntity">
-        <line displayname="hud.msg.EnderIO.Experience">
-            return nbt['experienceTotal']
-        </line>
-    </tileentity>
+	<init>
+		function gteioftFluid(eio,cap){
+			if(nbt['fuelTank']['FluidName']!=undefined)
+				{return YELLOW+"Fuel: "+GRAY+fluidName(eio['fuelTank']['FluidName'])+" "+(WHITE+eio['fuelTank']['Amount'])+GRAY+" / "+WHITE+cap+GRAY+" mB"}
+		}
+	</init>
+	<init>
+		function gteioctFluid(eio,cap){
+			if(nbt['coolantTank']['FluidName']!=undefined)
+				{return YELLOW+"Coolant: "+GRAY+fluidName(eio['coolantTank']['FluidName'])+" "+(WHITE+eio['coolantTank']['Amount'])+GRAY+" / "+WHITE+cap+GRAY+" mB"}
+		}
+	</init>
+	<init>
+		function gteioitFluid(eio,cap){
+			if(nbt['inputTank']['FluidName']!=undefined)
+				{return YELLOW+"Input Tank: "+GRAY+fluidName(eio['inputTank']['FluidName'])+" "+(WHITE+eio['inputTank']['Amount'])+GRAY+" / "+WHITE+cap+GRAY+" mB"}
+		}
+	</init>
+	<init>
+		function gteiootFluid(eio,cap){
+			if(nbt['outputTank']['FluidName']!=undefined)
+				{return YELLOW+"Output Tank: "+GRAY+fluidName(eio['outputTank']['FluidName'])+" "+(WHITE+eio['outputTank']['Amount'])+GRAY+" / "+WHITE+cap+GRAY+" mB"}
+		}
+	</init>
+	<tileentity id="blockCombustionGeneratorTileEntity">
+		<line>
+            gteioctFluid(nbt,5000)
+		</line>
+		<line>
+            gteioftFluid(nbt,5000)
+		</line>
+	</tileentity>
+	<tileentity id="blockVatTileEntity">
+		<line>
+            gteioitFluid(nbt,8000)
+		</line>
+		<line>
+            gteiootFluid(nbt,8000)
+		</line>
+	</tileentity>
+	<tileentity id="blockSoulBinderTileEntity">
+		<line>
+            return YELLOW+"XP Level: "+WHITE+nbt['experienceLevel']
+		</line>
+		<line>
+            return YELLOW+"XP Total: "+WHITE+nbt['experienceTotal']
+		</line>
+	</tileentity>
+	<tileentity id="blockExperienceObeliskTileEntity">
+		<line>
+            return YELLOW+"XP Level: "+WHITE+nbt['experienceLevel']
+		</line>
+		<line>
+            return YELLOW+"XP Total: "+WHITE+nbt['experienceTotal']
+		</line>
+	</tileentity>
+	<tileentity id="blockKillerJoeTileEntity">
+		<line>
+            return YELLOW+"Nutrient Distillation: "+WHITE+nbt['fuelTank']['Amount']
+		</line>
+		<line>
+            return YELLOW+"XP Level: "+WHITE+nbt['experienceLevel']
+		</line>
+		<line>
+            return YELLOW+"XP Total: "+WHITE+nbt['experienceTotal']
+		</line>
+	</tileentity>
 </oo>

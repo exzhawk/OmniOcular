@@ -1,10 +1,10 @@
 <!--Author: EpixZhang, ViKaleidoscope-->
-<!--Date: 2014/11/17-->
-<!--Version: r1.3-135-->
+<!--Date: 2015/04/20-->
+<!--Version: r1.6-181-->
 <oo>
     <tileentity id="botania:pool">
         <line displayname="hud.msg.Botania.Mana">
-            return nbt['mana']+" / "+nbt['manaCap']
+            return nbt['mana']+GRAY+" / "+WHITE+nbt['manaCap']
         </line>
     </tileentity>
     <tileentity id="botania:spreader">
@@ -14,12 +14,12 @@
     </tileentity>
     <tileentity id="botania:runeAltar">
         <line displayname="hud.msg.Botania.Mana">
-            return nbt['mana']
+            return nbt['mana']+GRAY+" / "+WHITE+nbt['manaToGet']
         </line>
     </tileentity>
     <tileentity id="botania:enchanter">
         <line displayname="hud.msg.Botania.Mana">
-            return nbt['mana']+" / "+nbt['manaRequired']
+            return nbt['mana']+GRAY+" / "+WHITE+nbt['manaRequired']
         </line>
     </tileentity>
     <tileentity id="botania:specialFlower">
@@ -29,12 +29,12 @@
     </tileentity>
     <tileentity id="botania:rfGenerator">
         <line displayname="hud.msg.Botania.Mana">
-            return nbt['mana']
+            return nbt['mana']+GRAY+" / "+WHITE+"1280 ("+nbt['mana']*10+" RF)"
         </line>
     </tileentity>
     <tileentity id="botania:spawnerClaw">
         <line displayname="hud.msg.Botania.Mana">
-            return nbt['mana']
+            return nbt['mana']+GRAY+" / "+WHITE+"160"
         </line>
     </tileentity>
 </oo>

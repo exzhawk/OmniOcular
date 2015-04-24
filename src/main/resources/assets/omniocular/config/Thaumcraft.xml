@@ -1,46 +1,134 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2014/11/17-->
-<!--Version: 1.7.10-4.2.1.4-->
+<!--Date: 2015/04/22-->
+<!--Version: 1.7.10-4.2.3.5-->
 <oo>
+	<init>
+		function up(word){
+			return word.substring(0,1).toUpperCase()+word.substring(1)
+			}
+	</init>
+	<tileentity id="TileDeconstructionTable">
+        <line displayname="hud.msg.Thaumcraft.AspectTable">
+				return up(nbt['Aspect'])
+        </line>
+    </tileentity>
+	<tileentity id="TilePedestal">
+		<line>
+				name(nbt['Items'][0])
+		</line>
+	</tileentity>
     <tileentity id="TileInfusionStone">
-        <line displayname="Instability">
-            return nbt['instability'].toFixed(0)
+        <line displayname="hud.msg.Thaumcraft.Instability">
+			if(nbt['crafting']!=0)
+				return nbt['instability'].toFixed(0)
         </line>
     </tileentity>
     <tileentity id="TileAlchemyFurnace">
-        <line displayname="Vis Amount">
-            return nbt['Vis']
-        </line>
-    </tileentity>
-    <tileentity id="TileSiphon">
-        <line displayname="Vis Amount">
-            return nbt['amount']
-        </line>
-    </tileentity>
-    <tileentity id="TileTube.*">
-        <line displayname="Vis Amount">
-            return nbt['amount']
+        <line displayname="hud.msg.Thaumcraft.VisAmount">
+				return nbt['Vis']+GRAY+" / "+WHITE+"50"
         </line>
     </tileentity>
     <tileentity id="TileCrucible">
-        <line displayname="Water Amount">
-            return nbt['Amount']+' mB'
-        </line>
-        <line displayname="Heat">
-            return nbt['Heat']
+        <line>
+				return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"1000 mB"
         </line>
     </tileentity>
+	<tileentity id="TileArcaneBore">
+		<line>
+			if(nbt['Inventory'][0]['Slot']!=0){
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][0])}
+			else{
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][1])}
+		</line>
+	</tileentity>
     <tileentity id="TileSpa">
-        <line displayname="Water Amount">
-            return nbt['Amount']+' mB'
+		<line displayname="item.ItemBathSalts.name">
+				return nbt['Items']['0']['Count']
         </line>
-        <line displayname="Bath Salts">
-            return nbt['Items']['0']['Count']
+        <line>
+			if(nbt['FluidName']!=undefined)
+				return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"5000 mB"
         </line>
     </tileentity>
     <tileentity id="TileJarBrain">
-        <line displayname="XP">
-            return nbt['XP']
+        <line displayname="hud.msg.Thaumcraft.XP">
+			if(nbt['XP']!=0)
+				return nbt['XP']
         </line>
     </tileentity>
+	<tileentity id="TileFocalManipulator">
+		<line>
+				name(nbt['ItemsSynced'][0])
+		</line>
+	</tileentity>
+	<tileentity id="TileMirror">
+        <line displayname="hud.msg.Thaumcraft.Link">
+			if(nbt['linked']!=0)
+				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+        </line>
+    </tileentity>
+	<tileentity id="TileMirrorEssentia">
+        <line displayname="hud.msg.Thaumcraft.Link">
+			if(nbt['linked']!=0)
+				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+        </line>
+    </tileentity>
+	<tileentity id="TileNode">
+		<line displayname="hud.msg.Thaumcraft.NodeType">
+			var result="";
+			switch(nbt['type']){
+				case 0:result= translate('nodetype.NORMAL.name');
+					break;
+				case 1:result= translate('nodetype.UNSTABLE.name');
+					break;
+				case 2:result= translate('nodetype.DARK.name');
+					break;
+				case 3:result= translate('nodetype.TAINTED.name');
+					break;
+				case 4:result= translate('nodetype.HUNGRY.name');
+					break;
+				case 5:result= translate('nodetype.PURE.name');
+					break;}
+			result+="";
+			switch(nbt['modifier']){
+				case 0:result+=", "+translate('nodemod.BRIGHT.name');
+					break;
+				case 1:result+=", "+translate('nodemod.PALE.name');
+					break;
+				case 2:result+=", "+translate('nodemod.FADING.name');
+					break;}
+			return result;
+		</line>
+	</tileentity>
+	<entity id="Thaumcraft.Golem">
+		<line displayname="hud.msg.Thaumcraft.GolemCore">
+			switch(nbt['Core']){
+				case 0:return translate('item.ItemGolemCore.0.name');
+					break;
+				case 1:return translate('item.ItemGolemCore.1.name');
+					break;
+				case 2:return translate('item.ItemGolemCore.2.name');
+					break;
+				case 3:return translate('item.ItemGolemCore.3.name');
+					break;
+				case 4:return translate('item.ItemGolemCore.4.name');
+					break;
+				case 5:return translate('item.ItemGolemCore.5.name');
+					break;
+				case 6:return translate('item.ItemGolemCore.6.name');
+					break;
+				case 7:return translate('item.ItemGolemCore.7.name');
+					break;
+				case 8:return translate('item.ItemGolemCore.8.name');
+					break;
+				case 9:return translate('item.ItemGolemCore.9.name');
+					break;
+				case 10:return translate('item.ItemGolemCore.10.name');
+					break;
+				case 11:return translate('item.ItemGolemCore.11.name');
+					break;
+				case 100:return translate('item.ItemGolemCore.100.name');
+					break;}
+	</line>
+	</entity>
 </oo>

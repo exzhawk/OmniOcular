@@ -1,2 +1,60 @@
-omniocular.info.NotHolding = "无手持物品"
-omniocular.info.NotPointing = "无指向对象"
+omniocular.info.NotHolding=使用该指令必须手持一件物品.
+omniocular.info.NotPointing=使用该指令必须对准一个目标.
+#
+hud.msg.common.LiquidAmount=Liquid Amount
+hud.msg.common.StorageFluid=Storage Fluid
+hud.msg.common.BurnTime=Burn Time
+#
+hud.msg.AWWayofTime.Capacity=Capacity
+hud.msg.AWWayofTime.Process=Process
+hud.msg.AWWayofTime.ProcessSpeed=Process Speed
+hud.msg.AWWayofTime.IOSpeed=IO Speed
+hud.msg.AWWayofTime.OrbCapacity=Orb Capacity
+hud.msg.AWWayofTime.Sacrifice=Sacrifice
+hud.msg.AWWayofTime.SelfSacrifice=Self-Sacrifice
+hud.msg.AWWayofTime.RitualID=Ritual ID
+hud.msg.AWWayofTime.RitualOwner=Ritual Owner
+hud.msg.AWWayofTime.Require=Require
+#
+hud.msg.Botania.Mana=Mana
+#
+hud.msg.BuildCraftCore.MaxEnergyReceive=Max Energy Receive
+hud.msg.BuildCraftCore.Recipe=Recipe
+hud.msg.BuildCraftCore.Pattern=Pattern
+#
+hud.msg.EnderIO.Experience=Experience
+#
+hud.msg.factorization.Count=Count
+hud.msg.factorization.Fan=Fan
+hud.msg.factorization.Charge=Charge
+hud.msg.factorization.Digest=Digest
+hud.msg.factorization.Process=Process
+hud.msg.factorization.Speed=Speed
+#
+hud.msg.GalacticraftCore.AirStored=Air Stored
+hud.msg.GalacticraftCore.GenerateRate=Generate Rate
+hud.msg.GalacticraftCore.CookTime=Cook Time
+hud.msg.GalacticraftCore.GasAmount=Gas Amount
+hud.msg.GalacticraftCore.LiquidAmount=Liquid Amount
+hud.msg.GalacticraftCore.TimeUntilLaunch=Time Until Launch
+#
+hud.msg.vanilla.BurnTime=Burn Time Left
+hud.msg.vanilla.Seconds=Seconds
+#
+hud.msg.witchery.Owner=主人
+#
+hud.msg.Thaumcraft.AspectTable=获得要素
+hud.msg.Thaumcraft.Instability=注魔不稳定度
+hud.msg.Thaumcraft.VisAmount=源质总量
+hud.msg.Thaumcraft.BorePick=使用工具
+hud.msg.Thaumcraft.XP=经验总量
+hud.msg.Thaumcraft.Link=链接坐标
+hud.msg.Thaumcraft.NodeType=节点类型
+hud.msg.Thaumcraft.GolemCore=傀儡核心
+#
+hud.msg.RotaryCraft.Power=功率
+hud.msg.RotaryCraft.Torque=扭矩
+hud.msg.RotaryCraft.Speed=转速
+#
+hud.msg.TConstruct.Layer=层数
+hud.msg.TConstruct.Capacity=容量

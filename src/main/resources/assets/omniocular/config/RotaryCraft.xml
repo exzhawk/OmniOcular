@@ -1,13 +1,32 @@
+<!--Date: 2015/04/22-->
+<!--Version: 1.7.10 V6f-->
 <oo>
     <tileentity id="RC.*">
-        <line displayname="Power">
-            return nbt['power']
+        <line>
+		if(nbt['power']!=0){if(nbt['power']!=undefined){
+            return translate('hud.msg.RotaryCraft.Power')+": "+(nbt['power']/1000).toFixed(3)+"kW"}}
         </line>
-        <line displayname="Torque">
-            return nbt['torque']
+        <line>
+		if(nbt['torque']!=0){if(nbt['torque']!=undefined){
+            return translate('hud.msg.RotaryCraft.Torque')+": "+nbt['torque']+" Nm"}}
         </line>
-        <line displayname="Speed">
-            return nbt['omega']
+        <line>
+		if(nbt['omega']!=0){if(nbt['omega']!=undefined){
+            return translate('hud.msg.RotaryCraft.Speed')+": "+nbt['omega']+" rad/s"}}
         </line>
     </tileentity>
+	<tileentity id="RC.*">
+		<line>
+		if(nbt['power']==0){
+			return translate('hud.msg.RotaryCraft.Power')+": "+"0W"}
+		</line>
+		<line>
+		if(nbt['torque']==0){
+			return translate('hud.msg.RotaryCraft.Torque')+": "+"0 Nm"}
+		</line>
+		<line>
+		if(nbt['omega']==0){
+			return translate('hud.msg.RotaryCraft.Speed')+": "+"0 rad/s"}
+		</line>
+	</tileentity>
 </oo>

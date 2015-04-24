@@ -1,94 +1,36 @@
-<!--todo rename-->
+<!--Author: syf097, Mrkwtkr-->
+<!--Date: 2015/04/21-->
+<!--Version: 1.7.10-0.28.7-->
 <oo>
-    <tileentity id="boiler">
-        <line displayname="water">
-            return nbt['water']
-        </line>
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="burn time">
-            return nbt['BurnTime']
+    <tileentity id="steamcraft:itemMortar">
+        <line displayname="Target">
+			if(nbt['xT']!=0)if(nbt['zT']!=0)
+				return nbt['xT']+", "+nbt['zT']
         </line>
     </tileentity>
-    <tileentity id="steamTank">
-        <line displayname="steam">
-            return nbt['steam']
+	<tileentity id="steamcraft:itemMortar">
+        <line>
+			if(nbt['xT']==0){return"No target"}
         </line>
     </tileentity>
-    <tileentity id="flashBoiler">
-        <line displayname="burn time">
-            return nbt['BurnTime']
+    <tileentity id="steamcraft:.*">
+        <line displayname="Water">
+		if(nbt['water']!=undefined)if(nbt['id']!=steamcraft:flashBoiler)
+            return nbt['water']+GRAY+" / "+WHITE+"10000 mB"
         </line>
-        <line displayname="water">
-            return nbt['water']
-        </line>
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="heat">
-            return nbt['heat']
+        <line displayname="Steam">
+		if(nbt['steam']!=undefined)
+            return nbt['steam']+" SU"
         </line>
     </tileentity>
-    <tileentity id="smasher">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="has Been Set or not">
-            return nbt['hasBeenSet']
+    <tileentity id="steamcraft:fan">
+        <line displayname="Range">
+            return nbt['range']+" blocks"
         </line>
     </tileentity>
-    <tileentity id="heater">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-    </tileentity>
-    <tileentity id="steamCharger">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-    </tileentity>
-    <tileentity id="steamHammer">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="progress">
-            return nbt['progress']
-        </line>
-        <line displayname="cost">
-            return nbt['cost']
-        </line>
-    </tileentity>
-    <tileentity id="itemMortar">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="fireTicks">
-            return nbt['fireTicks']
-        </line>
-    </tileentity>
-    <tileentity id="thumper">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="progress">
-            return nbt['progress']
-        </line>
-    </tileentity>
-    <tileentity id="fan">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="range">
-            return nbt['range']
-        </line>
-    </tileentity>
-    <tileentity id="vacuum">
-        <line displayname="steam">
-            return nbt['steam']
-        </line>
-        <line displayname="range">
-            return nbt['range']
+    <tileentity id="steamcraft:vacuum">
+        <line displayname="Range">
+            return nbt['range']+" blocks"
         </line>
     </tileentity>
 </oo>

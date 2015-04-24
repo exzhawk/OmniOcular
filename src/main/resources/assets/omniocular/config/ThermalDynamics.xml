@@ -1,0 +1,14 @@
+<!--Date: 2015/04/19-->
+<!--Version: 1.0.0-122-->
+<oo>
+	<init>
+		function gttdFluid(td){
+			if(nbt['FluidName']!=undefined)return fluidName(td['FluidName'])+" : "+td['Amount']+" / "+(td['ConnFluid']['Amount'])+" mB"
+		}
+	</init>
+	<tileentity id="thermaldynamics.FluidDuct.*">
+		<line>
+            gttdFluid(nbt)
+		</line>
+	</tileentity>
+</oo>
