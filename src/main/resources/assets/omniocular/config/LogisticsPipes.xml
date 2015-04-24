@@ -1,20 +1,78 @@
-<!--Author: ViKaleidoscope, EpixZhang -->
-<!--Date: 2015/2/8-->
-<!--Version: 0.8.2.81-->
+<!--Author: ViKaleidoscope, EpixZhang, Pr -->
+<!--Date: 2015/04/25-->
+<!--Version: 0.9.0.90-->
 <oo>
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity">
-        <line displayname="hud.msg.energ">
+	<init>
+	function getSlot(i, slot, slotName){
+		slotName=slotName||"Slot";
+		for (var index in i){
+			if (i[index][slotName]==slot){
+				return i[index];
+			}
+		}
+	}
+	</init>
+    <tileentity id="logisticspipes.blocks.LogisticsSolderingTileEntity"> <!--物流焊接台-->
+        <line displayname="item.ingotIron.name">
+			var Iron = getSlot(nbt['items'], 9, 'index');
+            return Iron['Count']
+        </line>
+		<line displayname="hud.msg.logisticspipes.product">
+			var NanoHopper = getSlot(nbt['items'], 10, 'index');
+			return name(NanoHopper)
+        </line>
+    </tileentity>
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity"> <!--物流能量中枢-->
+        <line displayname="gui.powerjunction.StoredEnergy">
             return nbt['powerLevel']+' / 2000000 LP'
         </line>
     </tileentity>
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity">
-        <line displayname="hud.msg.energ">
-            return nbt['internalStorage'].toFixed(0)+' / 10000000 RF'
+    <tileentity id="logisticspipes.blocks.LogisticsSecurityTileEntity"><!--物流安全站-->
+        <line displayname="UUID">
+            return nbt['UUID']
+        </line>
+		<line displayname="gui.securitystation.pipeRemove">
+			if(nbt['allowAutoDestroy'] == 0){return translate("hud.msg.logisticspipes.off")}
+				else{return translate("hud.msg.logisticspipes.on")}
+        </line>
+    </tileentity>	
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity"><!--物流TE能量供应器-->
+        <line displayname="gui.powerprovider.StoredEnergy">
+            return nbt['internalStorage']+' / 10000000 RF'
         </line>
     </tileentity>
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity">
-        <line displayname="hud.msg.energ">
-            return nbt['internalStorage'].toFixed(0)+' / 40000000 EU'
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity"><!--物流IC能量供应器-->
+        <line displayname="gui.powerprovider.StoredEnergy">
+            return nbt['internalStorage']+' / 40000000 EU'
+        </line>
+    </tileentity>
+    <tileentity id="logisticspipes.pipes.basic.LogisticsTileGenericPipe"><!--物流基础管道-->
+        <line displayname="item.itemDisk"><!--物流请求桌-->
+			var disk = getSlot(nbt['diskInvitems'], 1, 'Count');
+            if(disk['Count'] == 1){return translate("hud.msg.logisticspipes.yes")}
+        </line>
+		<line displayname="gui.providerpipe.Mode"><!--物流供应管道MK1/MK2-->
+			switch(nbt['extractionMode'])
+				{
+				case 0:
+					return translate("misc.extractionmode.Normal");
+					break;
+				case 1:
+					return translate("misc.extractionmode.LeaveFirst");
+					break;
+				case 2:
+					return translate("misc.extractionmode.LeaveLast");
+					break;
+				case 3:
+					return translate("misc.extractionmode.LeaveFirstAndLast");
+					break;
+				case 4:
+					return translate("misc.extractionmode.Leave1PerStack");
+					break;
+				case 5:
+					return translate("misc.extractionmode.Leave1PerType");
+					break;
+				}
         </line>
     </tileentity>
 </oo>
