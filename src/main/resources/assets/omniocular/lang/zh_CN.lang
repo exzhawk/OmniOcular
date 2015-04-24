@@ -62,3 +62,8 @@ hud.msg.TConstruct.Capacity=容量
 hudmsg.IC2.LavaAmount=岩浆储量
 hudmsg.IC2.Charging=充能
 hudmsg.IC2.Discharging=电池
+#Lp
+hud.msg.logisticspipes.product=产物
+hud.msg.logisticspipes.off=不允许
+hud.msg.logisticspipes.on=允许
+hud.msg.logisticspipes.yes=有
