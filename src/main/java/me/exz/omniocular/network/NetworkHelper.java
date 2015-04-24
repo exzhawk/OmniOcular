@@ -24,6 +24,7 @@ public class NetworkHelper {
         if (string.equals("__START__")) {
             ConfigHandler.mergedConfig = "";
         } else if (string.equals("__END__")) {
+//            LogHelper.info("received config: "+ConfigHandler.mergedConfig);
             ConfigHandler.parseConfigFiles();
         } else {
             ConfigHandler.mergedConfig += string;
