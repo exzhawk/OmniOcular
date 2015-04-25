@@ -17,7 +17,7 @@
 			var Iron = getSlot(nbt['items'], 9, 'index');
             return Iron['Count']
         </line>
-		<line displayname="hud.msg.logisticspipes.product">
+		<line displayname="gui.crafting.Output">
 			var NanoHopper = getSlot(nbt['items'], 10, 'index');
 			return name(NanoHopper)
         </line>
@@ -28,9 +28,6 @@
         </line>
     </tileentity>
     <tileentity id="logisticspipes.blocks.LogisticsSecurityTileEntity"><!--物流安全站-->
-        <line displayname="UUID">
-            return nbt['UUID']
-        </line>
 		<line displayname="gui.securitystation.pipeRemove">
 			if(nbt['allowAutoDestroy'] == 0){return translate("hud.msg.logisticspipes.off")}
 				else{return translate("hud.msg.logisticspipes.on")}
@@ -49,7 +46,7 @@
     <tileentity id="logisticspipes.pipes.basic.LogisticsTileGenericPipe"><!--物流基础管道-->
         <line displayname="item.itemDisk"><!--物流请求桌-->
 			var disk = getSlot(nbt['diskInvitems'], 1, 'Count');
-            if(disk['Count'] == 1){return translate("hud.msg.logisticspipes.yes")}
+            if(disk['Count'] == 1){return translate("gui.fluidsupplier.Yes")}
         </line>
 		<line displayname="gui.providerpipe.Mode"><!--物流供应管道MK1/MK2-->
 			switch(nbt['extractionMode'])
@@ -74,5 +71,156 @@
 					break;
 				}
         </line>
+		<line displayname="gui.providerpipe.Mode"><!--物流补给管道-->
+			switch(nbt['requestmode'])
+				{
+				case 2:
+					return "Bulk50";
+					break;
+				case 3:
+					return "Bulk100";
+					break;
+				case 4:
+					return "Infinite";
+					break;
+				case 0:
+					return "Partial";
+					break;
+				case 1:
+					return "Full";
+					break;
+				}
+		</line>
+		<line displayname="gui.crafting.Inventory"><!--物品栏-->
+        var items=nbt['items']; 
+        if (items.length==0){return };
+        var ns=[];
+            for(var index in items){
+            	ns.push(name(items[index]));
+            }
+         return ns.join('\n'+translate("gui.crafting.Inventory")+TAB+ALIGNRIGHT+WHITE);
+        </line>
+		<line displayname="gui.satellite.SatelliteID"><!--物流卫星管道-->
+			return nbt['satelliteid']
+        </line>
+		<line displayname="gui.crafting.Output"><!--物流合成管道-->
+			var output = getSlot(nbt['items'], 9, 'index');
+			return name(output)
+        </line>
+		<line displayname="gui.crafting.Priority"><!--物流合成管道-->
+			return nbt['priority']
+		</line>
+		<line displayname=""><!--物流管道模块-->
+			var items=nbt['upgradeManager']['UpgradeInventory_items'];
+			var ns=[];
+            for(var index in items){
+            	ns.push(name(items[index]) + '↑');
+            }
+         return ns.join('\n');
+		</line>
+		<line displayname="Extract Mode"><!--蜜蜂分析物流管道-->
+			switch(nbt['extractMode']){
+				case 0:
+					return "off";
+					break;
+				case 1:
+					return "on";
+					break;
+				}
+		</line>
+		<line displayname="gui.invsyscon.Resistance"><!--物流网络连接器-->
+			return nbt['resistance']
+		</line>
+		<line displayname="gui.firewall.Filtereditemsare"><!--物流防火墙管道_被过滤的物品-->
+			switch(nbt['isBlocking']){
+				case 0:
+					return translate("gui.firewall.Allowed");
+					break;
+				case 1:
+					return translate("gui.firewall.Blocked");
+					break;
+				}
+		</line>
+		<line displayname="gui.firewall.Providing"><!--物流防火墙管道_供应-->
+			switch(nbt['blockProvider']){
+				case 0:
+					return translate("gui.firewall.Allowed");
+					break;
+				case 1:
+					return translate("gui.firewall.Blocked");
+					break;
+				}
+		</line>
+		<line displayname="gui.firewall.Crafting"><!--物流防火墙管道_合成-->
+			switch(nbt['blockCrafer']){
+				case 0:
+					return translate("gui.firewall.Allowed");
+					break;
+				case 1:
+					return translate("gui.firewall.Blocked");
+					break;
+				}
+		</line>
+		<line displayname="gui.firewall.Sorting"><!--物流防火墙管道_分拣-->
+			switch(nbt['blockSorting']){
+				case 0:
+					return translate("gui.firewall.Allowed");
+					break;
+				case 1:
+					return translate("gui.firewall.Blocked");
+					break;
+				}
+		</line>
+		<line displayname="gui.firewall.Powerflow"><!--物流防火墙管道_能量-->
+			switch(nbt['blockPower']){
+				case 0:
+					return translate("gui.firewall.Allowed");
+					break;
+				case 1:
+					return translate("gui.firewall.Blocked");
+					break;
+				}
+		</line>
+		<line displayname=""><!--物流底座-->
+			var chassiitems=nbt['chassiitems'];
+			var ns=[];
+            for(var index in chassiitems){
+            	ns.push(name(chassiitems[index]));
+            }
+         return ns.join('\n');
+		</line>
+		<line displayname="Amount"><!--物流流体补给管道_Amount-->
+			return nbt['amount']
+		</line>
+		<line displayname="gui.fluidsupplier.Partialrequests"><!--物流流体容器补给管道-->
+			switch(nbt['requestpartials']){
+				case 0:
+					return translate("gui.fluidsupplier.No");
+					break;
+				case 1:
+					return translate("gui.fluidsupplier.Yes");
+					break;
+				}
+		</line>
+		<line displayname="Min. Mode"><!--物流流体补给管道-->
+			switch(nbt['_bucketMinimum']){
+				case 0:
+					return "None";
+					break;
+				case 1:
+					return "1 Bucket";
+					break;
+				case 2:
+					return "2 Bucket";
+					break;
+				case 3:
+					return "5 Bucket";
+					break;
+				}
+		</line>
+		<line displayname=""><!--防火墙-->
+			var authorize=nbt['upgradeManager']['SecurityInventory_items'][0]['index'];
+			if(authorize == 0){return translate("gui.firewall.Firewall")+"√"}
+		</line>
     </tileentity>
 </oo>
