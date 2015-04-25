@@ -63,7 +63,5 @@ hudmsg.IC2.LavaAmount=Lava Amount
 hudmsg.IC2.Charging=Charging
 hudmsg.IC2.Discharging=Discharging
 #Lp
-hud.msg.logisticspipes.product=Product
 hud.msg.logisticspipes.off=Not allowed
 hud.msg.logisticspipes.on=Allowed
-hud.msg.logisticspipes.yes=Yes
