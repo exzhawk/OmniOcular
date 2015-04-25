@@ -1,0 +1,43 @@
+<!--Author: Pr -->
+<!--Date: 2015/04/25-->
+<!--Version: 1.9s-->
+<oo>
+    <tileentity id="torcherino_tile">
+        <line displayname="">
+            switch(nbt['Mode']){
+				case 0:
+					break;
+				case 1:
+					return "3x3x3";
+					break;
+				case 2:
+					return "5x3x5";
+					break;
+				case 3:
+					return "7x3x7";
+					break;
+				case 4:
+					return "9x3x9";
+					break;
+				}
+        </line>
+        <line displayname="">
+            switch(nbt['Speed']){
+				case 0:
+					break;
+				case 1:
+					return "100%";
+					break;
+				case 2:
+					return "200%";
+					break;
+				case 3:
+					return "300%";
+					break;
+				case 4:
+					return "400%";
+					break;
+				}
+        </line>
+    </tileentity>
+</oo>
