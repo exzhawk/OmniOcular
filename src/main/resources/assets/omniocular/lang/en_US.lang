@@ -65,3 +65,5 @@ hudmsg.IC2.Discharging=Discharging
 #Lp
 hud.msg.logisticspipes.off=Not allowed
 hud.msg.logisticspipes.on=Allowed
+
+hud.msg.Mystcraft.position=Spawn at

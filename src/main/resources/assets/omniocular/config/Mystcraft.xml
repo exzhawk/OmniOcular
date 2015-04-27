@@ -1,0 +1,20 @@
+<!--Version: 1.7.10-0.11.5.00-->
+<!--Date: 2015/04/26-->
+<oo>
+	<tileentity id="Linkbook.*">
+		<line>
+			return nbt['Items'][0]['tag']['DisplayName']+" (DIM-"+nbt['Items'][0]['tag']['Dimension']+")"
+		</line>
+		<line>
+			return translate('hud.msg.Mystcraft.position')+" "+nbt['Items'][0]['tag']['SpawnX']+", "+nbt['Items'][0]['tag']['SpawnY']+", "+nbt['Items'][0]['tag']['SpawnZ']
+		</line>
+	</tileentity>
+	<tileentity id="CrystalBlock">
+		<line>
+			return nbt['Items'][0]['tag']['DisplayName']+" (DIM-"+nbt['Items'][0]['tag']['Dimension']+")"
+		</line>
+		<line>
+			return translate('hud.msg.Mystcraft.position')+" "+nbt['Items'][0]['tag']['SpawnX']+", "+nbt['Items'][0]['tag']['SpawnY']+", "+nbt['Items'][0]['tag']['SpawnZ']
+		</line>
+	</tileentity>
+</oo>
