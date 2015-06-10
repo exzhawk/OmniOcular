@@ -1,0 +1,123 @@
+<!--Version: 1.7.10-0.11.5.00-->
+<!--Date: 2015/04/27-->
+<oo>
+	<tileentity id="Linkbook.*">
+		<line>
+		if(nbt['Items'][0]['tag']['Dimension']!=undefined){
+			return nbt['Items'][0]['tag']['DisplayName']+" (DIM_MYST"+nbt['Items'][0]['tag']['Dimension']+")"}
+		else{
+			return nbt['Items'][0]['tag']['DisplayName']}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Authors']!=undefined){
+			return translate('hud.msg.Mystcraft.author')+": "+nbt['Items'][0]['tag']['Authors']
+			}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']==1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform, Intralinking, Maintain Momentum"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Disarm']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm, Intralinking"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Disarm']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Intralinking"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Generate Platform']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Maintain Momentum"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['SpawnX']!=undefined)if(nbt['Items'][0]['tag']['SpawnY']!=undefined)if(nbt['Items'][0]['tag']['SpawnZ']!=undefined){
+			return translate('hud.msg.Mystcraft.position')+" "+nbt['Items'][0]['tag']['SpawnX']+", "+nbt['Items'][0]['tag']['SpawnY']+", "+nbt['Items'][0]['tag']['SpawnZ']}
+		</line>
+	</tileentity>
+	<tileentity id="CrystalBlock">
+		<line>
+		if(nbt['Items'][0]['tag']['DisplayName']!=undefined)if(nbt['Items'][0]['tag']['Dimension']!=undefined){
+			return nbt['Items'][0]['tag']['DisplayName']+" (DIM_MYST"+nbt['Items'][0]['tag']['Dimension']+")"}
+		else{
+			return nbt['Items'][0]['tag']['DisplayName']}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Authors']!=undefined){
+			return translate('hud.msg.Mystcraft.author')+": "+nbt['Items'][0]['tag']['Authors']
+			}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']==1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform, Intra-linking, Maintain Momentum"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Disarm']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm, Intra-linking"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Disarm']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Intra Linking']==1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Intralinking"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Generate Platform']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1)if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['Flags']['Maintain Momentum']==1)if(nbt['Items'][0]['tag']['Flags']['Intra Linking']!=1)if(nbt['Items'][0]['tag']['Flags']['Generate Platform']!=1)if(nbt['Items'][0]['tag']['Flags']['Disarm']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Maintain Momentum"}
+		</line>
+		<line>
+		if(nbt['Items'][0]['tag']['SpawnX']!=undefined)if(nbt['Items'][0]['tag']['SpawnY']!=undefined)if(nbt['Items'][0]['tag']['SpawnZ']!=undefined){
+			return translate('hud.msg.Mystcraft.position')+" "+nbt['Items'][0]['tag']['SpawnX']+", "+nbt['Items'][0]['tag']['SpawnY']+", "+nbt['Items'][0]['tag']['SpawnZ']}
+		</line>
+	</tileentity>
+	<entity id="Mystcraft.myst.book">
+		<line>
+		if(nbt['Item']['tag']['Dimension']!=undefined){
+			return nbt['Item']['tag']['DisplayName']+" (DIM_MYST"+nbt['Item']['tag']['Dimension']+")"}
+		else{
+			return nbt['Item']['tag']['DisplayName']}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Authors']!=undefined){
+			return translate('hud.msg.Mystcraft.author')+": "+nbt['Item']['tag']['Authors']
+			}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Intra Linking']==1)if(nbt['Item']['tag']['Flags']['Maintain Momentum']==1)if(nbt['Item']['tag']['Flags']['Generate Platform']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform, Intra-linking, Maintain Momentum"}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Disarm']==1)if(nbt['Item']['tag']['Flags']['Intra Linking']==1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm, Intra-linking"}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Disarm']==1)if(nbt['Item']['tag']['Flags']['Intra Linking']!=1)if(nbt['Item']['tag']['Flags']['Generate Platform']!=1)if(nbt['Item']['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Disarm"}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Intra Linking']==1)if(nbt['Item']['tag']['Flags']['Disarm']!=1)if(nbt['Item']['tag']['Flags']['Generate Platform']!=1)if(nbt['Item']['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Intralinking"}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Generate Platform']==1)if(nbt['Item']['tag']['Flags']['Intra Linking']!=1)if(nbt['Item']['tag']['Flags']['Disarm']!=1)if(nbt['Item']['tag']['Flags']['Maintain Momentum']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Generate Platform"}
+		</line>
+		<line>
+		if(nbt['Item']['tag']['Flags']['Maintain Momentum']==1)if(nbt['Item']['tag']['Flags']['Intra Linking']!=1)if(nbt['Item']['tag']['Flags']['Generate Platform']!=1)if(nbt['Item']['tag']['Flags']['Disarm']!=1){
+			return translate('hud.msg.Mystcraft.flags')+": Maintain Momentum"}
+		</line>
+	</entity>
+</oo>

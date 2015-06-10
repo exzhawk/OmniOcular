@@ -46,7 +46,7 @@ hud.msg.witchery.Owner=主人
 hud.msg.Thaumcraft.AspectTable=获得要素
 hud.msg.Thaumcraft.Instability=注魔不稳定度
 hud.msg.Thaumcraft.VisAmount=源质总量
-hud.msg.Thaumcraft.BorePick=使用工具
+hud.msg.Thaumcraft.BorePick=工具
 hud.msg.Thaumcraft.XP=经验总量
 hud.msg.Thaumcraft.Link=链接坐标
 hud.msg.Thaumcraft.NodeType=节点类型
@@ -62,3 +62,10 @@ hud.msg.TConstruct.Capacity=容量
 hudmsg.IC2.LavaAmount=岩浆储量
 hudmsg.IC2.Charging=充能
 hudmsg.IC2.Discharging=电池
+#Lp
+hud.msg.logisticspipes.off=禁止
+hud.msg.logisticspipes.on=允许
+#
+hud.msg.Mystcraft.position=生成于
+hud.msg.Mystcraft.flags=效果
+hud.msg.Mystcraft.author=拥有者

@@ -62,3 +62,10 @@ hud.msg.TConstruct.Capacity=Capacity
 hudmsg.IC2.LavaAmount=Lava Amount
 hudmsg.IC2.Charging=Charging
 hudmsg.IC2.Discharging=Discharging
+#Lp
+hud.msg.logisticspipes.off=Not allowed
+hud.msg.logisticspipes.on=Allowed
+
+hud.msg.Mystcraft.position=Spawn at
+hud.msg.Mystcraft.flags=Effect
+hud.msg.Mystcraft.author=Author
