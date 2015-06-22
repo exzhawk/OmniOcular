@@ -1,10 +1,18 @@
 <!--Author: EpixZhang, ViKaleidoscope-->
-<!--Date: 2015/04/20-->
-<!--Version: r1.6-181-->
+<!--Date: 2015/06/22-->
+<!--Version: r1.6-193-->
 <oo>
     <tileentity id="botania:pool">
         <line displayname="hud.msg.Botania.Mana">
             return nbt['mana']+GRAY+" / "+WHITE+nbt['manaCap']
+        </line>
+		<line>
+            switch(nbt['outputting']) {
+				case 0:return "Accepting Mana from Items";
+					break;
+				case 1:return "Sparing Mana to Items";
+					break;
+				}
         </line>
     </tileentity>
     <tileentity id="botania:spreader">
@@ -37,4 +45,9 @@
             return nbt['mana']+GRAY+" / "+WHITE+"160"
         </line>
     </tileentity>
+	<entity id="Botania.botania:poolMinecart">
+        <line displayname="hud.msg.Botania.Mana">
+            return nbt['mana']+GRAY+" / "+WHITE+"1000000"
+        </line>
+    </entity>
 </oo>
