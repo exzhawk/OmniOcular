@@ -1,5 +1,5 @@
 omniocular.info.NotHolding=使用该指令必须手持一件物品.
-omniocular.info.NotPointing=使用该指令必须对准一个目标.
+omniocular.info.NotPointing=使用该指令必须对准一个实体.
 #
 hud.msg.common.LiquidAmount=Liquid Amount
 hud.msg.common.StorageFluid=Storage Fluid
@@ -69,3 +69,6 @@ hud.msg.logisticspipes.on=允许
 hud.msg.Mystcraft.position=生成于
 hud.msg.Mystcraft.flags=效果
 hud.msg.Mystcraft.author=拥有者
+#
+hud.msg.ReactorCraft.chg=Charge
+hud.msg.ReactorCraft.temp=Temperature
