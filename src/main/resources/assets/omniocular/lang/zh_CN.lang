@@ -17,6 +17,8 @@ hud.msg.AWWayofTime.RitualOwner=Ritual Owner
 hud.msg.AWWayofTime.Require=Require
 #
 hud.msg.Botania.Mana=Mana
+hud.msg.Botania.output.0=Accepting Mana from Items
+hud.msg.Botania.output.1=Sparing Mana to Items
 #
 hud.msg.BuildCraftCore.MaxEnergyReceive=Max Energy Receive
 hud.msg.BuildCraftCore.Recipe=Recipe
@@ -43,12 +45,9 @@ hud.msg.vanilla.Seconds=Seconds
 #
 hud.msg.witchery.Owner=主人
 #
-hud.msg.Thaumcraft.AspectTable=获得要素
 hud.msg.Thaumcraft.Instability=注魔不稳定度
 hud.msg.Thaumcraft.VisAmount=源质总量
-hud.msg.Thaumcraft.BorePick=工具
-hud.msg.Thaumcraft.XP=经验总量
-hud.msg.Thaumcraft.Link=链接坐标
+hud.msg.Thaumcraft.BorePick=物品
 hud.msg.Thaumcraft.NodeType=节点类型
 hud.msg.Thaumcraft.GolemCore=傀儡核心
 #
@@ -62,7 +61,7 @@ hud.msg.TConstruct.Capacity=容量
 hudmsg.IC2.LavaAmount=岩浆储量
 hudmsg.IC2.Charging=充能
 hudmsg.IC2.Discharging=电池
-#Lp
+#
 hud.msg.logisticspipes.off=禁止
 hud.msg.logisticspipes.on=允许
 #
@@ -71,4 +70,3 @@ hud.msg.Mystcraft.flags=效果
 hud.msg.Mystcraft.author=拥有者
 #
 hud.msg.ReactorCraft.chg=Charge
-hud.msg.ReactorCraft.temp=Temperature
