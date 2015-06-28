@@ -1,16 +1,10 @@
-<!--Date: 2015/06/22-->
+<!--Date: 2015/06/28-->
 <!--Version: 1.7.10 V6e-->
 <oo>
 	<tileentity id="ReactorMagnetic Containment Pipe">
         <line>
 		if(nbt['chg']!=0)
             return translate('hud.msg.ReactorCraft.chg')+": "+nbt['chg']+"kV"
-        </line>
-    </tileentity>
-	<tileentity id="Reactor.*">
-		<line>
-		if(nbt['temp']!=0)
-            return translate('hud.msg.ReactorCraft.temp')+": "+nbt['temp']+"C"
         </line>
     </tileentity>
 </oo>
