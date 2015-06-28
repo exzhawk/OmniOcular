@@ -17,6 +17,8 @@ hud.msg.AWWayofTime.RitualOwner=Ritual Owner
 hud.msg.AWWayofTime.Require=Require
 
 hud.msg.Botania.Mana=Mana
+hud.msg.Botania.output.0=Accepting Mana from Items
+hud.msg.Botania.output.1=Sparing Mana to Items
 
 hud.msg.BuildCraftCore.MaxEnergyReceive=Max Energy Receive
 hud.msg.BuildCraftCore.Recipe=Recipe
@@ -43,12 +45,9 @@ hud.msg.vanilla.Seconds=Seconds
 
 hud.msg.witchery.Owner=Owner
 
-hud.msg.Thaumcraft.AspectTable=Aspect
 hud.msg.Thaumcraft.Instability=Instability
 hud.msg.Thaumcraft.VisAmount=Vis Amount
-hud.msg.Thaumcraft.BorePick=Contains
-hud.msg.Thaumcraft.XP=XP
-hud.msg.Thaumcraft.Link=Linked with
+hud.msg.Thaumcraft.BorePick=Item
 hud.msg.Thaumcraft.NodeType=Node Type
 hud.msg.Thaumcraft.GolemCore=Core
 
@@ -71,4 +70,3 @@ hud.msg.Mystcraft.flags=Effect
 hud.msg.Mystcraft.author=Author
 
 hud.msg.ReactorCraft.chg=Charge
-hud.msg.ReactorCraft.temp=Temperature
