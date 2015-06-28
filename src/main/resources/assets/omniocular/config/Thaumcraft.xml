@@ -1,22 +1,42 @@
 <!--Author: ViKaleidoscope-->
-<!--Date: 2015/04/22-->
+<!--Date: 2015/06/28-->
 <!--Version: 1.7.10-4.2.3.5-->
 <oo>
 	<init>
 		function up(word){
 			return word.substring(0,1).toUpperCase()+word.substring(1)
-			}
+		}
 	</init>
-	<tileentity id="TileDeconstructionTable">
-        <line displayname="hud.msg.Thaumcraft.AspectTable">
-				return up(nbt['Aspect'])
+	<init>
+		function getSlot(i, slot, slotName){
+			slotName=slotName||"Slot";
+			for (var index in i){
+				if (i[index][slotName]==slot){
+					return i[index];
+					}
+				}
+		}
+	</init>
+	<tileentity id="TileArcaneWorkbench">
+        <line>
+			var Wand = getSlot(nbt['Inventory'], 10, 'Slot');
+				return name(Wand)
         </line>
-    </tileentity>
-	<tileentity id="TilePedestal">
+        <line>
+			var WandFocus = getSlot(nbt['Inventory'], 10, 'Slot');
+				return name(WandFocus['tag']['focus'])
+        </line>
 		<line>
-				name(nbt['Items'][0])
+			var TagVis = getSlot(nbt['Inventory'], 10, 'Slot');
+				return
+				YELLOW+(TagVis['tag']['aer'] / 100).toFixed(1)+WHITE+" | "+
+				DGREEN+(TagVis['tag']['terra'] / 100).toFixed(1)+WHITE+" | "+
+				RED+(TagVis['tag']['ignis'] / 100).toFixed(1)+WHITE+" | "+
+				DAQUA+(TagVis['tag']['aqua'] / 100).toFixed(1)+WHITE+" | "+
+				GRAY+(TagVis['tag']['ordo'] / 100).toFixed(1)+WHITE+" | "+
+				DGRAY+(TagVis['tag']['perditio'] / 100).toFixed(1)
 		</line>
-	</tileentity>
+    </tileentity>
     <tileentity id="TileInfusionStone">
         <line displayname="hud.msg.Thaumcraft.Instability">
 			if(nbt['crafting']!=0)
@@ -36,9 +56,9 @@
 	<tileentity id="TileArcaneBore">
 		<line>
 			if(nbt['Inventory'][0]['Slot']!=0){
-			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][0])}
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+name(nbt['Inventory'][0])}
 			else{
-			return translate('hud.msg.Thaumcraft.BorePick')+": "+WHITE+name(nbt['Inventory'][1])}
+			return translate('hud.msg.Thaumcraft.BorePick')+": "+name(nbt['Inventory'][1])}
 		</line>
 	</tileentity>
     <tileentity id="TileSpa">
@@ -50,27 +70,21 @@
 				return WHITE+nbt['Amount']+GRAY+" / "+WHITE+"5000 mB"
         </line>
     </tileentity>
-    <tileentity id="TileJarBrain">
-        <line displayname="hud.msg.Thaumcraft.XP">
-			if(nbt['XP']!=0)
-				return nbt['XP']
-        </line>
-    </tileentity>
 	<tileentity id="TileFocalManipulator">
 		<line>
 				name(nbt['ItemsSynced'][0])
 		</line>
 	</tileentity>
-	<tileentity id="TileMirror">
-        <line displayname="hud.msg.Thaumcraft.Link">
-			if(nbt['linked']!=0)
-				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+	<tileentity id="TileNodeConverter">
+        <line>
+			if(nbt['status']!=0)
+				return GREEN+"Activated"
         </line>
     </tileentity>
-	<tileentity id="TileMirrorEssentia">
-        <line displayname="hud.msg.Thaumcraft.Link">
-			if(nbt['linked']!=0)
-				return nbt['linkX']+", "+nbt['linkY']+", "+nbt['linkZ']
+    <tileentity id="TileFluxScrubber">
+        <line>
+			if(nbt['power']!=0)
+				return GREEN+"Activated"
         </line>
     </tileentity>
 	<tileentity id="TileNode">
@@ -129,6 +143,6 @@
 					break;
 				case 100:return translate('item.ItemGolemCore.100.name');
 					break;}
-	</line>
+		</line>
 	</entity>
 </oo>

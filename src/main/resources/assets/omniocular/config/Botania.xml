@@ -1,6 +1,6 @@
 <!--Author: EpixZhang, ViKaleidoscope-->
-<!--Date: 2015/06/22-->
-<!--Version: r1.6-193-->
+<!--Date: 2015/06/28-->
+<!--Version: r1.6-194-->
 <oo>
     <tileentity id="botania:pool">
         <line displayname="hud.msg.Botania.Mana">
@@ -8,9 +8,9 @@
         </line>
 		<line>
             switch(nbt['outputting']) {
-				case 0:return "Accepting Mana from Items";
+				case 0:return translate('hud.msg.Botania.output.0');
 					break;
-				case 1:return "Sparing Mana to Items";
+				case 1:return translate('hud.msg.Botania.output.1');
 					break;
 				}
         </line>

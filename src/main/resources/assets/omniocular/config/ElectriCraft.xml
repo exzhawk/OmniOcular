@@ -1,0 +1,42 @@
+<!--Date: 2015/06/28-->
+<!--Version: 1.7.10 V6a-->
+<oo>
+	<tileentity id="ElectriInduction.*">
+        <line>
+		if(nbt['pwr']!=0) {if(nbt['pwr']!=undefined) {
+            return translate('hud.msg.RotaryCraft.Power')+": "+(nbt['pwr']/1000).toFixed(3)+"kW"}}
+        </line>
+        <line>
+		if(nbt['tq']!=0) {if(nbt['tq']!=undefined) {
+            return translate('hud.msg.RotaryCraft.Torque')+": "+nbt['tq']+" Nm"}}
+        </line>
+        <line>
+		if(nbt['omg']!=0) {if(nbt['omg']!=undefined) {
+            return translate('hud.msg.RotaryCraft.Speed')+": "+nbt['omg']+" rad/s"}}
+        </line>
+    </tileentity>
+	<tileentity id="ElectriInduction.*">
+		<line>
+		if(nbt['pwr']==0) {
+			return translate('hud.msg.RotaryCraft.Power')+": "+"0W"}
+		</line>
+		<line>
+		if(nbt['tq']==0) {
+			return translate('hud.msg.RotaryCraft.Torque')+": "+"0 Nm"}
+		</line>
+		<line>
+		if(nbt['omg']==0) {
+			return translate('hud.msg.RotaryCraft.Speed')+": "+"0 rad/s"}
+		</line>
+	</tileentity>
+	<tileentity id="ElectriElectric Meter">
+		<line>
+		if(nbt['v']!=0) {
+			return "Point Voltage: "+nbt['v']}
+		</line>
+		<line>
+		if(nbt['a']!=0) {
+			return "Point Current: "+nbt['a']}
+		</line>
+	</tileentity>
+</oo>
