@@ -3,7 +3,7 @@ omniocular.info.NotPointing=使用该指令必须对准一个实体.
 #
 hud.msg.common.LiquidAmount=Liquid Amount
 hud.msg.common.StorageFluid=Storage Fluid
-hud.msg.common.BurnTime=Burn Time
+hud.msg.common.BurnTime=燃烧时间
 #
 hud.msg.AWWayofTime.Capacity=Capacity
 hud.msg.AWWayofTime.Process=Process

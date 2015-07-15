@@ -2,6 +2,13 @@
 <!--Date: 2014/11/17-->
 <!--Version: 6.1.8-->
 <oo>
+    <init>
+        function getLiquid(t){
+            if (t['FluidName']!=undefined || t['Amount']!=undefined ){
+                return t['FluidName']+"("+t['Amount']+" mB)"
+            }
+        }
+    </init>
     <tileentity id="net.minecraft.src.buildcraft.energy.TileEngineCreative">
         <line displayname="gui.heat">
             return nbt['heat']
@@ -33,7 +40,7 @@
         <line displayname="hud.msg.BuildCraftCore.MaxEnergyReceive">
             return nbt['battery']['maxReceive']+" RF"
         </line>
-        <line displayname="hud.msg.common.LiquidAmount=Liquid Amount">
+        <line displayname="hud.msg.common.LiquidAmount">
             return nbt['tank']['Amount']
         </line>
         <line displayname="hud.msg.common.StorageFluid">
@@ -82,10 +89,10 @@
             return nbt['energy']+" RF"
         </line>
         <line displayname="Coolant">
-            return nbt['tankCoolant']['FluidName']+"("+nbt['tankCoolant']['Amount']+" mB)"
+            return getLiquid(nbt['tankCoolant'])
         </line>
         <line displayname="fluid.fuel">
-            return nbt['tankFuel']['FluidName']+"("+nbt['tankFuel']['Amount']+" mB)"
+            return getLiquid(nbt['tankFuel'])
         </line>
     </tileentity>
     <tileentity id="net.minecraft.src.buildcraft.factory.TileFloodGate">
@@ -93,7 +100,7 @@
             return nbt['powered']
         </line>
         <line displayname="hud.msg.fluid">
-            return nbt['tank']['FluidName']+"("+nbt['tank']['Amount']+" mB)"
+            return getLiquid(nbt['tank'])
         </line>
     </tileentity>
     <tileentity id="Filler">
