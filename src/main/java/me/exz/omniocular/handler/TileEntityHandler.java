@@ -22,7 +22,7 @@ public class TileEntityHandler implements IWailaDataProvider {
 //        registrar.registerSyncedNBTKey("*", TileEntity.class);
 //        registrar.registerBodyProvider(instance, Block.class);
         registrar.registerBodyProvider(instance, TileEntity.class);
-        registrar.registerNBTProvider(instance, Block.class);
+//        registrar.registerNBTProvider(instance, Block.class);
         registrar.registerNBTProvider(instance, TileEntity.class);
 
     }
@@ -39,6 +39,7 @@ public class TileEntityHandler implements IWailaDataProvider {
     //TODO workaround for drops / support drops
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        //todo try accessor.remoteNbt
         NBTTagCompound n = accessor.getNBTData();
         if (n != null) {
             currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n, n.getString("id"), accessor.getPlayer()));

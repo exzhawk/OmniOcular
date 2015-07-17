@@ -1,6 +1,7 @@
 package me.exz.omniocular.network;
 
 import me.exz.omniocular.handler.ConfigHandler;
+import me.exz.omniocular.util.LogHelper;
 import net.minecraft.entity.player.EntityPlayerMP;
 
 public class NetworkHelper {
@@ -24,7 +25,7 @@ public class NetworkHelper {
         if (string.equals("__START__")) {
             ConfigHandler.mergedConfig = "";
         } else if (string.equals("__END__")) {
-//            LogHelper.info("received config: "+ConfigHandler.mergedConfig);
+            LogHelper.info("received config: " + ConfigHandler.mergedConfig);
             ConfigHandler.parseConfigFiles();
         } else {
             ConfigHandler.mergedConfig += string;
