@@ -4,7 +4,6 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,6 +11,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Map;
 
 public class TileEntityHandler implements IWailaDataProvider {
 
@@ -21,10 +21,16 @@ public class TileEntityHandler implements IWailaDataProvider {
 //        registrar.registerSyncedNBTKey("*", Block.class);
 //        registrar.registerSyncedNBTKey("*", TileEntity.class);
 //        registrar.registerBodyProvider(instance, Block.class);
-        registrar.registerBodyProvider(instance, TileEntity.class);
+//        registrar.registerBodyProvider(instance, TileEntity.class);
+        for (Object o : TileEntity.nameToClassMap.entrySet()) {
+            Map.Entry entry = (Map.Entry) o;
+            String key = (String) entry.getKey();
+            if (!key.contains("SignalBus")) {
+                registrar.registerBodyProvider(instance, (Class) entry.getValue());
+                registrar.registerNBTProvider(instance, (Class) entry.getValue());
+            }
+        }
 //        registrar.registerNBTProvider(instance, Block.class);
-        registrar.registerNBTProvider(instance, TileEntity.class);
-
     }
 
     @Override
