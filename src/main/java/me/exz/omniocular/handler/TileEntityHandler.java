@@ -4,6 +4,8 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
+import mcp.mobius.waila.api.impl.DataAccessorCommon;
+import me.exz.omniocular.reference.Reference;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,19 +20,21 @@ public class TileEntityHandler implements IWailaDataProvider {
     @SuppressWarnings("UnusedDeclaration")
     public static void callbackRegister(IWailaRegistrar registrar) {
         TileEntityHandler instance = new TileEntityHandler();
-//        registrar.registerSyncedNBTKey("*", Block.class);
-//        registrar.registerSyncedNBTKey("*", TileEntity.class);
-//        registrar.registerBodyProvider(instance, Block.class);
-//        registrar.registerBodyProvider(instance, TileEntity.class);
         for (Object o : TileEntity.nameToClassMap.entrySet()) {
             Map.Entry entry = (Map.Entry) o;
             String key = (String) entry.getKey();
-            if (!key.contains("SignalBus")) {
+            Boolean isBlackListed = false;
+            for (String blackItem : Reference.blackList) {
+                if (key.equals(blackItem)) {
+                    isBlackListed = true;
+                    break;
+                }
+            }
+            if (!isBlackListed) {
                 registrar.registerBodyProvider(instance, (Class) entry.getValue());
                 registrar.registerNBTProvider(instance, (Class) entry.getValue());
             }
         }
-//        registrar.registerNBTProvider(instance, Block.class);
     }
 
     @Override
@@ -42,10 +46,10 @@ public class TileEntityHandler implements IWailaDataProvider {
     public List<String> getWailaHead(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         return currenttip;
     }
+
     //TODO workaround for drops / support drops
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        //todo try accessor.remoteNbt
         NBTTagCompound n = accessor.getNBTData();
         if (n != null) {
             currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n, n.getString("id"), accessor.getPlayer()));
