@@ -9,6 +9,7 @@ public class Reference {
     public static final String[] blackList = {
             "SignalBus",
     };
+    //todo make this automatic
     public static final String[] configList = {
             "AdvancedMachines",
             "AdvancedSolarPanel",

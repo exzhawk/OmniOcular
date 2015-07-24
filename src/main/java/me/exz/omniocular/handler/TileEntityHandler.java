@@ -4,8 +4,8 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
-import mcp.mobius.waila.api.impl.DataAccessorCommon;
 import me.exz.omniocular.reference.Reference;
+import me.exz.omniocular.util.ListHelper;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -52,7 +52,10 @@ public class TileEntityHandler implements IWailaDataProvider {
     public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
         NBTTagCompound n = accessor.getNBTData();
         if (n != null) {
-            currenttip.addAll(JSHandler.getBody(ConfigHandler.tileEntityPattern, n, n.getString("id"), accessor.getPlayer()));
+            List<String> tips = JSHandler.getBody(ConfigHandler.tileEntityPattern, n, n.getString("id"), accessor.getPlayer());
+            for (String tip : tips) {
+                ListHelper.AddToList(currenttip, tip);
+            }
         }
         return currenttip;
     }
