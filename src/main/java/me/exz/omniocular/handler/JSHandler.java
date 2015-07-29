@@ -55,13 +55,9 @@ public class JSHandler {
                         for (int i = 0; i < lines.getLength(); i++) {
                             Node line = lines.item(i);
                             tip = "";
+                            String displayname = "";
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
-                                String displayname = StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());
-                                if (patternMap == ConfigHandler.tooltipPattern) {
-                                    tip += "\u00A77" + displayname + ": \u00A7f";
-                                } else {
-                                    tip += displayname + "\u00A4\u00A4a\u00A4\u00A4b\u00A7f";
-                                }
+                                displayname = StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());
                             }
                             String functionContent = line.getTextContent();
                             String hash = "S" + NBTHelper.MD5(functionContent);
@@ -79,11 +75,18 @@ public class JSHandler {
                             }
                             Invocable invoke = (Invocable) JSHandler.engine;
                             try {
-                                String r = String.valueOf(invoke.invokeFunction(hash, ""));
-                                if (r.equals("__ERROR__") || r.equals("null") || r.equals("undefined") || r.equals("NaN")) {
+                                String result = String.valueOf(invoke.invokeFunction(hash, ""));
+                                if (result.equals("__ERROR__") || result.equals("null") || result.equals("undefined")
+                                        || result.equals("NaN")) {
                                     continue;
                                 }
-                                tip += r;
+                                if (patternMap == ConfigHandler.tooltipPattern) {
+                                    tip = "\u00A77" + displayname + ": \u00A7f";
+                                } else {
+                                    tip = ConfigHandler.settingList.get("displaynameTileentity")
+                                            .replace("DISPLAYNAME", displayname)
+                                            .replace("RETURN", result);
+                                }
                             } catch (Exception e) {
                                 continue;
                                 //e.printStackTrace();
@@ -99,6 +102,7 @@ public class JSHandler {
         }
         return lastTips;
     }
+
     //todo provide an function to detect player keyboard action. (hold shift, etc.)
     public static void initEngine() {
         ScriptEngineManager manager = new ScriptEngineManager(null);
@@ -119,7 +123,6 @@ public class JSHandler {
             engine.eval("function armor(i){return Packages.me.exz.omniocular.handler.JSHandler.playerArmor(i)}");
             engine.eval("function isInHotbar(n){return Packages.me.exz.omniocular.handler.JSHandler.haveItemInHotbar(n)}");
             engine.eval("function isInInv(n){return Packages.me.exz.omniocular.handler.JSHandler.haveItemInInventory(n)}");
-
         } catch (ScriptException e) {
             e.printStackTrace();
         }

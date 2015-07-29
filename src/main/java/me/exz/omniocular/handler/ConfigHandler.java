@@ -3,6 +3,7 @@ package me.exz.omniocular.handler;
 import cpw.mods.fml.common.Loader;
 import me.exz.omniocular.reference.Reference;
 import me.exz.omniocular.util.LogHelper;
+import me.exz.omniocular.util.NBTHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +34,7 @@ public class ConfigHandler {
     public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
     public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();
+    public static Map<String, String> settingList = new HashMap<String, String>();
 
     public static void initConfigFiles() {
         configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -89,6 +91,7 @@ public class ConfigHandler {
             entityPattern.clear();
             tileEntityPattern.clear();
             tooltipPattern.clear();
+            settingList.clear();
             JSHandler.scriptSet.clear();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -116,6 +119,17 @@ public class ConfigHandler {
                 for (int j = 0; j < initList.getLength(); j++) {
                     Node node = initList.item(j);
                     JSHandler.engine.eval(node.getTextContent());
+                }
+                NodeList configList = ((Element) ooList.item(i)).getElementsByTagName("setting");
+                for (int j = 0; j < configList.getLength(); j++) {
+                    Node node = configList.item(j);
+                    String settingText = node.getTextContent();
+                    try {
+                        String settingResult = JSHandler.engine.eval(settingText.trim()).toString();
+                        settingList.put(node.getAttributes().getNamedItem("id").getTextContent(), settingResult);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (Exception e) {
