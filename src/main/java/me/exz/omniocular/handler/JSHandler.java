@@ -54,7 +54,6 @@ public class JSHandler {
                         NodeList lines = item.getElementsByTagName("line");
                         for (int i = 0; i < lines.getLength(); i++) {
                             Node line = lines.item(i);
-                            tip = "";
                             String displayname = "";
                             if (line.getAttributes().getNamedItem("displayname") != null && !line.getAttributes().getNamedItem("displayname").getTextContent().trim().isEmpty()) {
                                 displayname = StatCollector.translateToLocal(line.getAttributes().getNamedItem("displayname").getTextContent());

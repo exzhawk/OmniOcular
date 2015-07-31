@@ -1,13 +1,13 @@
 package me.exz.omniocular.handler;
 
 import cpw.mods.fml.common.Loader;
+import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.reference.Reference;
 import me.exz.omniocular.util.LogHelper;
-import me.exz.omniocular.util.NBTHelper;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.IResource;
-import net.minecraft.util.ResourceLocation;
+import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,12 +18,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SuppressWarnings("CanBeFinal")
@@ -49,15 +49,22 @@ public class ConfigHandler {
     }
 
     public static void releasePreConfigFiles() throws IOException {
-        for (String configFileName : Reference.configList) {
-            if (Loader.isModLoaded(configFileName) || configFileName.equals("vanilla")) {
-                configFileName = configFileName.replace("|", "") + ".xml";
-                File targetFile = new File(configDir, configFileName);
-                if (!targetFile.exists()) {
-                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
-                    IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
-                    FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
-                    LogHelper.info("Release pre-config file : " + configFileName);
+        Pattern p = Pattern.compile("[\\\\/:*?\"<>|]");
+        List<String> configList = IOUtils.readLines(OmniOcular.class.getClassLoader().getResourceAsStream("assets/omniocular/config"), Charsets.UTF_8);
+        Set<String> modList = Loader.instance().getIndexedModList().keySet();
+        for (String configFileName : configList) {
+            for (String modID : modList) {
+                Matcher m = p.matcher(modID);
+                if (m.replaceAll("").equals(StringUtils.substring(configFileName, 0, -4)) || configFileName.equals("minecraft")) {
+                    File targetFile = new File(configDir, configFileName);
+                    if (!targetFile.exists()) {
+//                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
+//                    IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
+//                    FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
+                        InputStream resource = OmniOcular.class.getClassLoader().getResourceAsStream("assets/omniocular/config/" + configFileName);
+                        FileUtils.copyInputStreamToFile(resource, targetFile);
+                        LogHelper.info("Release pre-config file : " + configFileName);
+                    }
                 }
             }
         }

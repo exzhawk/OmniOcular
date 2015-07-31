@@ -9,31 +9,4 @@ public class Reference {
     public static final String[] blackList = {
             "SignalBus",
     };
-    //todo make this automatic
-    public static final String[] configList = {
-            "AdvancedMachines",
-            "AdvancedSolarPanel",
-            "appliedenergistics2",
-            "AWWayofTime",
-            "Botania",
-            "BuildCraft|Core",
-            "ChickenChunks",
-            "EMT",
-            "EnderIO",
-            "factorization",
-            "Forestry",
-            "GalacticraftCore",
-            "IC2",
-            "LogisticsPipes",
-            "Mekanism",
-            "MineFactoryReloaded",
-            "ProjectExchange",
-            "Railcraft",
-            "RotaryCraft",
-            "Steamcraft",
-            "TConstruct",
-            "Thaumcraft",
-            "ThermalExpansion",
-            "vanilla",
-            "witchery"};
 }
