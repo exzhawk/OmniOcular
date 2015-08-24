@@ -1,0 +1,87 @@
+<!--Author: Amamiya-Nagisa-->
+<!--Date: 2015/08/18-->
+<!--Version: 6.0.50-->
+<oo>
+    <tileentity id="gt.multitileentity.smeltery">
+	    <line displayname="当前温度">
+		return nbt['gt.temperature']+BLUE+" K"
+        </line>
+		<line displayname="熔炼物种数">
+		return nbt['gt.materials']['size']+BLUE+" 种"
+        </line>
+		<line displayname="熔炼物1情况">
+		return nbt['gt.materials']['0']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['0']['m']
+        </line>
+		<line displayname="熔炼物2情况">
+		return nbt['gt.materials']['1']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['1']['m']
+        </line>
+		<line displayname="熔炼物3情况">
+		return nbt['gt.materials']['2']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['2']['m']
+        </line>
+		<line displayname="熔炼物4情况">
+		return nbt['gt.materials']['3']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['3']['m']
+        </line>
+		<line displayname="熔炼物5情况">
+		return nbt['gt.materials']['4']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['4']['m']
+        </line>
+		<line displayname="熔炼物6情况">
+		return nbt['gt.materials']['5']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['5']['m']
+        </line>
+		<line displayname="熔炼物7情况">
+		return nbt['gt.materials']['6']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['6']['m']
+        </line>
+		<line displayname="熔炼物8情况">
+		return nbt['gt.materials']['7']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['7']['m']
+        </line>
+		<line displayname="熔炼物9情况">
+		return nbt['gt.materials']['8']['a'] / 420076800+BLUE+"份 "+RED+nbt['gt.materials']['8']['m']
+        </line>
+	</tileentity>
+	<tileentity id="gt.multitileentity.mold">
+	    <line displayname="当前温度">
+		return nbt['gt.temperature']+BLUE+" K"
+        </line>
+		<line displayname="当前铸造">
+		return nbt['gt.materials']['m']
+        </line>
+	</tileentity>
+	<tileentity id="gt.multitileentity.tank.boiler_steam">
+	    <line displayname="水类型">
+		return nbt['gt.tank.0']['FluidName']
+		</line>
+		<line displayname="水存量">
+		return nbt['gt.tank.0']['Amount']+BLUE+"/"+nbt['gt.tank.0']['cap']+BLUE+" L"
+		</line>
+		<line displayname="蒸汽存量">
+		return nbt['gt.tank.1']['Amount']+BLUE+"/"+nbt['gt.tank.1']['cap']+BLUE+" L"
+		</line>
+	</tileentity>
+	<tileentity id="gt.multitileentity.engine.kinetic_steam">
+	    <line displayname="缓存能量">
+		return nbt['gt.energy']+BLUE+" KU"
+		</line>
+		<line displayname="蒸汽存量">
+		return nbt['gt.tank.0']['Amount']+BLUE+"/"+nbt['gt.tank.0']['cap']+BLUE+" L"
+		</line>
+	</tileentity>
+	<tileentity id="gt.multitileentity.generator.burning_solid">
+	    <line displayname="剩余热量">
+		return nbt['gt.energy']+BLUE+" HU"
+		</line>  
+		<line displayname="燃料情况">
+		if(nbt['gt.invlist']['0']['Damage']!=8200)
+		if(nbt['gt.invlist']['0']['Damage']!=8201){
+		return nbt['gt.invlist']['0']['Count']+BLUE+"个 "+RED+name(nbt['gt.invlist']['0'])}	
+		</line>
+		<line displayname="灰烬情况">
+		switch(nbt['gt.invlist']['0']['Damage']) {
+		case 8200:return nbt['gt.invlist']['0']['Count']+BLUE+"个 "+RED+name(nbt['gt.invlist']['0']);
+		    break;
+		case 8201:return nbt['gt.invlist']['0']['Count']+BLUE+"个 "+RED+name(nbt['gt.invlist']['0']);
+		    break;}
+		</line>
+		<line displayname="灰烬情况">
+		return nbt['gt.invlist']['1']['Count']+BLUE+"个 "+RED+name(nbt['gt.invlist']['1'])
+		</line>
+	</tileentity>
+</oo>
