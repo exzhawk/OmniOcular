@@ -1,10 +1,10 @@
 omniocular.info.NotHolding=使用该指令必须手持一件物品.
 omniocular.info.NotPointing=使用该指令必须对准一个实体.
-#
-hud.msg.common.LiquidAmount=Liquid Amount
-hud.msg.common.StorageFluid=Storage Fluid
+
+hud.msg.common.LiquidAmount=流体存量
+hud.msg.common.StorageFluid=流体种类
 hud.msg.common.BurnTime=燃烧时间
-#
+
 hud.msg.AWWayofTime.Capacity=Capacity
 hud.msg.AWWayofTime.Process=Process
 hud.msg.AWWayofTime.ProcessSpeed=Process Speed
@@ -15,58 +15,58 @@ hud.msg.AWWayofTime.SelfSacrifice=Self-Sacrifice
 hud.msg.AWWayofTime.RitualID=Ritual ID
 hud.msg.AWWayofTime.RitualOwner=Ritual Owner
 hud.msg.AWWayofTime.Require=Require
-#
+
 hud.msg.Botania.Mana=Mana
 hud.msg.Botania.output.0=Accepting Mana from Items
 hud.msg.Botania.output.1=Sparing Mana to Items
-#
-hud.msg.BuildCraftCore.MaxEnergyReceive=Max Energy Receive
+
+hud.msg.BuildCraftCore.MaxEnergyReceive=最大可接收能源
 hud.msg.BuildCraftCore.Recipe=Recipe
 hud.msg.BuildCraftCore.Pattern=Pattern
-#
+
 hud.msg.EnderIO.Experience=Experience
-#
+
 hud.msg.factorization.Count=Count
 hud.msg.factorization.Fan=Fan
 hud.msg.factorization.Charge=Charge
 hud.msg.factorization.Digest=Digest
 hud.msg.factorization.Process=Process
 hud.msg.factorization.Speed=Speed
-#
+
 hud.msg.GalacticraftCore.AirStored=Air Stored
 hud.msg.GalacticraftCore.GenerateRate=Generate Rate
 hud.msg.GalacticraftCore.CookTime=Cook Time
 hud.msg.GalacticraftCore.GasAmount=Gas Amount
 hud.msg.GalacticraftCore.LiquidAmount=Liquid Amount
 hud.msg.GalacticraftCore.TimeUntilLaunch=Time Until Launch
-#
+
 hud.msg.vanilla.BurnTime=Burn Time Left
 hud.msg.vanilla.Seconds=Seconds
-#
+
 hud.msg.witchery.Owner=主人
-#
+
 hud.msg.Thaumcraft.Instability=注魔不稳定度
 hud.msg.Thaumcraft.VisAmount=源质总量
 hud.msg.Thaumcraft.BorePick=物品
 hud.msg.Thaumcraft.NodeType=节点类型
 hud.msg.Thaumcraft.GolemCore=傀儡核心
-#
+
 hud.msg.RotaryCraft.Power=功率
 hud.msg.RotaryCraft.Torque=扭矩
 hud.msg.RotaryCraft.Speed=转速
-#
+
 hud.msg.TConstruct.Layer=层数
 hud.msg.TConstruct.Capacity=容量
-#
+
 hudmsg.IC2.LavaAmount=岩浆储量
 hudmsg.IC2.Charging=充能
 hudmsg.IC2.Discharging=电池
-#
+
 hud.msg.logisticspipes.off=禁止
 hud.msg.logisticspipes.on=允许
-#
+
 hud.msg.Mystcraft.position=生成于
 hud.msg.Mystcraft.flags=效果
 hud.msg.Mystcraft.author=拥有者
-#
+
 hud.msg.ReactorCraft.chg=Charge
