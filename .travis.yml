@@ -1,2 +1,2 @@
 language: java
-script: gradle setupCIWorkspace build
+script: gradle setupCIWorkspace build -i
