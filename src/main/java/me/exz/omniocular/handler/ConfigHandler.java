@@ -4,9 +4,7 @@ import cpw.mods.fml.common.Loader;
 import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.reference.Reference;
 import me.exz.omniocular.util.LogHelper;
-import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -52,33 +50,32 @@ public class ConfigHandler {
 
     public static void releasePreConfigFiles() throws IOException {
         Pattern p = Pattern.compile("[\\\\/:*?\"<>|]");
-        File jar = new File(OmniOcular.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        String classPath = OmniOcular.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+        String classFileName = "!/" + OmniOcular.class.getName().replace(".", "/") + ".class";
+        String jarPath = StringUtils.removeStart(StringUtils.removeEnd(classPath, classFileName), "file:/");
+        File jar = new File(jarPath);
         JarFile jarFile = new JarFile(jar);
         final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
+        Set<String> configList = new HashSet<String>();
+        final String assetConfigPath = "assets/omniocular/config/";
+        final String xmlExt = ".xml";
         while (entries.hasMoreElements()) {
             final String name = entries.nextElement().getName();
-            if (name.startsWith("assets/omniocular/config/")) { //filter according to the path
-                LogHelper.info(name);
+            if (name.startsWith(assetConfigPath) && name.endsWith(xmlExt)) { //filter according to the path
+                configList.add(StringUtils.removeStart(StringUtils.removeEnd(name, xmlExt), assetConfigPath));
             }
         }
-        List<String> configList = IOUtils.readLines(OmniOcular.class.getClassLoader().getResourceAsStream("assets/omniocular/config"), Charsets.UTF_8);
         Set<String> modList = Loader.instance().getIndexedModList().keySet();
-        for (String configFileNamet : configList) {
-            System.out.println(configFileNamet);
-        }
 
-        for (String configFileName : configList) {
+        for (String configName : configList) {
             for (String modID : modList) {
                 Matcher m = p.matcher(modID);
-                if (m.replaceAll("").equals(StringUtils.substring(configFileName, 0, -4)) || configFileName.equals("minecraft")) {
-                    File targetFile = new File(configDir, configFileName);
+                if (configName.equals(m.replaceAll("")) || configName.equals("minecraft")) {
+                    File targetFile = new File(configDir, configName + xmlExt);
                     if (!targetFile.exists()) {
-//                    ResourceLocation resourceLocation = new ResourceLocation(Reference.MOD_ID.toLowerCase(), "config/" + configFileName);
-//                    IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(resourceLocation);
-//                    FileUtils.copyInputStreamToFile(resource.getInputStream(), targetFile);
-                        InputStream resource = OmniOcular.class.getClassLoader().getResourceAsStream("assets/omniocular/config/" + configFileName);
+                        InputStream resource = OmniOcular.class.getClassLoader().getResourceAsStream(assetConfigPath + configName + xmlExt);
                         FileUtils.copyInputStreamToFile(resource, targetFile);
-                        LogHelper.info("Release pre-config file : " + configFileName);
+                        LogHelper.info("Release pre-config file : " + configName);
                     }
                 }
             }
