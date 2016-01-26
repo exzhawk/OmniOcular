@@ -23,6 +23,8 @@ import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,8 +52,21 @@ public class ConfigHandler {
 
     public static void releasePreConfigFiles() throws IOException {
         Pattern p = Pattern.compile("[\\\\/:*?\"<>|]");
+        File jar = new File(OmniOcular.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        JarFile jarFile = new JarFile(jar);
+        final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
+        while (entries.hasMoreElements()) {
+            final String name = entries.nextElement().getName();
+            if (name.startsWith("assets/omniocular/config/")) { //filter according to the path
+                LogHelper.info(name);
+            }
+        }
         List<String> configList = IOUtils.readLines(OmniOcular.class.getClassLoader().getResourceAsStream("assets/omniocular/config"), Charsets.UTF_8);
         Set<String> modList = Loader.instance().getIndexedModList().keySet();
+        for (String configFileNamet : configList) {
+            System.out.println(configFileNamet);
+        }
+
         for (String configFileName : configList) {
             for (String modID : modList) {
                 Matcher m = p.matcher(modID);
