@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.*;
@@ -48,21 +49,29 @@ public class ConfigHandler {
 
     }
 
-    public static void releasePreConfigFiles() throws IOException {
+    public static void releasePreConfigFiles() throws IOException, URISyntaxException {
+        final String assetConfigPath = "assets/omniocular/config/";
+        final String xmlExt = ".xml";
+        Set<String> configList = new HashSet<String>();
         Pattern p = Pattern.compile("[\\\\/:*?\"<>|]");
         String classPath = OmniOcular.class.getProtectionDomain().getCodeSource().getLocation().getFile();
         String classFileName = "!/" + OmniOcular.class.getName().replace(".", "/") + ".class";
         String jarPath = StringUtils.removeStart(StringUtils.removeEnd(classPath, classFileName), "file:/");
-        File jar = new File(jarPath);
-        JarFile jarFile = new JarFile(jar);
-        final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
-        Set<String> configList = new HashSet<String>();
-        final String assetConfigPath = "assets/omniocular/config/";
-        final String xmlExt = ".xml";
-        while (entries.hasMoreElements()) {
-            final String name = entries.nextElement().getName();
-            if (name.startsWith(assetConfigPath) && name.endsWith(xmlExt)) { //filter according to the path
-                configList.add(StringUtils.removeStart(StringUtils.removeEnd(name, xmlExt), assetConfigPath));
+        if (jarPath.endsWith(".class")) {
+            File xmlDirectory = new File(OmniOcular.class.getResource("/" + assetConfigPath).toURI());
+            for (String xmlFilename : xmlDirectory.list()) {
+                configList.add(StringUtils.removeEnd(xmlFilename, xmlExt));
+            }
+
+        } else {
+            File jar = new File(jarPath);
+            JarFile jarFile = new JarFile(jar);
+            final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
+            while (entries.hasMoreElements()) {
+                final String name = entries.nextElement().getName();
+                if (name.startsWith(assetConfigPath) && name.endsWith(xmlExt)) { //filter according to the path
+                    configList.add(StringUtils.removeStart(StringUtils.removeEnd(name, xmlExt), assetConfigPath));
+                }
             }
         }
         Set<String> modList = Loader.instance().getIndexedModList().keySet();
