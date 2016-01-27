@@ -1,2 +1,3 @@
 language: java
+before_script: chmod 777 gradlew
 script: gradle setupCIWorkspace build -i
