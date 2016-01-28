@@ -1,5 +1,6 @@
 package me.exz.omniocular.handler;
 
+import com.google.common.collect.ImmutableMap;
 import cpw.mods.fml.common.Loader;
 import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.reference.Reference;
@@ -110,6 +111,27 @@ public class ConfigHandler {
             }
         }
         mergedConfig = "<root>" + mergedConfig + "</root>";
+
+        final String[][] quoteChars = {
+                {"&", "&amp;"},
+                {"<", "&lt;"},
+                {">", "&gt;"},
+//                {"\"", "&quot;"},
+//                {"'", "&apos;"}
+        };
+
+        StringBuffer quotedBuffer = new StringBuffer();
+        Pattern tagSelectorRegex = Pattern.compile("(?<=<(init|line)[^>]*>).*?(?=</\\1>)");
+        Matcher tagSelectorMatcher = tagSelectorRegex.matcher(mergedConfig);
+        while (tagSelectorMatcher.find()) {
+            String quotedString = tagSelectorMatcher.group();
+            for (String[] quoteCharPair : quoteChars) {
+                quotedString = quotedString.replace(quoteCharPair[0], quoteCharPair[1]);
+            }
+            tagSelectorMatcher.appendReplacement(quotedBuffer, quotedString);
+        }
+        tagSelectorMatcher.appendTail(quotedBuffer);
+        mergedConfig = quotedBuffer.toString();
     }
 
     public static void parseConfigFiles() {
