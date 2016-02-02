@@ -35,6 +35,7 @@ public class ClientProxy extends CommonProxy {
             ConfigHandler.releasePreConfigFiles();
         } catch (Exception e) {
             LogHelper.error("Can't release pre-config files");
+            e.printStackTrace();
         }
         ConfigHandler.mergeConfig();
     }
