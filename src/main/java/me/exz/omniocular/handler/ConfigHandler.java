@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.net.URISyntaxException;
+import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.*;
@@ -65,7 +66,7 @@ public class ConfigHandler {
             }
 
         } else {
-            File jar = new File(jarPath);
+            File jar = new File(URLDecoder.decode(jarPath, "utf8"));
             JarFile jarFile = new JarFile(jar);
             final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
             while (entries.hasMoreElements()) {
