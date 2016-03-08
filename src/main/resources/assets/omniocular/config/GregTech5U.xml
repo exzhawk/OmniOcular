@@ -1,0 +1,69 @@
+<!--Version: 5.09.19-->
+<!--Date: 2016/03/08-->
+<!--Author: Amamiya-Nagisa-->
+<oo>
+	<tileentity id="BaseMetaTileEntity">
+	    <line displayname="能量:">
+            if(nbt['mStoredEnergy']!=0){return nbt['mStoredEnergy']+" EU"}
+		</line>
+		<line displayname="流体存量:">
+		    if(nbt['mFluid']['Amount']!=undefined){return GREEN+nbt['mFluid']['FluidName']+":"+WHITE+nbt['mFluid']['Amount']+" mB"}
+		</line>
+        <line displayname="蒸汽:">
+            if(nbt['mSteam']['Amount']!=undefined){return nbt['mSteam']['Amount']+" mB"}
+		</line>
+        <line displayname="蒸汽存量:">
+            if(nbt['mStoredSteam']!=0){return nbt['mStoredSteam']+" mB"}
+		</line>
+		<line displayname="温度:">
+            if(nbt['mID']==100)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="温度:">
+            if(nbt['mID']==105)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="温度:">
+            if(nbt['mID']==101)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="温度:">
+            if(nbt['mID']==102)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="工作功率:">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mStoredSteam']==0)
+			if(nbt['mSolderingTool']!=0){
+			return YELLOW+Math.abs(nbt['mEUt'])+WHITE+" EU/t"}
+		</line>
+		<line displayname="功率(设备未修好):">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mSolderingTool']==0){
+			return YELLOW+Math.abs(nbt['mEUt'])*1.1+WHITE+" EU/t"}
+		</line>	
+		<line displayname="蒸汽需求:">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mStoredSteam']!=0){
+			return YELLOW+Math.abs(nbt['mEUt']) * 2+WHITE+" mB/t"}
+		</line>
+		<line displayname="工作进程:">
+		    if(nbt['mMaxProgresstime']!=0)
+			if(nbt['mMaxProgresstime']!=undefined){
+            return YELLOW+nbt['mProgresstime'] / 20+WHITE+"/"+nbt['mMaxProgresstime'] / 20+" s"}
+		</line>			
+		<line displayname="正在生产:">
+            if(nbt['mActive']==1){
+			return YELLOW+nbt['mOutputItem0']['Count']+"个"+GREEN+name(nbt['mOutputItem0'])}
+		</line>
+		<line displayname="副产物:">
+            if(nbt['mActive']==1){
+			return YELLOW+nbt['mOutputItem1']['Count']+"个"+GREEN+name(nbt['mOutputItem1'])}
+		</line>
+	</tileentity>
+	<tileentity id="BaseMetaPipeEntity">
+		<line displayname="运输情况:">
+            if(nbt['mFluid']['Amount']!=undefined){
+			return YELLOW+nbt['mFluid']['Amount']+WHITE+" mb "+BLUE+nbt['mFluid']['FluidName']}
+		</line>
+	</tileentity>
+</oo>
