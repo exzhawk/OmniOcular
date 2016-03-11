@@ -1,0 +1,65 @@
+<!--Author: Amamiya-Nagisa-->
+<!--Date: 2016/03/11-->
+<!--Version: 0.7.1.2-->
+<oo>
+    <tileentity id="ImmersiveEngineering:CokeOven">
+		<line displayname="hud.msg.storedcreosote">
+		if(nbt['tank']['Amount']!=undefined){
+		return nbt['tank']['Amount']+BLUE+" mB"}
+		</line>
+		<line displayname="hud.msg.progress">
+		if(nbt['processMax']!=0){
+		return Math.floor(nbt['processMax'] /20 -(nbt['process']/ 20)) +"/"+nbt['processMax'] / 20 +BLUE+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="ImmersiveEngineering:BlastFurnace">
+	    <line displayname="hud.msg.vanilla.BurnTime">
+		if(nbt['burnTime']!=0){
+		return parseInt(nbt['burnTime'] / 20)+"/"+nbt['lastBurnTime'] / 20+BLUE+" s"}
+		</line>
+	    <line displayname="hud.msg.progress">
+		if(nbt['processMax']!=0){
+		return Math.floor(nbt['processMax'] /20 -(nbt['process']/ 20)) +"/"+nbt['processMax'] / 20 +BLUE+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="ImmersiveEngineering:BlastFurnaceAdvanced">
+	    <line displayname="hud.msg.vanilla.BurnTime">
+		if(nbt['burnTime']!=0 && nbt['burnTime']!=-2){
+		return Math.floor((nbt['burnTime'] / nbt['lastBurnTime']) * 100)+BLUE+"%"}
+		</line>
+	    <line displayname="hud.msg.progress">
+		if(nbt['processMax']!=0){
+		return Math.floor((1-(nbt['process'] / nbt['processMax'])) * 100)+BLUE+"%"}
+		</line>
+	</tileentity>
+	<tileentity id="ImmersiveEngineering:Crusher">
+        <line displayname="hud.msg.greg.output">	
+		if(nbt['inputs']['0']['id']!=0){
+		return nbt['inputs']['0']['Count']+BLUE+"个 "+RED+name(nbt['inputs']['0'])}
+		</line>
+	</tileentity>
+	<tileentity id="ImmersiveEngineering:DieselGenerator">
+	    <line displayname="hud.msg.state">	
+		if(nbt['active']!=0)
+		if(nbt['tank']['Amount']!=undefined){
+		return RED+translate("hud.msg.on")}
+		</line>
+		<line displayname="hud.msg.state">	
+		if(nbt['active']==0)
+		if(nbt['tank']['Amount']!=undefined){
+		return RED+translate("hud.msg.off")}
+		</line>
+		<line displayname="hud.msg.fuel">	
+		if(nbt['tank']['Amount']!=undefined){
+		return nbt['tank']['Amount']+BLUE+"mB "+RED+nbt['tank']['FluidName']}
+		</line>
+	</tileentity>
+	<tileentity id="ImmersiveEngineering:BreakerSwitch">
+	    <line displayname="hud.msg.state2">
+	    if(nbt['active']==1){
+	    return GREEN+translate("hud.msg.switch.on")}
+	    else{
+		return RED+translate("hud.msg.switch.off")}
+	    </line>
+	</tileentity>	
+</oo>
