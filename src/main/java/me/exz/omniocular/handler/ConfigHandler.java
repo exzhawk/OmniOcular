@@ -66,6 +66,8 @@ public class ConfigHandler {
             }
 
         } else {
+        	if ("Mac OS X".equals(System.getProperty("os.name")))
+        		jarPath = "/" + jarPath;
             File jar = new File(URLDecoder.decode(jarPath, "utf8"));
             JarFile jarFile = new JarFile(jar);
             final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar
