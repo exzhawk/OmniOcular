@@ -80,6 +80,9 @@ hud.msg.switch.on=ON
 hud.msg.switch.off=OFF
 hud.msg.state=State
 hud.msg.state2=State
+hud.msg.energy=Energy
+hud.msg.currentTickTime=Progress Time
+hud.msg.TR.energyOutput=Energy Output
 
 hud.msg.immersiveengineering.state.on=ON
 hud.msg.immersiveengineering.state.off=OFF

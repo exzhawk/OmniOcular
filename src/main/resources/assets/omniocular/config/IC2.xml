@@ -29,7 +29,7 @@
     </tileentity>
 	<tileentity id="BatBox">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"40000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"40000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "32"+GRAY+" EU/t"
@@ -52,7 +52,7 @@
 	</tileentity>
 	<tileentity id="CESU">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"300000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"300000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "128"+GRAY+" EU/t"
@@ -75,7 +75,7 @@
 	</tileentity>
 	<tileentity id="MFE">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"4000000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"4000000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "512"+GRAY+" EU/t"
@@ -98,7 +98,7 @@
 	</tileentity>
 	<tileentity id="MFSU">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"40000000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"40000000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "2048"+GRAY+" EU/t"
@@ -129,7 +129,7 @@
     </tileentity>
 	<tileentity id="Chargepad CESU">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"300000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"300000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "128"+GRAY+" EU/t"
@@ -137,7 +137,7 @@
     </tileentity>
 	<tileentity id="Chargepad MFE">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"4000000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"4000000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "512"+GRAY+" EU/t"
@@ -145,7 +145,7 @@
     </tileentity>
 	<tileentity id="Chargepad MFSU">
 		<line displayname="Stored">
-			return nbt['energy']+GRAY+" / "+WHITE+"40000000"+GRAY+" EU"
+			return Math.floor(nbt['energy'])+GRAY+" / "+WHITE+"40000000"+GRAY+" EU"
 		</line>
 		<line displayname="Output">
 			return "2048"+GRAY+" EU/t"
@@ -518,5 +518,36 @@
 			if(nbt['InvSlots']['discharge']['Contents'][0]['tag']==undefined) {
 			return RED+name(nbt['InvSlots']['discharge']['Contents'][0])+" was out of power"}
 		</line>
+	</tileentity>
+	<tileentity id="Iron Furnace">
+		<line displayname="hud.msg.progress">
+			return nbt['progress'] / 20+GRAY+"/"+GRAY+"8 s"
+		</line>
+		<line displayname="hud.msg.common.BurnTime">
+            return nbt['fuel'] / 20+GRAY+"/"+nbt['maxFuel']/20+GRAY+" s"
+        </line>
+    </tileentity>
+	<tileentity id="Electric Furnace">
+		<line displayname="hud.msg.progress">
+			return nbt['progress'] / 20+GRAY+"/"+GRAY+"5 s"
+		</line>
+		<line displayname="hud.msg.energy">
+		    return nbt['energy']+GRAY+" EU"
+		</line>
+    </tileentity>
+	<tileentity id="TECrop">
+		<line displayname="作物:">
+			return name(nbt['cropName'])
+		</line>
+		<line displayname="所属mod:">
+            return nbt['cropOwner']
+        </line>
+        <line displayname="长速G/种子G/抵抗R:">
+            if(nbt['cropName']!=undefined){return nbt['statGrowth']+"/"+nbt['statGain']+"/"+nbt['statResistance']}
+        </line>		
+		<line displayname="营养/农药/含水量:">
+            if(nbt['exStorage']!=0||nbt['nutrientStorage']!=0||nbt['waterStorage']!=0)
+			{return nbt['nutrientStorage']+"/"+nbt['exStorage']+"/"+nbt['waterStorage']}
+        </line>
 	</tileentity>
 </oo>
