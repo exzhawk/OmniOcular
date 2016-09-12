@@ -80,6 +80,9 @@ hud.msg.switch.on=闭合
 hud.msg.switch.off=断开
 hud.msg.state=运转情况
 hud.msg.state2=通断情况
+hud.msg.energy=能量
+hud.msg.currentTickTime=加工进度
+hud.msg.TR.energyOutput=输出电压
 
 hud.msg.immersiveengineering.state.on=运转
 hud.msg.immersiveengineering.state.off=停止
