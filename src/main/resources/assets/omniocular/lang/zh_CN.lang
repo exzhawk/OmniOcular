@@ -40,7 +40,7 @@ hud.msg.GalacticraftCore.GasAmount=Gas Amount
 hud.msg.GalacticraftCore.LiquidAmount=Liquid Amount
 hud.msg.GalacticraftCore.TimeUntilLaunch=Time Until Launch
 
-hud.msg.vanilla.BurnTime=Burn Time Left
+hud.msg.vanilla.BurnTime=剩余燃烧时间
 hud.msg.vanilla.Seconds=Seconds
 
 hud.msg.witchery.Owner=主人
@@ -70,3 +70,28 @@ hud.msg.Mystcraft.flags=效果
 hud.msg.Mystcraft.author=拥有者
 
 hud.msg.ReactorCraft.chg=Charge
+
+hud.msg.progress=工作进程
+hud.msg.temperature=温度
+hud.msg.storedsteam=蒸汽存量
+hud.msg.storedcreosote=杂酚油量
+hud.msg.fuel=剩余燃料
+hud.msg.switch.on=闭合
+hud.msg.switch.off=断开
+hud.msg.state=运转情况
+hud.msg.state2=通断情况
+hud.msg.energy=能量
+hud.msg.currentTickTime=加工进度
+hud.msg.TR.energyOutput=输出电压
+
+hud.msg.immersiveengineering.state.on=运转
+hud.msg.immersiveengineering.state.off=停止
+
+hud.msg.greg.power=功率
+hud.msg.greg.power.unfix=功率(设备未修好)
+hud.msg.greg.requiredsteam=蒸汽需求
+hud.msg.greg.output=正在生产
+hud.msg.greg.output2=副产物
+hud.msg.greg.multifurnaceoutput=熔炼物(1-6)
+hud.msg.greg.multifurnaceoutput2=熔炼物(7-12)
+hud.msg.greg.multifurnaceoutput3=熔炼物(13-18)

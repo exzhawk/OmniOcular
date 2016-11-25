@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -116,6 +117,7 @@ public class JSHandler {
         try {
             engine.eval("importClass(Packages.me.exz.omniocular.handler.JSHandler);");
             engine.eval("function translate(t){return Packages.me.exz.omniocular.handler.JSHandler.translate(t)}");
+            engine.eval("function translateFormatted(t,obj){return Packages.me.exz.omniocular.handler.JSHanlder.translateFormatted(t,obj)}");
             engine.eval("function name(n){return Packages.me.exz.omniocular.handler.JSHandler.getDisplayName(n.hashCode)}");
             engine.eval("function fluidName(n){return Packages.me.exz.omniocular.handler.JSHandler.getFluidName(n)}");
             engine.eval("function holding(){return Packages.me.exz.omniocular.handler.JSHandler.playerHolding()}");
@@ -166,6 +168,10 @@ public class JSHandler {
     public static String translate(String t) {
         return StatCollector.translateToLocal(t);
     }
+    
+    public static String translateFormatted(String t, Object[] format) {
+    	return StatCollector.translateToLocalFormatted(t, format);
+    }
 
     public static String playerHolding() {
         ItemStack is = entityPlayer.getHeldItem();
@@ -210,7 +216,7 @@ public class JSHandler {
             return fluidList.get(uName);
         } else {
             try {
-                Fluid f = new Fluid(uName);
+                Fluid f = FluidRegistry.getFluid(uName.toLowerCase());
                 FluidStack fs = new FluidStack(f, 1);
                 String lName = fs.getLocalizedName();
                 fluidList.put(uName, lName);

@@ -1,0 +1,181 @@
+<!--Author: Amamiya-Nagisa-->
+<!--Date: 2016/09/08-->
+<!--Version:1.7.10-0.7.18.1111-->
+<oo>
+    <tileentity id="TileRollingMachineTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.progress">
+		if(nbt['tickTime']!=undefined)
+		if(nbt['tickTime']!=-1){
+		return nbt['tickTime']/20+"/"+"12.5"+GREEN+" s"}
+		</line>
+    </tileentity>
+	<tileentity id="TileBlastFurnaceTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+    </tileentity>
+	<tileentity id="TileThermalGeneratorTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hudmsg.IC2.LavaAmount">
+		if(nbt['TileThermalGenerator']['Amount']!=undefined){
+		return Math.floor(nbt['TileThermalGenerator']['Amount'])+GREEN+" mB"}
+		</line>
+    </tileentity>
+	<tileentity id="TileDieselGeneratorTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.fuel">
+		if(nbt['TileDieselGenerator']['Amount']!=undefined){
+		return Math.floor(nbt['TileDieselGenerator']['Amount'])+GREEN+"mB"+RED+" "+nbt['TileDieselGenerator']['FluidName']}
+		</line>
+    </tileentity>
+	<tileentity id="TileGassTurbineTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.fuel">
+		if(nbt['TileGasTurbine']['Amount']!=undefined){
+		return Math.floor(nbt['TileGasTurbine']['Amount'])+GREEN+"mB"+RED+" "+nbt['TileGasTurbine']['FluidName']}
+		</line>
+    </tileentity>
+	<tileentity id="TileAssemblyMachineTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+GREEN+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="TileVacuumFreezerTR">
+	    <line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+GREEN+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="TileGrinderTR">
+	    <line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+"/5"+GREEN+" s"}
+		</line>
+	    <line displayname="hud.msg.common.LiquidAmount">
+		if(nbt['TileGrinder']['Amount']!=undefined){
+		return Math.floor(nbt['TileGrinder']['Amount'])+GREEN+"mB"+RED+" "+nbt['TileGrinder']['FluidName']}
+		</line>
+	</tileentity>
+	<tileentity id="TileIndustrialSawmillTR">
+	    <line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+"/10"+GREEN+" s"}
+		</line>
+	    <line displayname="hud.msg.common.LiquidAmount">
+		if(nbt['TileSawmill']['Amount']!=undefined){
+		return Math.floor(nbt['TileSawmill']['Amount'])+GREEN+"mB"+RED+" "+nbt['TileSawmill']['FluidName']}
+		</line>
+	</tileentity>
+	<tileentity id="TileCentrifugeTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+GREEN+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="TileAlloySmalterTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return Math.floor(nbt['Crater']['currentTickTime']/20)+"/10"+GREEN+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="TileChemicalReactorTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.currentTickTime">
+		if(nbt['Crater']['currentTickTime']!=0){
+		return nbt['Crater']['currentTickTime']/20+GREEN+" s"}
+		</line>
+	</tileentity>
+	<tileentity id="TileQuantumChestTR">
+		<line displayname="hud.msg.factorization.Count">
+		if(nbt['storedQuantity']!=undefined){
+		return nbt['storedQuantity']+GREEN+" 个"}
+		</line>
+	</tileentity>
+	<tileentity id="TileDigitalChestTR">
+		<line displayname="hud.msg.factorization.Count">
+		if(nbt['storedQuantity']!=undefined){
+		return nbt['storedQuantity']+GREEN+" 个"}
+		</line>
+	</tileentity>
+	<tileentity id="TileChargeBench">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+	</tileentity>
+	<tileentity id="TileMatterFabricatorTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+	</tileentity>
+		<tileentity id="TileChunkLoaderTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+	</tileentity>
+	<tileentity id="TileHeatGeneratorTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+	</tileentity>
+	<tileentity id="TileAesuTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+		<line displayname="hud.msg.TR.energyOutput">
+		return nbt['output']+GREEN+" EU"
+		</line>
+	</tileentity>
+	<tileentity id="TileLesuTR">
+		<line displayname="hud.msg.energy">
+		if(nbt['TilePowerAcceptor']['energy']!=undefined){
+		return Math.floor(nbt['TilePowerAcceptor']['energy'])+GREEN+" EU"}
+		</line>
+	</tileentity>
+</oo>

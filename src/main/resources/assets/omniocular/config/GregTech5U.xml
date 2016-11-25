@@ -1,0 +1,171 @@
+<!--Version: 5.09.20-->
+<!--Date: 2016/03/29-->
+<!--Author: Amamiya-Nagisa-->
+<!--Editor: JimJokes-->
+<oo>
+<tileentity id="BaseMetaTileEntity">
+		<line displayname="hud.msg.common.LiquidAmount">
+		    if(nbt['mFluid']['Amount']!=undefined){return GREEN+nbt['mFluid']['FluidName']+" : "+WHITE+nbt['mFluid']['Amount']+" mB"}
+		</line>
+        <line displayname="hud.msg.storedsteam">
+            if(nbt['mSteam']['Amount']!=undefined){return nbt['mSteam']['Amount']+" mB"}
+		</line>
+        <line displayname="hud.msg.storedsteam">
+            if(nbt['mStoredSteam']!=0){return nbt['mStoredSteam']+" mB"}
+		</line>
+		<line displayname="hud.msg.temperature">
+            if(nbt['mID']==100)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="hud.msg.temperature">
+            if(nbt['mID']==105)return nbt['mTemperature']+" / 500"
+		</line>
+		<line displayname="hud.msg.temperature">
+            if(nbt['mID']==101)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="hud.msg.temperature">
+            if(nbt['mID']==102)return nbt['mTemperature']+" / 1000"
+		</line>
+		<line displayname="hud.msg.greg.power">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mStoredSteam']==0)
+			if(nbt['mSolderingTool']!=0){
+			return YELLOW+Math.abs(nbt['mEUt'])+WHITE+" EU/t"}
+		</line>
+		<line displayname="hud.msg.greg.power.unfix">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mSolderingTool']==0){
+			return YELLOW+Math.abs(nbt['mEUt'])*1.1+WHITE+" EU/t"}
+		</line>	
+		<line displayname="hud.msg.greg.requiredsteam">
+		    if(nbt['mEUt']!=0)
+		    if(nbt['mEUt']!=undefined)
+			if(nbt['mStoredSteam']!=0){
+			return YELLOW+Math.abs(nbt['mEUt']) * 2+WHITE+" mB/t"}
+		</line>
+		<line displayname="hud.msg.progress">
+		    if(nbt['mMaxProgresstime']!=0)
+			if(nbt['mMaxProgresstime']!=undefined){
+            return YELLOW+(nbt['mProgresstime'] / 20).toFixed(0)+WHITE+"/"+nbt['mMaxProgresstime'] / 20+" s"}
+		</line>			
+		<line displayname="hud.msg.greg.output">
+            if(nbt['mActive']==1 &&nbt['mID']!=1003&&nbt['mID']!=108){
+			return YELLOW+nbt['mOutputItem0']['Count']+"个"+GREEN+name(nbt['mOutputItem0'])}
+			if(nbt['mActive']==1 &&nbt['mID']==108){
+			return YELLOW+nbt['mOutputItem1']['Count']+"个"+GREEN+name(nbt['mOutputItem1'])}
+		</line>
+		<line displayname="hud.msg.greg.output2">
+            if(nbt['mActive']==1 &&nbt['mID']!=1003&&nbt['mID']!=108){
+			return YELLOW+nbt['mOutputItem1']['Count']+"个"+GREEN+name(nbt['mOutputItem1'])}
+            if(nbt['mActive']==1 &&nbt['mID']==108){
+			return YELLOW+nbt['mOutputItem2']['Count']+"个"+GREEN+name(nbt['mOutputItem2'])}			
+		</line>
+		<line displayname="hud.msg.greg.multifurnaceoutput">
+            if(nbt['mActive']==1 &&nbt['mID']==1003){
+			return GREEN+name(nbt['mOutputItem0'])+WHITE+"/"+GREEN+name(nbt['mOutputItem1'])+WHITE+"/"+GREEN+name(nbt['mOutputItem2'])
+			+WHITE+"/"+GREEN+name(nbt['mOutputItem3'])+WHITE+"/"+GREEN+name(nbt['mOutputItem4'])+WHITE+"/"+GREEN+name(nbt['mOutputItem5'])}
+		</line>
+		<line displayname="hud.msg.greg.multifurnaceoutput2">
+            if(nbt['mActive']==1 &&nbt['mID']==1003){
+			return GREEN+name(nbt['mOutputItem6'])+WHITE+"/"+GREEN+name(nbt['mOutputItem7'])+WHITE+"/"+GREEN+name(nbt['mOutputItem8'])
+			+WHITE+"/"+GREEN+name(nbt['mOutputItem9'])+WHITE+"/"+GREEN+name(nbt['mOutputItem10'])+WHITE+"/"+GREEN+name(nbt['mOutputItem11'])}
+		</line>
+		<line displayname="hud.msg.greg.multifurnaceoutput3">
+            if(nbt['mActive']==1 &&nbt['mID']==1003){
+			return GREEN+name(nbt['mOutputItem12'])+WHITE+"/"+GREEN+name(nbt['mOutputItem13'])+WHITE+"/"+GREEN+name(nbt['mOutputItem14'])
+			+WHITE+"/"+GREEN+name(nbt['mOutputItem15'])+WHITE+"/"+GREEN+name(nbt['mOutputItem16'])+WHITE+"/"+GREEN+name(nbt['mOutputItem17'])}
+		</line>
+		<line displayname="电压输入">
+		    for(i=0;i<=8;i++){
+			if(nbt['mID']==40+i||nbt['mID']==150+i||nbt['mID']==690+i){return GREEN+8*Math.pow(4,i)+GRAY+" EU/t"}
+			}
+			if(nbt['mID']==49||nbt['mID']==159||nbt['mID']==699){
+				return GREEN+"2147483647(MAX)"+GRAY+" EU/t"
+			}
+			for(i=0;i<=7;i++){
+				if(nbt['mID']==20+i){
+					if(nbt['mActive']==1){return GREEN+8*Math.pow(4,i+1)+GRAY+" EU/t"}
+					return GREEN+8*Math.pow(4,i)+GRAY+" EU/t"
+				}
+			}
+			if(nbt['mID']==28){
+				if(nbt['mActive']==1){return GREEN+"2147483647"+GRAY+" EU/t"}
+				return GREEN+"524288"+GRAY+" EU/t"
+			}			
+		</line>
+		<line displayname="电压输出">
+		    for(i=0;i<=8;i++){
+			if(nbt['mID']==160+i||nbt['mID']==170+i||nbt['mID']==180+i||nbt['mID']==190+i||nbt['mID']==30+i||nbt['mID']==690+i){return GREEN+8*Math.pow(4,i)+GRAY+" EU/t"}
+			}
+			if(nbt['mID']==169||nbt['mID']==179||nbt['mID']==189||nbt['mID']==199||nbt['mID']==39||nbt['mID']==699){
+				return GREEN+"2147483647(MAX)"+GRAY+" EU/t"
+			}
+			for(i=0;i<=7;i++){
+				if(nbt['mID']==20+i){
+					if(nbt['mActive']==0){return GREEN+8*Math.pow(4,i+1)+GRAY+" EU/t"}
+					return GREEN+8*Math.pow(4,i)+GRAY+" EU/t"
+				}
+			}
+			if(nbt['mID']==28){
+				if(nbt['mActive']==0){return GREEN+"2147483647"+GRAY+" EU/t"}
+				return GREEN+"524288"+GRAY+" EU/t"
+			}
+		</line>
+		<line displayname="hud.msg.energ">
+		    a=0;
+			b=0;
+			for(i=0;i<=15;i++){
+				if(nbt['Inventory'][i]!=undefined){
+				    b=b+1;
+				    if(nbt['Inventory'][i]['tag']!=undefined){
+				        if(nbt['Inventory'][i]['tag']['GT.ItemCharge']!=undefined){
+		    	            a=a+nbt['Inventory'][i]['tag']['GT.ItemCharge'];
+		    		    }
+				    }
+			    }
+			}
+            if(nbt['mStoredEnergy']!=0){return nbt['mStoredEnergy']+a+GRAY+" EU"}			
+		</line>
+		<line displayname="最大电流">
+		    for (i=0;i<=39;i++){
+				if(nbt['mID']==160+i){return GREEN+b+GRAY+" A"}
+			}
+		    for (i=0;i<=9;i++){
+				if(nbt['mID']==690+i){return GREEN+b+GRAY+" A"}
+			}			
+		</line>
+	</tileentity>
+	<tileentity id="BaseMetaPipeEntity">
+		<line>
+            if(nbt['mFluid']['Amount']!=undefined){
+			return GREEN+nbt['mFluid']['FluidName']+" : "+YELLOW+nbt['mFluid']['Amount']+WHITE+" mb"}
+		</line>
+        <line displayname="最大电压">
+		    for (i=0;i<=90;i++){
+				if(nbt['mID']==1200+i){return GREEN+"32"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=90;i++){
+				if(nbt['mID']==1300+i){return GREEN+"128"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=90;i++){
+				if(nbt['mID']==1400+i){return GREEN+"512"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=90;i++){
+				if(nbt['mID']==1500+i){return GREEN+"2048"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=50;i++){
+				if(nbt['mID']==1600+i){return GREEN+"8192"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=90;i++){
+				if(nbt['mID']==1700+i){return GREEN+"32768"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=10;i++){
+				if(nbt['mID']==2000+i){return GREEN+"8"+GRAY+" EU/t"}
+			}
+			for (i=0;i<=5;i++){
+				if(nbt['mID']==2020+i){return GREEN+"2147483647"+GRAY+" EU/t"}
+			}
+		</line>			
+	</tileentity>
+</oo>

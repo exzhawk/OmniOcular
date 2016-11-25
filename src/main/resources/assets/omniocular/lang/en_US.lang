@@ -70,3 +70,28 @@ hud.msg.Mystcraft.flags=Effect
 hud.msg.Mystcraft.author=Author
 
 hud.msg.ReactorCraft.chg=Charge
+
+hud.msg.progress=Progress
+hud.msg.temperature=Temperature
+hud.msg.storedsteam=Stored Steam
+hud.msg.storedcreosote=Stored Creosote
+hud.msg.fuel=Fuel
+hud.msg.switch.on=ON
+hud.msg.switch.off=OFF
+hud.msg.state=State
+hud.msg.state2=State
+hud.msg.energy=Energy
+hud.msg.currentTickTime=Progress Time
+hud.msg.TR.energyOutput=Energy Output
+
+hud.msg.immersiveengineering.state.on=ON
+hud.msg.immersiveengineering.state.off=OFF
+
+hud.msg.greg.power=Power
+hud.msg.greg.power.unfix=Power(need repair)
+hud.msg.greg.requiredsteam=Required Steam
+hud.msg.greg.output=Output
+hud.msg.greg.output2=Output2
+hud.msg.greg.multifurnaceoutput=Smelting(1-6)
+hud.msg.greg.multifurnaceoutput2=Smelting(7-12)
+hud.msg.greg.multifurnaceoutput3=Smelting(13-18)
