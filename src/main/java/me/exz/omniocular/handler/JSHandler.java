@@ -21,6 +21,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static me.exz.omniocular.util.NBTHelper.NBTCache;
+
 @SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
     public static ScriptEngine engine;
@@ -203,7 +205,7 @@ public class JSHandler {
 
     public static String getDisplayName(String hashCode) {
         try {
-            NBTTagCompound nc = NBTHelper.mapNBT.get(Integer.valueOf(hashCode));
+            NBTTagCompound nc = NBTCache.get(Integer.valueOf(hashCode));
             ItemStack is = ItemStack.loadItemStackFromNBT(nc);
             return is.getDisplayName();
         } catch (Exception e) {
