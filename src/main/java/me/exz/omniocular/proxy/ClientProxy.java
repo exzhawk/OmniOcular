@@ -2,12 +2,20 @@ package me.exz.omniocular.proxy;
 
 import codechicken.nei.guihook.GuiContainerManager;
 import cpw.mods.fml.common.event.FMLInterModComms;
+import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.command.CommandEntityName;
 import me.exz.omniocular.command.CommandItemName;
 import me.exz.omniocular.handler.ConfigHandler;
 import me.exz.omniocular.handler.TooltipHandler;
 import me.exz.omniocular.util.LogHelper;
 import net.minecraftforge.client.ClientCommandHandler;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.util.resource.Resource;
+
+import java.net.URI;
 
 @SuppressWarnings("UnusedDeclaration")
 public class ClientProxy extends CommonProxy {
@@ -38,5 +46,31 @@ public class ClientProxy extends CommonProxy {
             e.printStackTrace();
         }
         ConfigHandler.mergeConfig();
+    }
+
+    @Override
+    public void startHttpServer() {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Server server = new Server(23333);
+                try {
+                    URI uri = OmniOcular.class.getResource("/assets/omniocular/static/").toURI();
+                    ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+                    context.setContextPath("/");
+                    context.setBaseResource(Resource.newResource(uri));
+                    context.setWelcomeFiles(new String[]{"index.html"});
+                    ServletHolder holderPwd = new ServletHolder("default", DefaultServlet.class);
+                    context.addServlet(holderPwd, "/");
+                    server.setHandler(context);
+                    server.start();
+                    server.join();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        t.start();
+
     }
 }
