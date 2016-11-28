@@ -66,7 +66,7 @@ public class ConfigHandler {
             }
 
         } else {
-        	if ("Mac OS X".equals(System.getProperty("os.name")))
+        	if (!(System.getProperty("os.name").startsWith("Windows")))
         		jarPath = "/" + jarPath;
             File jar = new File(URLDecoder.decode(jarPath, "utf8"));
             JarFile jarFile = new JarFile(jar);
