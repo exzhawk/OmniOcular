@@ -19,4 +19,6 @@ public interface IProxy {
     public abstract void initConfig(FMLPreInitializationEvent event);
 
     public abstract void prepareConfigFiles();
+
+    public abstract void startHttpServer();
 }
