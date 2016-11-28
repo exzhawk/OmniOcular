@@ -25,6 +25,7 @@ public class OmniOcular {
     public void preInit(FMLPreInitializationEvent event) {
         proxy.initConfig(event);
         proxy.registerNetwork();
+        proxy.startHttpServer();
     }
 
     @Mod.EventHandler
