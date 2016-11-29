@@ -18,8 +18,7 @@ import java.util.Map;
 
 public class OmniOcular {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static IProxy proxy;
-
+    private static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -45,8 +44,9 @@ public class OmniOcular {
 //        LogHelper.info("FMLServerStartingEvent");
         proxy.registerServerCommand(event);
     }
+
     @NetworkCheckHandler
-    public static boolean check(Map<String,String> remote,Side side){
+    public static boolean check(Map<String, String> remote, Side side) {
         return !(side == Side.SERVER && !remote.isEmpty() && !remote.containsKey(Reference.MOD_ID));
     }
 

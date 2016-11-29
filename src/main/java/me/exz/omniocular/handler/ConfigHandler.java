@@ -1,6 +1,5 @@
 package me.exz.omniocular.handler;
 
-import com.google.common.collect.ImmutableMap;
 import cpw.mods.fml.common.Loader;
 import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.reference.Reference;
@@ -33,11 +32,11 @@ import java.util.regex.Pattern;
 public class ConfigHandler {
     public static File minecraftConfigDirectory;
     public static String mergedConfig = "";
+    static Map<Pattern, Node> entityPattern = new HashMap<>();
+    static Map<Pattern, Node> tileEntityPattern = new HashMap<>();
+    static Map<Pattern, Node> tooltipPattern = new HashMap<>();
+    static Map<String, String> settingList = new HashMap<>();
     private static File configDir;
-    public static Map<Pattern, Node> entityPattern = new HashMap<Pattern, Node>();
-    public static Map<Pattern, Node> tileEntityPattern = new HashMap<Pattern, Node>();
-    public static Map<Pattern, Node> tooltipPattern = new HashMap<Pattern, Node>();
-    public static Map<String, String> settingList = new HashMap<String, String>();
 
     public static void initConfigFiles() {
         configDir = new File(minecraftConfigDirectory, Reference.MOD_ID);
@@ -54,7 +53,7 @@ public class ConfigHandler {
     public static void releasePreConfigFiles() throws IOException, URISyntaxException {
         final String assetConfigPath = "assets/omniocular/config/";
         final String xmlExt = ".xml";
-        Set<String> configList = new HashSet<String>();
+        Set<String> configList = new HashSet<>();
         Pattern p = Pattern.compile("[\\\\/:*?\"<>|]");
         String classPath = OmniOcular.class.getProtectionDomain().getCodeSource().getLocation().getFile();
         String classFileName = "!/" + OmniOcular.class.getName().replace(".", "/") + ".class";
@@ -66,8 +65,8 @@ public class ConfigHandler {
             }
 
         } else {
-        	if (!(System.getProperty("os.name").startsWith("Windows")))
-        		jarPath = "/" + jarPath;
+            if (!(System.getProperty("os.name").startsWith("Windows")))
+                jarPath = "/" + jarPath;
             File jar = new File(URLDecoder.decode(jarPath, "utf8"));
             JarFile jarFile = new JarFile(jar);
             final Enumeration<JarEntry> entries = jarFile.entries(); //gives ALL entries in jar

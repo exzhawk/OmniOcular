@@ -12,7 +12,7 @@ public class ConfigMessage implements IMessage {
     public ConfigMessage() {
     }
 
-    public ConfigMessage(String text) {
+    ConfigMessage(String text) {
         this.text = text;
     }
 

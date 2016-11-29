@@ -25,15 +25,15 @@ import static me.exz.omniocular.util.NBTHelper.NBTCache;
 
 @SuppressWarnings({"CanBeFinal", "UnusedDeclaration"})
 public class JSHandler {
-    public static ScriptEngine engine;
-    public static HashSet<String> scriptSet = new HashSet<String>();
-    private static List<String> lastTips = new ArrayList<String>();
+    static ScriptEngine engine;
+    static HashSet<String> scriptSet = new HashSet<>();
+    private static List<String> lastTips = new ArrayList<>();
     private static int lastHash;
-    private static Map<String, String> fluidList = new HashMap<String, String>();
-    private static Map<String, String> displayNameList = new HashMap<String, String>();
+    private static Map<String, String> fluidList = new HashMap<>();
+    private static Map<String, String> displayNameList = new HashMap<>();
     private static EntityPlayer entityPlayer;
 
-    public static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
+    static List<String> getBody(Map<Pattern, Node> patternMap, NBTTagCompound n, String id, EntityPlayer player) {
         entityPlayer = player;
         if (n.hashCode() != lastHash || player.worldObj.getTotalWorldTime() % 10 == 0) {
             lastHash = n.hashCode();
@@ -106,11 +106,11 @@ public class JSHandler {
     }
 
     //todo provide an function to detect player keyboard action. (hold shift, etc.)
-    public static void initEngine() {
+    static void initEngine() {
         ScriptEngineManager manager = new ScriptEngineManager(null);
         engine = manager.getEngineByName("javascript");
         setSpecialChar();
-        /** java 8 work around */
+        /* java 8 work around */
         try {
             engine.eval("load(\"nashorn:mozilla_compat.js\");");
         } catch (ScriptException e) {
