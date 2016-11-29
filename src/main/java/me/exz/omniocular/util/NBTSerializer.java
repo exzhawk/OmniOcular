@@ -9,7 +9,7 @@ import java.util.Map;
 import static me.exz.omniocular.util.NBTHelper.NBTCache;
 import static me.exz.omniocular.util.NBTHelper.gson;
 
-public class NBTSerializer implements JsonSerializer<NBTBase> {
+class NBTSerializer implements JsonSerializer<NBTBase> {
     @Override
     public JsonElement serialize(NBTBase src, Type typeOfSrc, JsonSerializationContext context) {
         switch (src.getId()) {

@@ -7,7 +7,18 @@ import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
 
 public class WebSocketHandler extends WebSocketAdapter {
-    public static String lastBroadcastString = "";
+    private static String lastBroadcastString = "";
+
+    static void broadcast(String message) {
+        if (!lastBroadcastString.equals(message)) {
+            lastBroadcastString = message;
+            for (WebSocketHandler webSocketClient : ClientProxy.webSocketClients) {
+                if (webSocketClient.getSession().isOpen()) {
+                    webSocketClient.sendWebSocketText(message);
+                }
+            }
+        }
+    }
 
     @Override
     public void onWebSocketBinary(byte[] payload, int offset, int len) {
@@ -42,16 +53,5 @@ public class WebSocketHandler extends WebSocketAdapter {
 
     private void sendWebSocketText(String message) {
         getRemote().sendStringByFuture(message);
-    }
-
-    static void broadcast(String message) {
-        if (!lastBroadcastString.equals(message)) {
-            lastBroadcastString = message;
-            for (WebSocketHandler webSocketClient : ClientProxy.webSocketClients) {
-                if (webSocketClient.getSession().isOpen()) {
-                    webSocketClient.sendWebSocketText(message);
-                }
-            }
-        }
     }
 }

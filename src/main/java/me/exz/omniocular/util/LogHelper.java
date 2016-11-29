@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Level;
 @SuppressWarnings("UnusedDeclaration")
 public class LogHelper {
     private static void log(Level logLevel, Object object) {
-        FMLLog.log(Reference.MOD_NAME, logLevel, "%s" ,String.valueOf(object));
+        FMLLog.log(Reference.MOD_NAME, logLevel, "%s", String.valueOf(object));
     }
 
     public static void all(Object object) {

@@ -1,6 +1,7 @@
 (function () {
     function start(delay) {
         var ws = new WebSocket("ws://" + window.location.host + "/w");
+        //noinspection JSUnusedLocalSymbols
         ws.onopen = function (event) {
             console.log("websocket opened");
         };
@@ -15,6 +16,7 @@
                     break;
             }
         };
+        //noinspection JSUnusedLocalSymbols
         ws.onclose = function (event) {
             setTimeout(function () {
                 start(delay * 2);
