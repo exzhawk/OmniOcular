@@ -40,8 +40,10 @@ public class JSHandler {
             lastTips.clear();
             //LogHelper.info(NBTHelper.NBT2json(n));
             try {
-                String json = "var nbt=" + NBTHelper.NBT2json(n) + ";";
+                String bareJson = NBTHelper.NBT2json(n);
+                String json = "var nbt=" + bareJson + ";";
                 JSHandler.engine.eval(json);
+                WebSocketHandler.broadcast(bareJson);
             } catch (ScriptException e) {
                 e.printStackTrace();
             }
@@ -170,9 +172,9 @@ public class JSHandler {
     public static String translate(String t) {
         return StatCollector.translateToLocal(t);
     }
-    
+
     public static String translateFormatted(String t, Object[] format) {
-    	return StatCollector.translateToLocalFormatted(t, format);
+        return StatCollector.translateToLocalFormatted(t, format);
     }
 
     public static String playerHolding() {
