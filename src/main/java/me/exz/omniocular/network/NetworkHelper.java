@@ -21,14 +21,18 @@ public class NetworkHelper {
         sendString("__END__", player);
     }
 
-    public static void recvConfigString(String string) {
-        if (string.equals("__START__")) {
-            ConfigHandler.mergedConfig = "";
-        } else if (string.equals("__END__")) {
-            LogHelper.info("received config: " + ConfigHandler.mergedConfig);
-            ConfigHandler.parseConfigFiles();
-        } else {
-            ConfigHandler.mergedConfig += string;
+    static void recvConfigString(String string) {
+        switch (string) {
+            case "__START__":
+                ConfigHandler.mergedConfig = "";
+                break;
+            case "__END__":
+                LogHelper.info("received config: " + ConfigHandler.mergedConfig);
+                ConfigHandler.parseConfigFiles();
+                break;
+            default:
+                ConfigHandler.mergedConfig += string;
+                break;
         }
     }
 }

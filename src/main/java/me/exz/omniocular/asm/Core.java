@@ -5,7 +5,7 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
-public class Core implements IFMLLoadingPlugin{
+public class Core implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
         //LogHelper.info("getASMTransformerClass");

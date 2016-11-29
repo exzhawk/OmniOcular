@@ -7,9 +7,8 @@ import cpw.mods.fml.common.ModMetadata;
 
 import java.util.Arrays;
 
-public class CoreContainer extends DummyModContainer{
-    public CoreContainer()
-    {
+public class CoreContainer extends DummyModContainer {
+    public CoreContainer() {
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
         meta.modId = "OmniOcularCore";
@@ -21,8 +20,7 @@ public class CoreContainer extends DummyModContainer{
     }
 
     @Override
-    public boolean registerBus(EventBus bus, LoadController controller)
-    {
+    public boolean registerBus(EventBus bus, LoadController controller) {
         bus.register(this);
         return true;
     }

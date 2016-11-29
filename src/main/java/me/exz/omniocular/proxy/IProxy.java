@@ -4,21 +4,21 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public interface IProxy {
-    public abstract void registerEvent();
+    void registerEvent();
 
-    public abstract void registerClientCommand();
+    void registerClientCommand();
 
-    public abstract void registerServerCommand(FMLServerStartingEvent event);
+    void registerServerCommand(FMLServerStartingEvent event);
 
-    public abstract void registerWaila();
+    void registerWaila();
 
-    public abstract void registerNEI();
+    void registerNEI();
 
-    public abstract void registerNetwork();
+    void registerNetwork();
 
-    public abstract void initConfig(FMLPreInitializationEvent event);
+    void initConfig(FMLPreInitializationEvent event);
 
-    public abstract void prepareConfigFiles();
+    void prepareConfigFiles();
 
-    public abstract void startHttpServer();
+    void startHttpServer();
 }
