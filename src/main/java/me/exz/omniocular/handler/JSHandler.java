@@ -43,7 +43,7 @@ public class JSHandler {
                 String bareJson = NBTHelper.NBT2json(n);
                 String json = "var nbt=" + bareJson + ";";
                 JSHandler.engine.eval(json);
-                WebSocketHandler.broadcast(bareJson);
+                WebSocketHandler.broadcast(n);
             } catch (ScriptException e) {
                 e.printStackTrace();
             }

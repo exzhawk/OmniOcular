@@ -2,12 +2,21 @@ package me.exz.omniocular.handler;
 
 import me.exz.omniocular.proxy.ClientProxy;
 import me.exz.omniocular.util.LogHelper;
+import me.exz.omniocular.util.NBTHelper;
+import me.exz.omniocular.util.WebSocketMsg;
+import net.minecraft.nbt.NBTBase;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
 
 public class WebSocketHandler extends WebSocketAdapter {
     private static String lastBroadcastString = "";
+
+    static void broadcast(NBTBase n) {
+        WebSocketMsg msg = new WebSocketMsg(n, "nbt");
+        String msgString = NBTHelper.NBT2json(msg);
+        broadcast(msgString);
+    }
 
     static void broadcast(String message) {
         if (!lastBroadcastString.equals(message)) {

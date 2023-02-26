@@ -23,7 +23,7 @@ public class NBTHelper {
     );
     static Gson gson = new GsonBuilder().registerTypeHierarchyAdapter(NBTBase.class, new NBTSerializer()).create();
 
-    public static String NBT2json(NBTBase n) {
+    public static String NBT2json(Object n) {
         try {
             return gson.toJson(n);
         } catch (Exception e) {
