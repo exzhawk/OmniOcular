@@ -26,4 +26,5 @@ public class ServerProxy extends CommonProxy {
     public void prepareConfigFiles() {
         ConfigHandler.mergeConfig();
     }
+
 }

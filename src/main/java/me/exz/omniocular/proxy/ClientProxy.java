@@ -2,6 +2,7 @@ package me.exz.omniocular.proxy;
 
 import codechicken.nei.guihook.GuiContainerManager;
 import cpw.mods.fml.common.event.FMLInterModComms;
+import me.exz.omniocular.OmniOcular;
 import me.exz.omniocular.command.CommandEntityName;
 import me.exz.omniocular.command.CommandItemName;
 import me.exz.omniocular.handler.ConfigHandler;
@@ -9,8 +10,11 @@ import me.exz.omniocular.handler.TooltipHandler;
 import me.exz.omniocular.util.LogHelper;
 import net.minecraftforge.client.ClientCommandHandler;
 
+
 @SuppressWarnings("UnusedDeclaration")
 public class ClientProxy extends CommonProxy {
+
+
     @Override
     public void registerClientCommand() {
         ClientCommandHandler.instance.registerCommand(new CommandItemName());
@@ -39,4 +43,5 @@ public class ClientProxy extends CommonProxy {
         }
         ConfigHandler.mergeConfig();
     }
+
 }
