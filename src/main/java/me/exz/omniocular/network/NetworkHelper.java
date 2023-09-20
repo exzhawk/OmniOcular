@@ -27,7 +27,7 @@ public class NetworkHelper {
                 ConfigHandler.mergedConfig = "";
                 break;
             case "__END__":
-                LogHelper.info("received config: " + ConfigHandler.mergedConfig);
+//                LogHelper.info("received config: " + ConfigHandler.mergedConfig);
                 ConfigHandler.parseConfigFiles();
                 break;
             default:

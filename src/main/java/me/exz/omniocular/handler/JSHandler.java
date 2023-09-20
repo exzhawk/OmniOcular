@@ -104,23 +104,41 @@ public class JSHandler {
         return lastTips;
     }
 
+    private static int getJavaVersion() {
+        String version = System.getProperty("java.version");
+        if (version.startsWith("1.")) {
+            version = version.substring(2, 3);
+        } else {
+            int dot = version.indexOf(".");
+            if (dot != -1) {
+                version = version.substring(0, dot);
+            }
+        }
+        return Integer.parseInt(version);
+    }
+
     //todo provide an function to detect player keyboard action. (hold shift, etc.)
     static void initEngine() {
+        if (getJavaVersion() <= 14) { // removed in Java 15
+            ScriptEngineManager manager = new ScriptEngineManager(null);
+            engine = manager.getEngineByName("javascript");
+        } else {
 //        List<ScriptEngineFactory> engines = (new ScriptEngineManager()).getEngineFactories();
 //        for (ScriptEngineFactory f: engines) {
 //            System.out.println(f.getLanguageName()+" "+f.getEngineName()+" "+f.getNames().toString());
 //        }
-        ScriptEngineManager manager = new ScriptEngineManager();
-        engine = manager.getEngineByName("graal.js");
-        Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
-        bindings.put("polyglot.js.allowHostAccess", true);
-        bindings.put("polyglot.js.allowHostClassLookup", (Predicate<String>) s -> true);
+            ScriptEngineManager manager = new ScriptEngineManager();
+            engine = manager.getEngineByName("graal.js");
+            Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
+            bindings.put("polyglot.js.allowHostAccess", true);
+            bindings.put("polyglot.js.allowHostClassLookup", (Predicate<String>) s -> true);
 //        engine= GraalJSScriptEngine.create(null,
 //                Context.newBuilder("js")
 //                        .allowHostAccess(HostAccess.ALL)
 //                        .allowHostClassLookup(s -> true)
 ////                        .option("js.ecmascript-version","2022")
 //        );
+        }
         if (engine==null){
             LogHelper.fatal("no javascript engine");
         }
@@ -134,7 +152,7 @@ public class JSHandler {
         try {
             engine.eval("var _JSHandler = Java.type('me.exz.omniocular.handler.JSHandler');");
             engine.eval("function translate(t){return _JSHandler.translate(t)}");
-            engine.eval("function translateFormatted(t,obj){return _JSHanlder.translateFormatted(t,obj)}");
+            engine.eval("function translateFormatted(t,obj){return _JSHandler.translateFormatted(t,obj)}");
             engine.eval("function name(n){return _JSHandler.getDisplayName(n.hashCode)}");
             engine.eval("function fluidName(n){return _JSHandler.getFluidName(n)}");
             engine.eval("function holding(){return _JSHandler.playerHolding()}");
@@ -185,7 +203,7 @@ public class JSHandler {
     public static String translate(String t) {
         return StatCollector.translateToLocal(t);
     }
-    
+
     public static String translateFormatted(String t, Object[] format) {
     	return StatCollector.translateToLocalFormatted(t, format);
     }
@@ -218,9 +236,9 @@ public class JSHandler {
         return entityPlayer.inventory.func_146029_c((Item) Item.itemRegistry.getObject(n)) != -1;
     }
 
-    public static String getDisplayName(String hashCode) {
+    public static String getDisplayName(int hashCode) {
         try {
-            NBTTagCompound nc = NBTCache.get(Integer.valueOf(hashCode));
+            NBTTagCompound nc = NBTCache.get(hashCode);
             ItemStack is = ItemStack.loadItemStackFromNBT(nc);
             return is.getDisplayName();
         } catch (Exception e) {
